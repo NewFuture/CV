@@ -1,0 +1,33 @@
+@media screen and (max-width: 48rem) {
+  html,body {
+      padding: 0;
+      border: 0;
+  }
+  .container{
+    padding-left: .5rem;
+    padding-right: .5rem;
+  }
+  header {
+    display: block;
+  }
+  #name-wrapper{
+    text-align: center;
+  }
+  #contact{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-top: .1rem solid #bbbbbb;
+  }
+  .contact-item{
+    padding-top: .2rem;
+    padding-left: .4rem;
+  }
+  section {
+    display: block;
+    padding: 0;
+  }
+  .title{
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+}

@@ -1,0 +1,54 @@
+--- layout: default ---
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>{{ site.data.resume.title }}</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ " /css/main.css " | prepend: site.baseurl }}">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <div id="name-wrapper">
+        <div id="fullname">{{ site.data.resume.name }}</div>
+        <div id="jobtitle">{{ site.data.resume.jobtitle }}</div>
+      </div>
+      <div id="contact">
+        {% for item in site.data.resume.contact %}
+        <div class="contact-item">
+          <i class="fa {{ item.icon }}" aria-hidden="true"></i> {{ item.text }}
+        </div>
+        {% endfor %}
+      </div>
+    </header>
+
+    <main>
+      {% for list in site.data.resume.list %}
+      <section id="{{list.type}}">
+        <h2 class="title">{{ list.name | default: list.type}}</h2>
+        <div class="content">
+          {% for content in list.content %}
+          <div class="block">
+            <h3 class="block-title">{{content.title}}</h3>
+            {% if content.sub %}
+            <div class="block-subtitle">{{content.sub}}</div>
+            {% endif %} {% if content.duration %}
+            <div class="block-duration">{{content.duration}}</div>
+            {% endif %}
+            <div class="block-detail">{{content.detail }}</div>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+      {% endfor %}
+    </main>
+  </div>
+  <footer>
+    Made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="site.url">{{site.data.resume.name}}</a>
+  </footer>
+</body>
+
+</html>

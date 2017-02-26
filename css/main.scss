@@ -1,0 +1,75 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+// @import "variables"; // Want to change something? Check here first.
+@import "resume"; // Want to change something? Check here first.
+@import "mobile";
+@import "print";
+
+
+// @import "font-awesome.min" ;
+// @import "resume" ;
+// @import "opensans" ;
+
+
+// /* Import our project variables */
+// @import "variables"; // Want to change something? Check here first.
+// // @import "resume"; // Want to change something? Check here first.
+
+// /* GENERIC */
+// /* ========================================================================== */
+// // Imports files which generate no output but are used by other modules.
+// @import "generic/mixins";
+// @import "generic/reset";
+// @import "generic/print";
+// @import "generic/helpers";
+// @import "generic/modular-scale";
+
+
+// /* ELEMENTS */
+// /* ========================================================================== */
+// //
+// // Global styles applicable primarily to named html
+// // elements, like <body>, <table>. <header>, <footer> and
+// // <main> are too generic and included as sections, below.
+// //
+// @import "elements/root"; // This has to come first, obviously.
+// //@import "elements/figures";
+// //@import "elements/forms";
+// @import "elements/footer";
+// @import "elements/header";
+// @import "elements/headings";
+// //@import "elements/images";
+// @import "elements/links";
+// @import "elements/lists";
+// //@import "elements/nav";
+// //@import "elements/rules";
+// //@import "elements/tables";
+// @import "elements/typography";
+
+
+// /* PATTERNS */
+// /* ========================================================================== */
+// //
+// // The following are re-usable 'objects' that bring recurring CSS patterns
+// // into discrete and easily maintainable modules.
+// //
+
+// //@import "patterns/buttons";
+// //@import "patterns/content";
+// @import "patterns/grid";
+// @import "patterns/lists";
+// //@import "patterns/nav";
+// //@import "patterns/rows";
+// @import "patterns/section";
+// @import "patterns/wrapper";
+
+
+/* SECTIONS */
+/* ========================================================================== */
+// Document-level structural elements and specific page regions.
+// @import "sections/footer";
+// @import "sections/header";
+// @import "sections/main";
+//@import "sections/navigation";

@@ -1,0 +1,16 @@
+title: 简历模板
+baseurl: ""
+exclude:
+  - LICENSE
+  - README.md
+  - .gitignore
+
+# Compress html
+compress_html:
+  clippings: all
+  comments: all
+
+#css
+sass:
+    style: compressed
+    # sass_dir: _sass

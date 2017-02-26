@@ -1,0 +1,54 @@
+title: 简历标题
+name: 姓名
+jobtitle: 职业
+contact:
+  - icon: fa-envelope
+    text: youremail@example.com
+  - icon: fa-phone-square
+    text: 1234567890
+  - icon: fa-globe
+    text: your-website.com
+  - icon: fa-github
+    text: GitHubID
+list:
+  - type: education
+    name: 教育
+    content:
+      - title: 大学名称
+        duration: 2011年x月 - 2015年
+        sub: 地点
+        detail: 专业
+      - title: Your University
+        duration: Aug 2007 - Jun 2011
+        sub: Ut enim ad minim veniam
+        detail: Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+ 
+  - type: skills
+    content:
+      - title: 编程语音
+        detail: 语言1, 语言2, 语言3
+      - title: Skill Group 2
+        detail: Consectetur, Adipiscing, Elit
+
+  - type: experience
+    name: 经验
+    content:
+    - title: 职位
+      duration: xxxx年xx月 - yyyy年yy月
+      sub: 某某公司
+      detail: 职位或者工作描述，工作经验详细总结或者介绍
+    - title: Job Title 2
+      duration: Apr 2013 - Mar 2016
+      sub: Your 2nd, Inc.
+      detail: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+  - type: projects
+    name: 项目
+    content:
+      - title: 项目名称
+        duration: xxxx年xx月 - yyyy年yy月      
+        detail: 项目和工作介绍，项目总结.
+        sub: 贡献者.
+      - title: Project Name 2
+        detail: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        sub: Creator and maintainer.
