@@ -3,8 +3,8 @@
 
 ## 用法
 
-1. 修改[_data/resume.yml](edit/gh-pages/_data/resume.yml)并保存
-2. 打开[https://yourgithub-id.github.io/CV/](https://newfuture.github.io/CV/) 查看效果
+1. 修改(`Edit`)[_data/resume.yml](_data/resume.yml)并保存(`Commit changes`) (会自动fork此参考然后commit)
+2. 打开[https://yourgithub-id.github.io/CV/](https://newfuture.github.io/CV/) 查看效果(commit后会自动编译生成github pages)
 
 
 
