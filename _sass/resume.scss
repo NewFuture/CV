@@ -54,7 +54,13 @@ header {
   justify-content: space-between;
   border-bottom: .1rem solid #bbbbbb;
 }
-#name-wrapper {
+
+.avatar img{
+  max-width: 10em;
+  max-height: 10em;
+  border-radius: 50%;
+}
+.avatar,#name-wrapper {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }

@@ -8,12 +8,17 @@ layout: default
   <title>{{ site.data.resume.title }}</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="{{ '/css/main.css' | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | prepend: site.baseurl }}">
 </head>
 
 <body>
   <div class="container">
     <header>
+      {% if site.data.resume.avatar %}
+      <div class="avatar">
+        <img src="{{site.data.resume.avatar}}" alt="头像">
+      </div>
+      {% endif %}
       <div id="name-wrapper">
         <div id="fullname">{{ site.data.resume.name }}</div>
         <div id="jobtitle">{{ site.data.resume.jobtitle }}</div>
