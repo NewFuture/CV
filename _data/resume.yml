@@ -1,6 +1,6 @@
 title: 简历标题
 name: 姓名
-jobtitle: 职业
+jobtitle: 求职意向
 contact:
   - icon: fa-envelope
     text: youremail@example.com
@@ -43,12 +43,12 @@ list:
       detail: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
   - type: projects
-    name: 项目
+    name: Projects
     content:
       - title: 项目名称
         duration: xxxx年xx月 - yyyy年yy月      
         detail: 项目和工作介绍，项目总结.
-        sub: 贡献者.
+        sub: 贡献者
       - title: Project Name 2
         detail: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         sub: Creator and maintainer.

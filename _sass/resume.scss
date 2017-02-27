@@ -1,3 +1,4 @@
+/** 简历基本样式*/
 html {
   width: 100%;
   font-size: 14px;
@@ -52,7 +53,7 @@ a:hover {
 header {
   display: flex;
   justify-content: space-between;
-  border-bottom: .1rem solid #bbbbbb;
+  border-bottom: .3rem solid #7fb8ec;
 }
 
 .avatar img{
@@ -66,6 +67,8 @@ header {
 }
 #fullname{
   font-size: 3.2rem;
+  font-weight: 900;
+  color: #6fa8dc;
 }
 #jobtitle{
   font-size: 1.6rem;
@@ -86,10 +89,11 @@ section{
 }
 .title{
   font-size: 1.6rem;
-  font-weight: bold;
   text-align: left;
-  min-width: 8rem;
+  min-width: 10rem;
   padding-bottom: .4rem;
+  font-weight: 800;
+  color: #6fa8dc;
 }
 .content{
 }
@@ -115,6 +119,8 @@ section{
 .block-detail{
   font-size: 1rem;
   line-height: 1.5;
+  color: #444444;
+  font-weight:500;
 }
 footer{
   color: #bbbbbb;
@@ -122,4 +128,8 @@ footer{
   min-height: 3rem;
   line-height: 3rem;
   margin-bottom: 1rem;
+}
+
+footer>a{
+  color: #80bcf3;
 }
