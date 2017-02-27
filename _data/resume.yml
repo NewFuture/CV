@@ -1,6 +1,7 @@
 title: 简历标题
 name: 姓名
 jobtitle: 求职意向
+photo: "assets/img/photo.jpg"
 contact:
   - icon: fa-envelope
     text: youremail@example.com

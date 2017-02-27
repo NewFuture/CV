@@ -57,13 +57,13 @@ header {
 }
 
 .avatar img{
-  max-width: 10em;
-  max-height: 10em;
+  max-width: 8.5em;
+  max-height: 8.5em;
   border-radius: 50%;
 }
 .avatar,#name-wrapper {
   padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1.5rem;
 }
 #fullname{
   font-size: 3.2rem;
@@ -77,7 +77,7 @@ header {
 #contact{
   font-size: 1rem;
   padding-top: 2.9rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1.5rem;
 }
 .contact-item{
 }
@@ -89,9 +89,10 @@ section{
 }
 .title{
   font-size: 1.6rem;
-  text-align: left;
+  text-align: right;
+  margin-right: 1em;
   min-width: 10rem;
-  padding-bottom: .4rem;
+  // padding-bottom: .4rem;
   font-weight: 800;
   color: #6fa8dc;
 }
