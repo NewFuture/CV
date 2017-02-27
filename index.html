@@ -20,7 +20,7 @@ layout: default
       </div>
       {% endif %}
       <div id="name-wrapper">
-        <div id="fullname">{{ site.data.resume.name }}</div>
+        <h1 id="fullname">{{ site.data.resume.name }}</h1>
         <div id="jobtitle">{{ site.data.resume.jobtitle }}</div>
       </div>
       <div id="contact">
@@ -39,13 +39,16 @@ layout: default
         <div class="content">
           {% for content in list.content %}
           <div class="block">
-            <h3 class="block-title">{{content.title}}</h3>
-            {% if content.sub %}
-            <div class="block-subtitle">{{content.sub}}</div>
-            {% endif %} {% if content.duration %}
+            <div class="block-head">
+              <h3 class="block-title">{{content.title}}</h3>              
+              {% if content.sub %}
+              <div class="block-subtitle">{{content.sub}}</div>
+              {% endif %} 
+            </div>
+            {% if content.duration %}
             <div class="block-duration">{{content.duration}}</div>
             {% endif %}
-            <div class="block-detail">{{content.detail }}</div>
+            <p class="block-detail">{{content.detail }}</p>
           </div>
           {% endfor %}
         </div>
@@ -54,7 +57,7 @@ layout: default
     </main>
   </div>
   <footer>
-    Made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="{{site.url}}">{{site.data.resume.name}}</a>
+    Made with &hearts; by <a href="{{site.url}}">{{site.data.resume.name}}</a>
   </footer>
 </body>
 

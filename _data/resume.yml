@@ -17,7 +17,7 @@ list:
     content:
       - title: 大学名称
         duration: 2011年x月 - 2015年
-        sub: 地点
+        sub: 地点或学历
         detail: 专业
       - title: Your University
         duration: Aug 2007 - Jun 2011

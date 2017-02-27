@@ -11,23 +11,20 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-overflow-scrolling: touch;
   -webkit-text-size-adjust: 100%;
-  padding: 1.618em;
+  padding: 1.5em;
 }
 body{
   text-align: center;
-  width: 100%;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  margin: 0;
-  color: #222;
-  background-color: #fbfbfb;
+  // width: 100%;
+  max-width: 70em;
+  
+  font: 400 1rem Palatino,"Palatino Linotype",Georgia,serif;
+
   background-color: #fff;
   border: 1px solid #dedede;
   color: #333;
-  font: 400 0.9375em/1.618 Palatino,"Palatino Linotype","Palatino LT STD","Book Antiqua",Georgia,serif;
   margin: 0 auto;
-  max-width: 70em;
-  padding: 1.618em;
+  padding: 1em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-hyphens: auto;
@@ -44,7 +41,8 @@ a:hover {
   text-decoration: underline;
 }
 .container{
-  max-width: 48rem;
+  max-width: 75%; 
+  // max-width: 80%;   
   margin-left: auto;
   margin-right: auto;
   text-align: left;
@@ -61,7 +59,10 @@ header {
   max-height: 8.5em;
   border-radius: 50%;
 }
-.avatar,#name-wrapper {
+.avatar{
+  padding: 1em;
+}
+#name-wrapper {
   padding-top: 2rem;
   padding-bottom: 1.5rem;
 }
@@ -69,6 +70,7 @@ header {
   font-size: 3.2rem;
   font-weight: 900;
   color: #6fa8dc;
+  display: inline;
 }
 #jobtitle{
   font-size: 1.6rem;
@@ -88,11 +90,10 @@ section{
   border-bottom: .1rem solid #bbbbbb;
 }
 .title{
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   text-align: right;
   margin-right: 1em;
   min-width: 10rem;
-  // padding-bottom: .4rem;
   font-weight: 800;
   color: #6fa8dc;
 }
@@ -101,30 +102,42 @@ section{
 .block{
   margin-bottom: 1rem;
 }
+.block-head{
+  margin: .5rem auto .5em auto;  
+}
+.block-head>*{
+  margin: 0;
+}
 .block-title{
-  font-size: 1.5rem;
-  margin-bottom: .5rem;
-  font-weight: 800;
+  font-size: 1.4rem;
+  font-weight: 700;
+  // margin-bottom: .5rem;  
+  min-width: 60%;
+  display: inline-block;
 }
 .block-subtitle{
-  font-size: 1rem;
+  font-size: 1.1rem;
+  color: #858585;
   text-align: right;
-  margin-bottom: .5rem;
-  color: #333;
+
+  // margin-bottom: .5rem;
+  display: inline-block;
+  font-weight: 600;
+  min-width: 40%;
 }
 .block-duration{
-  font-size: .8rem;
-  margin-bottom: .5rem;
-  color: #bbbbbb;
+  font-size: .9rem;
+  color: #bbb;
+  margin: .2rem auto .5em auto;
 }
 .block-detail{
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #444444;
-  font-weight:500;
+  // font-size: 1rem;
+  line-height: 1.3;
+  text-indent: 1.2em;
+  font-weight:400;
 }
 footer{
-  color: #bbbbbb;
+  color: #bbb;
   font-size: 1rem;
   min-height: 3rem;
   line-height: 3rem;
