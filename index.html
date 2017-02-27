@@ -26,7 +26,10 @@ layout: default
       <div id="contact">
         {% for item in site.data.resume.contact %}
         <div class="contact-item">
-          <i class="fa {{ item.icon }}" aria-hidden="true"></i>
+          <!--<i class="fa {{ item.icon }}" aria-hidden="true"></i>-->
+          {% if item.icon%}
+            <i class="icon">{% include {{item.icon}} %}</i>
+          {% endif %}
           {% if item.href%}
             <a href="{{item.text | prepend: item.href }}">{{item.text}}</a>
           {% else %}

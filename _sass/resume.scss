@@ -81,6 +81,17 @@ header {
   padding-top: 2.9rem;
   padding-bottom: 1.5rem;
 }
+.icon{
+
+    // max-height: 1.5rem;
+    margin-right: .5rem;
+}
+.icon>svg{
+    display: inline-block;
+    vertical-align: middle;
+    max-height: 95%;
+    fill: #333;
+}
 .contact-item>a{
   color: #333;
 }
