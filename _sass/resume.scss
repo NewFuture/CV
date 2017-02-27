@@ -81,7 +81,8 @@ header {
   padding-top: 2.9rem;
   padding-bottom: 1.5rem;
 }
-.contact-item{
+.contact-item>a{
+  color: #333;
 }
 section{
   display: flex;
