@@ -149,22 +149,19 @@ section{
   font-weight:400;
 }
 footer{
-  color: #bbb;
-  font-size: 1rem;
-  min-height: 3rem;
+  color: #888;
+  font-size: 0.9rem;
+  min-height: 2.5rem;
   line-height: 3rem;
-  margin-bottom: 1rem;
 }
 
 footer li {
-	display: inline;
-  color: #888;  
+	display: inline-block;
 }
 
 footer ul{
   margin: 0 auto;
   padding: 0;
-  font-size: 0.9rem;
 }
 
 footer li:before {
