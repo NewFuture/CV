@@ -158,15 +158,24 @@ footer{
 
 footer li {
 	display: inline;
+  color: #888;  
+}
+
+footer ul{
+  margin: 0 auto;
+  padding: 0;
+  font-size: 0.9rem;
 }
 
 footer li:before {
-	content: '|'
+	content: '|';
+  color: #999;
 }
 
 footer li:first-child:before {
 	content: ''
 }
-footer a, footer li{
-  color: #80bcf3;
+footer a{
+  color: #888;
+  text-decoration: underline;
 }

@@ -47,4 +47,11 @@
   .block-subtitle{
     min-width: 99%;
   }
+  footer li{
+    display: block;
+    line-height: 1.5rem;
+  }
+  footer li:before {
+	  content: ''
+  }
 }

@@ -1,21 +1,26 @@
-# CV(简历自动生成)
+# CV(简历)自动生成
 简历模板自动生成gh-pages. A resume template auto builds in github-pages by Jekyll
 
 * [x] 手机端适配
-* [x] 打印格式优化
+* [x] 打印格式优化(可导PDF)
 * [x] html和css压缩
 
-## 立即在线使用
+## 在线使用(需登录github)
 
-1. 修改(`Edit`)[_data/resume.yml](https://github.com/NewFuture/CV/edit/gh-pages/_data/resume.yml)(内容和条目更具需要删减)
+1. 修改(`Edit`)[_data/resume.yml](https://github.com/NewFuture/CV/edit/gh-pages/_data/resume.yml)(内容和条目根据需要删减)
 2. 保存(点击`Commit changes`) (会自动fork和commit)
-3. 打开[https://{your-github-id}.github.io/CV/](https://newfuture.github.io/CV/) 查看效果(commit后会自动编译生成github pages)
+3. 稍等片刻(commit后会自动编译生成github pages),打开[https://{your-github-id}.github.io/CV/](https://newfuture.github.io/CV/) 查看效果
 
 ## 高级用法
 
 ### 导出 PDF
 1. 浏览器打开右键选择`打印`
 2. 选择打印为PDF文档
+
+### 自定义域名
+
+1. 添加[`CNAME`](./CNAME)文件，一行你的域名,[更多](https://help.github.com/articles/adding-or-removing-a-custom-domain-for-your-github-pages-site/)
+2. 修改该域名的DNS的CNAME记录为`{YOUR-github-ID}.github.io`
 
 ### 自定义样式
 * [`_sass/resume.scss`](_sass/resume.scss) 默认样式
