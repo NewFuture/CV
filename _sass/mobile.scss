@@ -1,3 +1,4 @@
+//pad 平板或者横屏
 @media screen and (max-width: 48rem) {
   html,body {
       padding: 0;
@@ -8,13 +9,26 @@
     padding-right: .5rem;
     max-width: 90%;
   }
-  header {
-    display: block;
-  }
   .avatar{
       display: none;
   }
+  section {
+    display: block;
+    padding: 0;
+  }
+  .title{
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+}
+
+//手机
+@media screen and (max-width: 32rem) {
+  header {
+    display: block;
+  }
   #name-wrapper{
+    padding-top: 1.5rem;
     text-align: center;
   }
   #contact{
@@ -27,12 +41,10 @@
     padding-top: .2rem;
     padding-left: .4rem;
   }
-  section {
-    display: block;
-    padding: 0;
+  .block-title{
+    margin-top: 1rem;
   }
-  .title{
-    text-align: center;
-    margin-bottom: 1rem;
+  .block-subtitle{
+    min-width: 99%;
   }
 }
