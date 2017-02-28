@@ -156,6 +156,17 @@ footer{
   margin-bottom: 1rem;
 }
 
-footer>a{
+footer li {
+	display: inline;
+}
+
+footer li:before {
+	content: '|'
+}
+
+footer li:first-child:before {
+	content: ''
+}
+footer a, footer li{
   color: #80bcf3;
 }

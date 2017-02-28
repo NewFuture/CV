@@ -1,26 +1,29 @@
-title: 简历标题
-name: 姓名
-jobtitle: 求职意向 #可空不显示
+title: "简历标题"
+lang: "zh" #语言设置 zh表示中文 en 表示英语
+name: "姓名"
+jobtitle: "求职意向" #可空不显示
 photo: "assets/img/photo.jpg" #照片可空，不显示
 contact: #联系方式连接等3~5行
-  - text: youremail@example.com #文本内容
+  - text: "youremail@example.com" #文本内容
+    href: 'mailto:youremail@example.com' #链接，无链接则空  
     icon: 'icons/email.svg' #图标 svg文件
-    href: 'mailto:' #链接前缀，无链接则空
-  - text: 1234567890
+  - text: "1234567890"
+    href: 'tel:1234567890'   
     icon: 'icons/phone.svg'
-    href: 'tel:' 
-  - text: your-website.com
+  - text: "your-website.com"
+    href: 'http://your-website.com'  
     icon: 'icons/web.svg'
-    href: 'http://'  
-  - text: GitHubID
+  - text: "GitHubID"
+    href: 'https://github.com/GitHubID'      
     icon: "icons/github.svg"
-    href: 'https://github.com/'    
+  # - text: "地址"    
+  #   icon: "icons/location.svg"
 list: #简历主要内容，类别条数不限
   - type: education #类别显示为ID
     name: 教育 #显示名称，空则使用type
     content: #内容基本格式 标题-副标题-日期-详细内容 (都允许空)
       - title: 大学名称
-        duration: 2011年x月 - 2015年
+        duration: "2011年x月 - 2015年"
         sub: 地点或学历
         detail: 专业
       - title: Your University
@@ -39,7 +42,7 @@ list: #简历主要内容，类别条数不限
     name: 经验
     content:
     - title: 职位
-      duration: xxxx年xx月 - yyyy年yy月
+      duration: "xxxx年xx月 - yyyy年yy月"
       sub: 某某公司
       detail: 职位或者工作描述，工作经验详细总结或者介绍
     - title: Job Title 2
@@ -57,3 +60,9 @@ list: #简历主要内容，类别条数不限
       - title: Project Name 2
         detail: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         sub: Creator and maintainer.
+   #可继续添加更多内容
+footer: #脚注
+  # - text: "XX简历"
+  #   href: '/'
+  - text: "Made with &hearts; by NewFuture"
+    href: "https://github.com/NewFuture/CV/"
