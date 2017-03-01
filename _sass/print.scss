@@ -20,7 +20,10 @@
         border: 0 !important;
         padding: 0;
     }
-
+    
+    .container{
+        max-width: 80%; 
+    }
     .avatar img{
         border-radius: 1%;
     }
