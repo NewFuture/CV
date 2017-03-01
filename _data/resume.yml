@@ -32,8 +32,9 @@ list: #简历主要内容，类别条数不限
         detail: Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
  
   - type: skills
+    # name: "技能"
     content:
-      - title: 编程语音
+      - title: 编程语言
         detail: 语言1, 语言2, 语言3
       - title: Skill Group 2
         detail: Consectetur, Adipiscing, Elit
@@ -67,6 +68,7 @@ others: #其他列表显示
     - 列表项1
     - name: "加粗:"
       text: "列表项二"
+    - list 3
     
 footer: #脚注
   # - text: "XX简历"

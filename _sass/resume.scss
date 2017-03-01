@@ -16,7 +16,7 @@ html {
 body{
   text-align: center;
   // width: 100%;
-  max-width: 70em;
+  max-width: 75em;
   
   font: 400 1rem Palatino,"Palatino Linotype",Georgia,serif;
 
@@ -52,6 +52,11 @@ header {
   display: flex;
   justify-content: space-between;
   border-bottom: .3rem solid #7fb8ec;
+  padding: 2.5em 1em 1em;
+}
+
+.avatar{
+  // padding: 1em;
 }
 
 .avatar img{
@@ -59,15 +64,13 @@ header {
   max-height: 8.5em;
   border-radius: 50%;
 }
-.avatar{
-  padding: 1em;
-}
+
 #name-wrapper {
-  padding-top: 2.5rem;
-  padding-bottom: 1rem;
+  // padding-top: 2.5rem;
+  // padding-bottom: 1rem;
 }
 #fullname{
-  font-size: 3.2rem;
+  font-size: 3rem;
   font-weight: 900;
   color: #6fa8dc;
   display: inline;
@@ -77,9 +80,9 @@ header {
   font-style: italic;
 }
 #contact{
-  font-size: 1rem;
-  padding-top: 2.9rem;
-  padding-bottom: 1.5rem;
+  font-size: .95rem;
+  // padding-top: 2.9rem;
+  // padding-bottom: 1.5rem;
 }
 .icon{
 
@@ -107,12 +110,15 @@ section:last-child{
 .title{
   font-size: 1.5rem;
   text-align: right;
-  margin-right: 1em;
-  min-width: 10rem;
+  margin-right: 1rem;
+  min-width: 10.5rem;
   font-weight: 800;
   color: #6fa8dc;
+  text-transform: uppercase;
 }
 .content{
+  margin-left: 1rem;
+  // width: 100%;
 }
 .block{
   margin-bottom: 1rem;
@@ -124,18 +130,18 @@ section:last-child{
   margin: 0;
 }
 .block-title{
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 700;
-  // margin-bottom: .5rem;  
   min-width: 60%;
   display: inline-block;
+}
+.block-title a{
+  color: initial;
 }
 .block-subtitle{
   font-size: 1.1rem;
   color: #858585;
   text-align: right;
-
-  // margin-bottom: .5rem;
   display: inline-block;
   font-weight: 600;
   min-width: 40%;
@@ -158,7 +164,6 @@ section:last-child{
 }
 #others ul{
     padding-left: 1.5em;
-    width: 100%;
 }
 footer{
   border-top: .1rem dashed #ccc;

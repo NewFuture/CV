@@ -1,0 +1,109 @@
+--- 
+layout: default
+---
+{% assign data = site.data[page.data] %}
+<!DOCTYPE html>
+<html lang="{{ data.lang }}">
+
+<head>
+  <title>{{ data.title }}</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | prepend: site.baseurl}}?{{site.time | date: '%s'}}">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      {% if data.photo %}
+      <div class="avatar">
+        <img src="{{data.photo}}?{{site.time | date: '%s'}}" alt="头像">
+      </div>
+      {% endif %}
+      <div id="name-wrapper">
+        <h1 id="fullname">{{ data.name }}</h1>
+        <div id="jobtitle">{{ data.jobtitle }}</div>
+      </div>
+      <div id="contact">
+        {% for item in data.contact %}
+        <div class="contact-item">
+          {% if item.icon%}
+            <i class="icon" aria-hidden="true">{% include {{item.icon}} %}</i>
+          {% endif %}
+          {% if item.href%}
+            <a href="{{item.href }}">{{item.text}}</a>
+          {% else %}
+            <span>{{ item.text }}</span>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </header>
+
+    <main>
+      {% for list in data.list %}
+      <section id="{{list.type}}">
+        <h2 class="title">{{ list.name | default: list.type }}</h2>
+        <div class="content">
+          {% for content in list.content %}
+          <div class="block">
+            <div class="block-head">
+              <h3 class="block-title">
+              {% if content.url %}
+                <a href="{{content.url}}" target="_blank">{{content.title}}</a>
+              {% else %}
+                {{content.title}}
+              {% endif %}  
+              </h3>
+              {% if content.sub %}
+              <div class="block-subtitle">{{content.sub}}</div>
+              {% endif %} 
+            </div>
+            {% if content.duration %}
+            <div class="block-duration">{{content.duration}}</div>
+            {% endif %}
+            <p class="block-detail">{{content.detail }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+      {% endfor %}
+
+      {% if data.others %}
+      <section id="others">
+        <h2 class="title">{{ data.others.title | default: '其他' }}</h2>
+        <div class="content">
+        <ul>
+          {% for content in data.others.content %}
+            <li>
+              {% if content.name %}
+                <span class="name">{{content.name}}</span>
+              {% endif %}
+              <span class="block-detail">{{content.text | default: content}}</span>
+              </li>
+          {% endfor %}
+        </ul>
+        </div>
+      </section>
+      {% endif%}
+
+    </main>
+  </div>
+
+  <footer>
+    <ul>
+       {% for footer in data.footer %}
+        <li><a href="{{footer.href}}">{{footer.text}}</a></li>
+       {% endfor %}
+       {% case data.lang %}
+        {% when 'zh' %}
+          <li>更新于 {{ page.date | default: site.time | date: '%Y-%m-%d'}}</li>
+        {% when 'en' %}
+          <li>Last edit {{ page.date | default: site.time | date: '%B %d, %Y'}}</li>
+      {% endcase %}
+    </ul>
+  </footer>
+
+</body>
+
+</html>
