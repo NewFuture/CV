@@ -99,7 +99,10 @@ section{
   display: flex;
   margin-top: 1rem;
   padding-left: .2rem;
-  border-bottom: .1rem solid #bbbbbb;
+  border-bottom: .1rem solid #bbb;
+}
+section:last-child{
+  border-bottom: none;
 }
 .title{
   font-size: 1.5rem;
@@ -138,21 +141,33 @@ section{
   min-width: 40%;
 }
 .block-duration{
-  font-size: .9rem;
-  color: #bbb;
-  margin: .2rem auto .5em auto;
+  font-size: .95rem;
+  color: #aaa;
+  margin: .2rem auto .5rem auto;
 }
 .block-detail{
-  // font-size: 1rem;
+  font-size: 1.05rem;
   line-height: 1.3;
   text-indent: 1.2em;
-  font-weight:400;
+  font-weight: 500;
+}
+.content .name{
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-right: .5rem;
+}
+#others ul{
+    padding-left: 1.5em;
+    width: 100%;
 }
 footer{
+  border-top: .1rem dashed #ccc;
+  margin-top: 2rem;
+  padding-top:1rem;
   color: #888;
   font-size: 0.9rem;
-  min-height: 2.5rem;
   line-height: 3rem;
+  font-weight: 300;
 }
 
 footer li {

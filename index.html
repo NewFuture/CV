@@ -8,7 +8,7 @@ layout: default
   <title>{{ site.data.resume.title }}</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | prepend: site.baseurl}}?{{site.time | date: '%s'}}">
 </head>
 
 <body>
@@ -16,7 +16,7 @@ layout: default
     <header>
       {% if site.data.resume.photo %}
       <div class="avatar">
-        <img src="{{site.data.resume.photo}}" alt="头像">
+        <img src="{{site.data.resume.photo}}?{{site.time | date: '%s'}}" alt="头像">
       </div>
       {% endif %}
       <div id="name-wrapper">
@@ -61,6 +61,23 @@ layout: default
         </div>
       </section>
       {% endfor %}
+
+      {% if site.data.resume.others %}
+      <section id="others">
+        <h2 class="title">{{ site.data.resume.others.title | default: '其他' }}</h2>
+        <ul class="content">
+          {% for content in site.data.resume.others.content %}
+            <li>
+              {% if content.name %}
+                <span class="name">{{content.name}}</span>
+              {% endif %}
+              <span class="block-detail">{{content.text | default: content}}</span>
+              </li>
+          {% endfor %}
+        </ul>
+      </section>
+      {% endif%}
+
     </main>
   </div>
 
