@@ -78,8 +78,10 @@ layout: default
             <li>
               {% if content.name %}
                 <span class="name">{{content.name}}</span>
+                <span class="block-detail">{{content.text}}</span>
+              {% else %}
+                <span class="block-detail">{{content}}</span>
               {% endif %}
-              <span class="block-detail">{{content.text | default: content}}</span>
               </li>
           {% endfor %}
         </ul>
