@@ -153,6 +153,13 @@ section:last-child{
   color: #aaa;
   margin: .2rem auto .5rem auto;
 }
+.block-duration > i{
+  border: 1px solid rgba(171, 180, 189, 0.15);
+  box-shadow: none;
+  font-style: normal;
+  border-radius: 4px;
+  padding: .1rem;
+}
 .block-detail{
   font-size: 1.05rem;
   line-height: 1.3;
