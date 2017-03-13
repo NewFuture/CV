@@ -95,11 +95,11 @@ layout: default
   <footer>
     <ul>
        {% for footer in data.footer %}
-        <li>
+        
           {% if footer.href %}
-            <a href="{{footer.href}}">{{ footer.text | default:footer }}</a>
+            <li><a href="{{footer.href}}">{{ footer.text | default:footer }}</a></li>
           {% else %}
-            {{ footer.text | default:footer }}
+            <li>{{ footer.text | default:footer }}</li>
           {% endif %}
         </li>
        {% endfor %}
