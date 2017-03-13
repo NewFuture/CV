@@ -95,7 +95,13 @@ layout: default
   <footer>
     <ul>
        {% for footer in data.footer %}
-        <li><a href="{{footer.href}}">{{footer.text}}</a></li>
+        <li>
+          {% if footer.href %}
+            <a href="{{footer.href}}">{{ footer.text | default:footer }}</a>
+          {% else %}
+            {{ footer.text | default:footer }}
+          {% endif %}
+        </li>
        {% endfor %}
        {% case data.lang %}
         {% when 'zh' %}

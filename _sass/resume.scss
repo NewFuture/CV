@@ -188,11 +188,13 @@ footer ul{
 
 footer li:before {
 	content: '|';
-  color: #999;
+  color: #333;
+  font-size: 1.1rem;
 }
 
 footer li:first-child:before {
-	content: ''
+	content: '';
+  font-size: inherit;
 }
 footer a{
   color: #888;
