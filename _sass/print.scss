@@ -1,4 +1,4 @@
-/* Basic print styles */
+/* 打印样式 */
 
 @media print {
     *,
@@ -42,9 +42,9 @@
     //     content: "";
     // }
 
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
+    // abbr[title]:after {
+    //     content: " (" attr(title) ")";
+    // }
 
     /*
     * Don't show links that are fragment identifiers,
@@ -53,22 +53,22 @@
 
 
 
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
+    // pre,
+    // blockquote {
+    //     border: 1px solid #999;
+    //     page-break-inside: avoid;
+    // }
 
     /*
     * Printing Tables:
     * http://css-discuss.incutio.com/wiki/Printing_Tables
     */
 
-    thead {
-        display: table-header-group;
-    }
+    // thead {
+    //     display: table-header-group;
+    // }
 
-    tr,
+    // tr,
     img {
         page-break-inside: avoid;
         max-width: 100% !important;

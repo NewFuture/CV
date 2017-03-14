@@ -1,0 +1,77 @@
+/* 定义跨浏览器兼容函数*/
+
+// 圆角边框
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin box-sizing($box-sizing: border-box) {
+    -webkit-box-sizing: #{$box-sizing};
+    -moz-box-sizing: #{$box-sizing};
+    box-sizing: #{$box-sizing};
+}
+
+// 文本溢出省略显示
+@mixin text-ellipsis () {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+// Better OSX font-rendering
+@mixin font-smoothing() {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+// Cross-browser opacity
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+// Hyphenate text.
+@mixin hyphens() {
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -o-hyphens: auto;
+    hyphens: auto;
+}
+
+// Better box-shadows.
+@mixin box-shadow($shadow1, $shadow2:false, $shadow3:false) {
+    $shadows: $shadow1;
+    @if $shadow2 {
+        $shadows: $shadow1, $shadow2;
+    }
+    @if $shadow3 {
+        $shadows: $shadow1, $shadow2, $shadow3;
+    }
+    -webkit-box-shadow: $shadows;
+    -moz-box-shadow: $shadows;
+    box-shadow: $shadows;
+}
+
+//画出边框
+@mixin outline($bg-color, $radius:4px) {
+    padding: .1rem;
+    border: 1px solid $bg-color;
+    border-radius: $radius;
+    @include box-shadow(none);
+}

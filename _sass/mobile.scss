@@ -1,64 +1,70 @@
+/*移动版适配*/
+
 //pad 平板或者横屏
 @media screen and (max-width: 48rem) {
-  html,body {
-      padding: 0;
-      border: 0;
-  }
-  .container{
-    padding-left: .5rem;
-    padding-right: .5rem;
-    max-width: 95%;
-  }
-  .content{
-    width: 90%;
-  }
-  .avatar{
-      display: none;
-  }
-  section {
-    display: block;
-    padding: 0;
-  }
-  .title{
-    text-align: center;
-    margin: 1rem auto;
-  }
+    html,
+    body {
+        padding: 0;
+        border: 0;
+    }
+    .container {
+        padding: 0 .5rem;
+        max-width: 95%;
+    }
+    .content {
+        width: 90%;
+    }
+    .avatar {
+        display: none;
+    }
+    section {
+        display: block;
+        padding: 0;
+    }
+    // .subject,
+    h2 {
+        text-align: center;
+        margin: 1rem auto;
+    }
 }
 
 //手机
 @media screen and (max-width: 32rem) {
-  header {
-    display: block;
-  }
-  #name-wrapper{
-    padding-top: 1.5rem;
-    text-align: center;
-  }
-  #contact{
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    border-top: .1rem solid #bbbbbb;
-    padding-left: 15%;
-  }
-  .contact-item{
-    padding-top: .2rem;
-    padding-left: .4rem;
-  }
-  .block-title{
-    margin-top: 1rem;
-  }
-  .block-subtitle{
-    min-width: 99%;
-    text-align: left;
-  }
-  .block-duration{
-    text-align: right;
-  }
-  footer li{
-    display: block;
-    line-height: 1.5rem;
-  }
-  footer li:before {
-	  content: ''
-  }
+    header {
+        display: block;
+    }
+    #name-wrapper {
+        // padding-top: 1.5rem;
+        text-align: center;
+    }
+    #contact {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        border-top: .1rem solid #bbbbbb;
+        padding-left: 15%;
+    }
+    .contact-item {
+        padding-top: .2rem;
+        padding-left: .4rem;
+    }
+    .block {
+        // .title,
+        h3 {
+            margin-top: 1rem;
+        }
+        .sub {
+            min-width: 99%;
+            text-align: left;
+        }
+        .time {
+            text-align: right;
+        }
+    }
+    footer li {
+        display: block;
+        line-height: 1.5rem;
+        &:before {
+            content: ''
+        }
+    }
 }

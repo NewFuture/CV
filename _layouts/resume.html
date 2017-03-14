@@ -43,26 +43,27 @@ layout: default
     <main>
       {% for list in data.list %}
       <section id="{{list.type}}">
-        <h2 class="title">{{ list.name | default: list.type }}</h2>
+        <h2 class="subject">{{ list.name | default: list.type }}</h2>
         <div class="content">
           {% for content in list.content %}
           <div class="block">
-            <div class="block-head">
-              <h3 class="block-title">
+            <div class="head">
               {% if content.url %}
+               <h3 class="title">
                 <a href="{{content.url}}" target="_blank">{{content.title}}</a>
+               </h3>
               {% else %}
-                {{content.title}}
-              {% endif %}  
+                <h3 class="title">{{content.title}}</h3>
+              {% endif %}
               </h3>
               {% if content.sub %}
-              <div class="block-subtitle">{{content.sub}}</div>
+              <div class="sub">{{content.sub}}</div>
               {% endif %} 
             </div>
             {% if content.duration %}
-            <div class="block-duration"><i>{{content.duration}}</i></div>
+            <div class="time"><i>{{content.duration}}</i></div>
             {% endif %}
-            <p class="block-detail">{{content.detail }}</p>
+            <p class="detail">{{content.detail }}</p>
           </div>
           {% endfor %}
         </div>
@@ -71,16 +72,28 @@ layout: default
 
       {% if data.others %}
       <section id="others">
-        <h2 class="title">{{ data.others.title | default: '其他' }}</h2>
+        <h2 class="subject">{{ data.others.title | default: '其他' }}</h2>
         <div class="content">
         <ul>
           {% for content in data.others.content %}
             <li>
               {% if content.name %}
                 <span class="name">{{content.name}}</span>
-                <span class="block-detail">{{content.text}}</span>
+              {% endif %}
+              {% if content.text%}
+                <span class="detail">{{content.text}}</span>
+              {% elsif content.items %}
+                {% for item in content.items %}
+                  <span class="item detail">{{item}}</span>
+                {% endfor %}
+              {% elsif content.list %}
+                <ul class="list detail">
+                  {% for li in content.list %}
+                    <li>{{li}}</li>
+                  {% endfor %}
+                </ul>
               {% else %}
-                <span class="block-detail">{{content}}</span>
+                <span>{{content}}</span>
               {% endif %}
               </li>
           {% endfor %}
@@ -95,7 +108,6 @@ layout: default
   <footer>
     <ul>
        {% for footer in data.footer %}
-        
           {% if footer.href %}
             <li><a href="{{footer.href}}">{{ footer.text | default:footer }}</a></li>
           {% else %}
