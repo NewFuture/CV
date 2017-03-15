@@ -65,13 +65,23 @@ list: #简历主要内容，类别条数不限
 others: #其他列表显示
   title: '其他'
   content:
-    - 列表项1
+    - 单行文字
     - name: "加粗:"
       text: "列表项二"
-    - list 3
+    - name: "兴趣:"
+      items: #单行列表
+        - 睡觉
+        - 吃饭
+        - coding
+    - name: 列表
+      list:
+        - 第一项
+        - 第二项
+        - 选择需要的格式
+
     
-footer: #脚注
-  # - text: "XX简历"
+footer: #脚注多组
+  - text: "简历脚注"
   #   href: '/'
   - text: "Made with &hearts; by NewFuture"
     href: "https://github.com/NewFuture/CV/"

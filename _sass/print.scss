@@ -9,84 +9,76 @@
         text-shadow: none !important;
         font-size: 12px;
     }
-
     html {
         background: inherit !important;
         padding: 0 !important;
         font-size: 12px;
     }
-
     body {
         border: 0 !important;
         padding: 0;
     }
-    
-    .container{
-        max-width: 80%; 
+    .container {
+        max-width: 80%;
     }
-    .avatar img{
+    .avatar img {
         border-radius: 1%;
     }
-
     a,
     a:visited {
         text-decoration: underline !important;
     }
-
     // a[href]:after {
     //     content: " (" attr(href) ")";
     // }
-
     // a[href^="#"]:after,
     // a[href^="javascript:"]:after {
     //     content: "";
     // }
-
     // abbr[title]:after {
     //     content: " (" attr(title) ")";
     // }
-
     /*
     * Don't show links that are fragment identifiers,
     * or use the `javascript:` pseudo protocol
     */
-
-
-
     // pre,
     // blockquote {
     //     border: 1px solid #999;
     //     page-break-inside: avoid;
     // }
-
     /*
     * Printing Tables:
     * http://css-discuss.incutio.com/wiki/Printing_Tables
     */
-
     // thead {
     //     display: table-header-group;
     // }
-
     // tr,
     img {
-        page-break-inside: avoid;
         max-width: 100% !important;
     }
-
     p,
     h2,
     h3 {
         orphans: 3;
         widows: 3;
     }
-
+    img,
+    .block,
+    .list {
+        page-break-inside: avoid;
+    }
     h2,
     h3,
-    header {
+    header,
+    {
         page-break-after: avoid;
     }
-    footer{
+    .container {
+        border-bottom: 1px dashed #ccc;
+    }
+    footer {
         padding-bottom: 0;
         margin: 0;
         display: none;
