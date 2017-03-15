@@ -58,7 +58,6 @@ layout: default
               {% else %}
                 <h3 class="title">{{content.title}}</h3>
               {% endif %}
-              </h3>
               {% if content.sub %}
               <div class="sub">{{content.sub}}</div>
               {% endif %} 
@@ -116,7 +115,6 @@ layout: default
           {% else %}
             <li>{{ footer.text | default:footer }}</li>
           {% endif %}
-        </li>
        {% endfor %}
        {% case data.lang %}
         {% when 'zh' %}

@@ -71,9 +71,12 @@ header {
     }
 }
 
-#name-wrapper {
-    // padding-top: 2.5rem;
-    // padding-bottom: 1rem;
+.avatar,
+#name-wrapper,
+#contact {
+    display: inline-block;
+    text-align: center;
+    min-width: 28%;
 }
 
 // #fullname,
@@ -90,6 +93,7 @@ h1 {
 }
 
 #contact {
+    text-align: left;
     font-size: .95rem;
 }
 
@@ -134,6 +138,13 @@ h2 {
     margin-left: 1rem;
     width: 75%;
     // width: 100%;
+}
+
+h2,
+.content {
+    // display: table-cell;//兼容IE9
+    display: inline-block;
+    vertical-align: top;
 }
 
 .block {

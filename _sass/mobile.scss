@@ -23,6 +23,7 @@
     }
     // .subject,
     h2 {
+        display: block;
         text-align: center;
         margin: 1rem auto;
     }
@@ -35,9 +36,10 @@
     }
     #name-wrapper {
         // padding-top: 1.5rem;
-        text-align: center;
+        display: block;
     }
     #contact {
+        display: block;
         padding-top: 1rem;
         padding-bottom: 1rem;
         border-top: .1rem solid #bbbbbb;
