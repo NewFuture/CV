@@ -5,6 +5,11 @@ exclude:
   - README.md
   - .gitignore
 
+#额外js脚本
+# scripts:
+#   - src: "assets/js/resume.js"
+#     defer: defer
+
 # Compress html 压缩HTML
 compress_html:
   #去除空格
@@ -14,5 +19,5 @@ compress_html:
 
 #css 合并压缩css
 sass:
-    style: compressed
-    sass_dir: _sass
+  style: compressed
+  sass_dir: _sass

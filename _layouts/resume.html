@@ -10,6 +10,9 @@ layout: default
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | prepend: site.baseurl}}?{{site.time | date: '%s'}}">
+  {% for script in site.scripts %}
+    <script src="{{script.src}}?{{site.time | date: '%s'}}" {{script.defer}}></script>
+  {% endfor %}
 </head>
 
 <body>
@@ -123,7 +126,9 @@ layout: default
       {% endcase %}
     </ul>
   </footer>
-
+  {% for script in data.scripts %}
+    <script src="{{script.src}}?{{site.time | date: '%s'}}" {{script.defer}}></script>
+  {% endfor %}
 </body>
 
 </html>
