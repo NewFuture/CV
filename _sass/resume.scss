@@ -11,7 +11,11 @@ $detail_bg: rgba(236, 236, 236, .5);
 //时间外边颜色
 $time_outline: rgba(180, 180, 180, .15);
 //item背景色
-$other_bg:rgba(238, 238, 238, 0.3);
+$other_bg:rgba(238, 238, 238, .3);
+
+//IE8 兼容
+header,main,section,footer{display:block}
+
 html {
     width: 100%;
     font-size: 14px;
@@ -33,7 +37,7 @@ body {
     background-color: $paper_color;
     border: 1px solid #dedede;
     color: $default_color;
-    font: 400 1rem Palatino, "Palatino Linotype", Georgia, serif;
+    font: 400 1em Palatino, "Palatino Linotype", Georgia, serif;
     @include font-smoothing();
     @include hyphens();
 }
@@ -51,13 +55,13 @@ a {
     margin-left: auto;
     margin-right: auto;
     text-align: left;
-    margin-bottom: 1rem;
+    margin-bottom: 1em;
 }
 
 header {
     display: flex;
     justify-content: space-between;
-    border-bottom: .3rem solid #7fb8ec;
+    border-bottom: .3em solid #7fb8ec;
     padding: 2.5em 1em 1em;
 }
 
@@ -81,25 +85,25 @@ header {
 
 // #fullname,
 h1 {
-    font-size: 3rem;
+    font-size: 3em;
     font-weight: 900;
     color: #6fa8dc;
     display: inline;
 }
 
 #jobtitle {
-    font-size: 1.6rem;
+    font-size: 1.6em;
     font-style: italic;
 }
 
 #contact {
     text-align: left;
-    font-size: .95rem;
+    font-size: .95em;
 }
 
 //图标
 .icon {
-    margin-right: .5rem;
+    margin-right: .5em;
     svg {
         display: inline-block;
         vertical-align: middle;
@@ -114,9 +118,9 @@ h1 {
 
 section {
     display: flex;
-    margin-top: 1rem;
-    padding-left: .2rem;
-    border-bottom: .1rem solid #bbb;
+    margin-top: 1em;
+    padding-left: .2em;
+    border-bottom: .1em solid #bbb;
     &:last-child {
         border-bottom: none;
     }
@@ -124,40 +128,39 @@ section {
 
 // .subject,
 h2 {
-    font-size: 1.5rem;
+    font-size: 1.5em;
     text-align: right;
-    margin-right: 1rem;
+    margin-right: 1em;
     width: 20%;
-    min-width: 10.5rem;
+    min-width: 7em;
     font-weight: 800;
     color: #6fa8dc;
     text-transform: uppercase;
 }
 
 .content {
-    margin-left: 1rem;
+    margin-left: 1em;
     width: 75%;
     // width: 100%;
 }
 
 h2,
 .content {
-    // display: table-cell;//兼容IE9
     display: inline-block;
     vertical-align: top;
 }
 
 .block {
-    margin-bottom: 1rem;
+    margin-bottom: 1em;
     .head {
-        margin: .5rem auto .5em auto;
+        margin: .5em auto;
     }
     .head>* {
         margin: 0;
     }
     // .title ,
     h3 {
-        font-size: 1.3rem;
+        font-size: 1.3em;
         font-weight: 700;
         min-width: 60%;
         display: inline-block;
@@ -166,7 +169,7 @@ h2,
         }
     }
     .sub {
-        font-size: 1.1rem;
+        font-size: 1.1em;
         color: #858585;
         text-align: right;
         display: inline-block;
@@ -174,16 +177,16 @@ h2,
         min-width: 40%;
     }
     .time {
-        font-size: .95rem;
+        font-size: .95em;
         color: #aaa;
-        margin: .2rem auto .5rem auto;
+        // margin: .25em auto;
         i {
             font-style: normal;
             @include outline($time_outline);
         }
     }
     .detail {
-        font-size: 1.05rem;
+        font-size: 1.05em;
         line-height: 1.3;
         text-indent: 1.2em;
         font-weight: 500;
@@ -198,26 +201,26 @@ h2,
     }
     .name {
         font-weight: 700;
-        font-size: 1.1rem;
-        margin-right: .5rem;
+        font-size: 1.1em;
+        margin-right: .5em;
     }
     .detail {
         background-color: $other_bg;
     }
     .item {
-        margin-right: 1rem;
+        margin-right: 1em;
         @include outline($other_bg);
     }
 }
 
 // 脚注
 footer {
-    border-top: .1rem dashed #ccc;
-    margin-top: 2rem;
-    padding-top: 1rem;
+    border-top: .1em dashed #ccc;
+    margin-top: 2em;
+    padding-top: 1em;
     color: #888;
-    font-size: 0.9rem;
-    line-height: 3rem;
+    font-size: .9em;
+    line-height: 3em;
     font-weight: 300;
     ul {
         margin: 0 auto;
@@ -228,7 +231,7 @@ footer {
         &:before {
             content: '|';
             color: $default_color;
-            font-size: 1.1rem;
+            font-size: 1.1em;
         }
         &:first-child:before {
             content: '';

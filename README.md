@@ -5,6 +5,15 @@
 * [x] 打印格式优化(可导PDF)
 * [x] html和css压缩
 
+浏览器兼容:
+
+* [x] Chrome
+* [x] Andoroid (系统内置浏览器,微信等)
+* [x] Edge
+* [x] >=IE8 (支持IE: 8 9 10 11)
+* [ ] Safari
+* [ ] firefox
+
 ## 在线使用(需登录github)
 
 1. 修改(`Edit`)[_data/resume.yml](https://github.com/NewFuture/CV/edit/gh-pages/_data/resume.yml)(内容和条目根据需要删减)

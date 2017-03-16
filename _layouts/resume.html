@@ -1,18 +1,24 @@
 --- 
 layout: default
----
+--- 
 {% assign data = site.data[page.data] %}
 <!DOCTYPE html>
 <html lang="{{ data.lang }}">
 
 <head>
   <title>{{ data.title }}</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | prepend: site.baseurl}}?{{site.time | date: '%s'}}">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | prepend: site.baseurl}}?{{site.time | date: '%s'}}"/>
+<!--[if lt IE 9]>
+<script>if(/*@cc_on!@*/0){var a = ['header', 'main', 'section', 'footer'];
+        for(var i = 0; i < a.length; ++i)document.createElement(a[i]);}
+</script>
+<![endif]-->
   {% for script in site.scripts %}
-    <script src="{{script.src}}?{{site.time | date: '%s'}}" {{script.defer}}></script>
+  <script src="{{script.src}}?{{site.time | date: '%s'}}" {{script.defer}}></script>
   {% endfor %}
+
 </head>
 
 <body>
@@ -24,19 +30,19 @@ layout: default
       </div>
       {% endif %}
       <div id="name-wrapper">
-        <h1 id="fullname">{{ data.name }}</h1>
+        <h1>{{ data.name }}</h1>
         <div id="jobtitle">{{ data.jobtitle }}</div>
       </div>
       <div id="contact">
         {% for item in data.contact %}
         <div class="contact-item">
-          {% if item.icon%}
-            <i class="icon" aria-hidden="true">{% include {{item.icon}} %}</i>
-          {% endif %}
-          {% if item.href%}
-            <a href="{{item.href }}">{{item.text}}</a>
+          {% if item.icon %}
+          <i class="icon" aria-hidden="true">{% include {{item.icon}} %}</i>
+          {% endif %} 
+          {% if item.href %}
+          <a href="{{item.href }}">{{ item.text }}</a>
           {% else %}
-            <span>{{ item.text }}</span>
+          <span>{{ item.text }}</span> 
           {% endif %}
         </div>
         {% endfor %}
@@ -52,54 +58,54 @@ layout: default
           <div class="block">
             <div class="head">
               {% if content.url %}
-               <h3 class="title">
-                <a href="{{content.url}}" target="_blank">{{content.title}}</a>
-               </h3>
+                <h3 class="title">
+                  <a href="{{content.url}}" target="_blank">{{ content.title }}</a>
+                </h3>
               {% else %}
-                <h3 class="title">{{content.title}}</h3>
-              {% endif %}
-              {% if content.sub %}
-              <div class="sub">{{content.sub}}</div>
+                <h3 class="title">{{ content.title }}</h3>
               {% endif %} 
+              {% if content.sub %}
+                <div class="sub">{{ content.sub }}</div>
+              {% endif %}
             </div>
             {% if content.duration %}
-            <div class="time"><i>{{content.duration}}</i></div>
+              <div class="time"><i>{{ content.duration }}</i></div>
             {% endif %}
-            <p class="detail">{{content.detail }}</p>
+            <p class="detail">{{ content.detail }}</p>
           </div>
           {% endfor %}
         </div>
       </section>
-      {% endfor %}
-
+      {% endfor %} 
+      
       {% if data.others %}
       <section id="others">
         <h2 class="subject">{{ data.others.title | default: '其他' }}</h2>
         <div class="content">
-        <ul>
-          {% for content in data.others.content %}
+          <ul>
+            {% for content in data.others.content %}
             <li>
               {% if content.name %}
-                <span class="name">{{content.name}}</span>
+                <span class="name">{{ content.name }}</span>
               {% endif %}
               {% if content.text%}
-                <span class="detail">{{content.text}}</span>
+                <span class="detail">{{ content.text }}</span> 
               {% elsif content.items %}
                 {% for item in content.items %}
-                  <span class="item detail">{{item}}</span>
-                {% endfor %}
+                  <span class="item detail">{{ item }}</span>
+                {% endfor %} 
               {% elsif content.list %}
                 <ul class="list detail">
                   {% for li in content.list %}
-                    <li>{{li}}</li>
+                    <li>{{ li }}</li>
                   {% endfor %}
                 </ul>
               {% else %}
-                <span>{{content}}</span>
+                <span>{{ content }}</span>
               {% endif %}
-              </li>
-          {% endfor %}
-        </ul>
+            </li>
+            {% endfor %}
+          </ul>
         </div>
       </section>
       {% endif%}
@@ -109,14 +115,14 @@ layout: default
 
   <footer>
     <ul>
-       {% for footer in data.footer %}
-          {% if footer.href %}
-            <li><a href="{{footer.href}}">{{ footer.text | default:footer }}</a></li>
-          {% else %}
-            <li>{{ footer.text | default:footer }}</li>
-          {% endif %}
-       {% endfor %}
-       {% case data.lang %}
+      {% for footer in data.footer %}
+        {% if footer.href %}
+          <li><a href="{{footer.href}}">{{ footer.text | default:footer }}</a></li>
+        {% else %}
+          <li>{{ footer.text | default:footer }}</li>
+        {% endif %} 
+      {% endfor %}
+      {% case data.lang %} 
         {% when 'zh' %}
           <li>更新于 {{ page.date | default: site.time | date: '%Y-%m-%d'}}</li>
         {% when 'en' %}
@@ -125,7 +131,7 @@ layout: default
     </ul>
   </footer>
   {% for script in data.scripts %}
-    <script src="{{script.src}}?{{site.time | date: '%s'}}" {{script.defer}}></script>
+    <script src="{{ script.src }}?{{site.time | date: '%s'}}" {{ script.defer }}></script>
   {% endfor %}
 </body>
 

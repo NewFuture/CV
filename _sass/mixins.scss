@@ -70,7 +70,7 @@
 
 //画出边框
 @mixin outline($bg-color, $radius:4px) {
-    padding: .1rem;
+    padding: .1em .3em;
     border: 1px solid $bg-color;
     border-radius: $radius;
     @include box-shadow(none);
