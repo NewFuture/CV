@@ -12,12 +12,20 @@ $detail_bg: rgba(236, 236, 236, .5);
 $time_outline: rgba(180, 180, 180, .15);
 //item背景色
 $other_bg:rgba(238, 238, 238, .3);
-//IE7,8 兼容
+
+/* IE7,8 兼容*/
+
 header,
 main,
 section,
 footer {
     display: block
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
 }
 
 //水平布局IE兼容
@@ -115,7 +123,10 @@ header {
     .jobtitle {
         font-size: 1.6em;
         font-weight: bold;
-        // font-style: italic;
+        // 英文使用斜体
+        &:lang(en) {
+            font-style: italic;
+        }
     }
 }
 
