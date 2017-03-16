@@ -1,58 +1,63 @@
 /*移动版适配*/
 
-//pad 平板或者横屏
-@media screen and (max-width: 48rem) {
+//低分辨率笔记本和宽pad
+@media screen and (max-width: 1024px) {
     html,
-    body {
+    body,
+    section {
         padding: 0;
         border: 0;
     }
     .container {
-        padding: 0 .5rem;
+        padding: 0 .5em;
         max-width: 95%;
     }
-    .content {
-        width: 90%;
-    }
+}
+
+//平板pad或者手机横屏
+@media screen and (max-width: 768px) {
     .avatar {
         display: none;
     }
-    section {
-        display: block;
-        padding: 0;
+    #name {
+        margin-left: 8%;
+    }
+    #contact {
+        margin-right: 7%;
+    }
+    .content {
+        width: 92%;
+        margin: 0 4%;
     }
     // .subject,
     h2 {
         display: block;
         text-align: center;
-        margin: 1rem auto;
+        margin: .8em auto;
     }
 }
 
 //手机
-@media screen and (max-width: 32rem) {
-    header {
+@media screen and (max-width: 450px) {
+    #name {
         display: block;
-    }
-    #name-wrapper {
-        // padding-top: 1.5rem;
-        display: block;
+        margin: auto;
     }
     #contact {
         display: block;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        border-top: .1rem solid #bbbbbb;
-        padding-left: 15%;
+        margin: 0 auto;
+        padding: 1em 0 1em 12%;
+        border-top: .1em solid #bbb;
+        float: none;
     }
     .contact-item {
-        padding-top: .2rem;
-        padding-left: .4rem;
+        padding-top: .2em;
+        padding-left: .4em;
     }
     .block {
         // .title,
         h3 {
-            margin-top: 1rem;
+            margin-top: 1em;
         }
         .sub {
             min-width: 99%;
@@ -64,7 +69,7 @@
     }
     footer li {
         display: block;
-        line-height: 1.5rem;
+        line-height: 1.5em;
         &:before {
             content: ''
         }

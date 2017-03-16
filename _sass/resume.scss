@@ -12,12 +12,26 @@ $detail_bg: rgba(236, 236, 236, .5);
 $time_outline: rgba(180, 180, 180, .15);
 //item背景色
 $other_bg:rgba(238, 238, 238, .3);
-//IE8 兼容
+//IE7,8 兼容
 header,
 main,
 section,
 footer {
     display: block
+}
+
+//水平布局IE兼容
+.avatar,
+#name,
+#contact,
+h2,
+.content,
+h3,
+.sub,
+footer li {
+    display: inline-block;
+    *display: inline; //IE 7兼容
+    *zoom: 1;
 }
 
 html {
@@ -48,7 +62,7 @@ body {
 
 a {
     text-decoration: none;
-    color: #08c;
+    color: inherit;
     &:hover {
         text-decoration: underline;
     }
@@ -62,25 +76,26 @@ a {
     margin-bottom: 1em;
 }
 
+
+/* 头部信息*/
+
 header {
-    display: flex;
     justify-content: space-between;
     border-bottom: .3em solid #7fb8ec;
-    padding: 2.5em 1em 1em;
+    padding: 2.5em 1.5em 1em;
 }
 
 .avatar,
-#name-wrapper,
+#name,
 #contact {
-    text-align: center;
-    min-width: 28%;
-    vertical-align: baseline;
+    min-width: 25%;
+    vertical-align: middle;
 }
 
 //头像
 .avatar {
-    // padding: 1em;
-    width: 30%;
+    max-width: 27%;
+    margin-left: 8%;
     img {
         max-width: 8.5em;
         height: 6.5em;
@@ -88,22 +103,28 @@ header {
     }
 }
 
-// #fullname,
-h1 {
-    font-size: 3em;
-    font-weight: 900;
-    color: #6fa8dc;
-    display: inline;
-}
-
-#jobtitle {
-    font-size: 1.6em;
-    font-style: italic;
+#name {
+    text-align: center;
+    // #fullname,
+    h1 {
+        font-size: 3em;
+        font-weight: 900;
+        color: #6fa8dc;
+        display: inline;
+    }
+    .jobtitle {
+        font-size: 1.6em;
+        font-weight: bold;
+        // font-style: italic;
+    }
 }
 
 #contact {
     text-align: left;
     font-size: .95em;
+    padding: 0 1em;
+    float: right;
+    *float: none; //兼容IE7
 }
 
 //图标
@@ -117,23 +138,11 @@ h1 {
     }
 }
 
-.contact-item>a {
-    color: $default_color;
-}
 
-.avatar,
-#name-wrapper,
-#contact,
-h2,
-.content {
-    display: inline-block;
-    *display: inline; //IE 7兼容
-    *zoom: 1;
-    // vertical-align: top;
-}
+/* 分类介绍*/
 
 section {
-    display: flex;
+    // display: flex;
     margin-top: 1em;
     padding-left: .2em;
     border-bottom: .1em solid #bbb;
@@ -146,21 +155,17 @@ section {
 h2 {
     font-size: 1.5em;
     text-align: right;
-    // margin-right: 1em;
     width: 20%;
     min-width: 7em;
     font-weight: 800;
     color: #6fa8dc;
     text-transform: uppercase;
     vertical-align: top;
-    // *zoom: normal;
 }
 
 .content {
-    vertical-align: top;
-    margin-left: 1em;
+    margin-left: 2%;
     width: 75%;
-    // width: 100%;
 }
 
 .block {
@@ -168,31 +173,24 @@ h2 {
     .head {
         margin: .5em auto;
     }
-    .head>* {
-        margin: 0;
-    }
     // .title ,
     h3 {
         font-size: 1.3em;
         font-weight: 700;
         min-width: 60%;
-        display: inline-block;
-        a {
-            color: initial;
-        }
+        margin: 0;
+        vertical-align: middle;
     }
     .sub {
         font-size: 1.1em;
         color: #858585;
         text-align: right;
-        display: inline-block;
         font-weight: 600;
         min-width: 40%;
     }
     .time {
         font-size: .95em;
         color: #aaa;
-        // margin: .25em auto;
         i {
             font-style: normal;
             @include outline($time_outline);
@@ -240,8 +238,6 @@ footer {
         padding: 0;
     }
     li {
-        display: inline-block;
-        *display: inline;
         padding: .1em;
         &:before {
             content: '|';

@@ -26,12 +26,12 @@ layout: default
     <header>
       {% if data.photo %}
       <div class="avatar">
-        <img src="{{data.photo}}?{{site.time | date: '%s'}}" alt="头像">
+        <img src="{{data.photo}}?{{site.time | date: '%s'}}" alt="photo">
       </div>
       {% endif %}
-      <div id="name-wrapper">
+      <div id="name">
         <h1>{{ data.name }}</h1>
-        <div id="jobtitle">{{ data.jobtitle }}</div>
+        <div class="jobtitle">{{ data.jobtitle }}</div>
       </div>
       <div id="contact">
         {% for item in data.contact %}
@@ -124,7 +124,7 @@ layout: default
       {% endfor %}
       {% case data.lang %} 
         {% when 'zh' %}
-          <li>更新于 {{ page.date | default: site.time | date: '%Y-%m-%d'}}</li>
+          <li>更新于{{ page.date | default: site.time | date: '%Y-%m-%d'}}</li>
         {% when 'en' %}
           <li>Last edit {{ page.date | default: site.time | date: '%B %d, %Y'}}</li>
       {% endcase %}
