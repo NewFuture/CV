@@ -12,9 +12,13 @@ $detail_bg: rgba(236, 236, 236, .5);
 $time_outline: rgba(180, 180, 180, .15);
 //item背景色
 $other_bg:rgba(238, 238, 238, .3);
-
 //IE8 兼容
-header,main,section,footer{display:block}
+header,
+main,
+section,
+footer {
+    display: block
+}
 
 html {
     width: 100%;
@@ -65,22 +69,23 @@ header {
     padding: 2.5em 1em 1em;
 }
 
-//头像
-.avatar {
-    // padding: 1em;
-    img {
-        max-width: 8.5em;
-        max-height: 8.5em;
-        border-radius: 50%;
-    }
-}
-
 .avatar,
 #name-wrapper,
 #contact {
-    display: inline-block;
     text-align: center;
     min-width: 28%;
+    vertical-align: baseline;
+}
+
+//头像
+.avatar {
+    // padding: 1em;
+    width: 30%;
+    img {
+        max-width: 8.5em;
+        height: 6.5em;
+        border-radius: 50%;
+    }
 }
 
 // #fullname,
@@ -116,6 +121,17 @@ h1 {
     color: $default_color;
 }
 
+.avatar,
+#name-wrapper,
+#contact,
+h2,
+.content {
+    display: inline-block;
+    *display: inline; //IE 7兼容
+    *zoom: 1;
+    // vertical-align: top;
+}
+
 section {
     display: flex;
     margin-top: 1em;
@@ -130,24 +146,21 @@ section {
 h2 {
     font-size: 1.5em;
     text-align: right;
-    margin-right: 1em;
+    // margin-right: 1em;
     width: 20%;
     min-width: 7em;
     font-weight: 800;
     color: #6fa8dc;
     text-transform: uppercase;
+    vertical-align: top;
+    // *zoom: normal;
 }
 
 .content {
+    vertical-align: top;
     margin-left: 1em;
     width: 75%;
     // width: 100%;
-}
-
-h2,
-.content {
-    display: inline-block;
-    vertical-align: top;
 }
 
 .block {
@@ -228,6 +241,8 @@ footer {
     }
     li {
         display: inline-block;
+        *display: inline;
+        padding: .1em;
         &:before {
             content: '|';
             color: $default_color;
