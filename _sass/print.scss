@@ -66,7 +66,7 @@
     }
     img,
     .block,
-    .list {
+    ul {
         page-break-inside: avoid;
     }
     h2,
@@ -74,6 +74,9 @@
     header,
     {
         page-break-after: avoid;
+    }
+    section {
+        display: flex;
     }
     .container {
         border-bottom: 1px dashed #ccc;

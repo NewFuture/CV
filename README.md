@@ -11,8 +11,8 @@
 * [x] Andoroid (系统内置浏览器,微信等)
 * [x] Edge
 * [x] >=IE7 (支持IE: 7 8 9 10 11)
-* [x] Safari
-* [ ] firefox
+* [x] Safari (包括 iPhone和iPad)
+* [x] FireFox
 
 ## 在线使用(需登录github)
 
