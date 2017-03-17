@@ -20,6 +20,16 @@
 2. 保存(点击`Commit changes`) (会自动fork和commit)
 3. 稍等片刻(commit后会自动编译生成github pages),打开[https://{your-github-id}.github.io/CV/](https://newfuture.github.io/CV/) 查看效果
 
+
+## 效果截图
+
+1. 标准PC版(宽度> 1024)![](assets/img/pc.png)
+2. iPad Pro或窄屏笔记本( 1024 >= width >= 768)![](assets/img/large.png)
+3. iPad mini或宽屏Note( 768 >= width > 450)![](assets/img/ipad.png)
+4. 标准手机版( width <= 450)![](assets/img/iphone.png)
+
+
+
 ## 高级用法
 
 ### 导出 PDF
