@@ -84,20 +84,20 @@ layout: default
         <div class="content">
           <ul>
             {% for content in data.others.content %}
-            <li>
+            <li class="block">
               {% if content.name %}
                 <span class="name">{{ content.name }}</span>
               {% endif %}
               {% if content.text%}
-                <span class="detail">{{ content.text }}</span> 
+                <span class="text">{{ content.text }}</span> 
               {% elsif content.items %}
                 {% for item in content.items %}
-                  <span class="item detail">{{ item }}</span>
+                  <span class="text item">{{ item }}</span>
                 {% endfor %} 
               {% elsif content.list %}
-                <ul class="list detail">
+                <ul class="list">
                   {% for li in content.list %}
-                    <li>{{ li }}</li>
+                    <li class="text">{{ li }}</li>
                   {% endfor %}
                 </ul>
               {% else %}
@@ -124,8 +124,10 @@ layout: default
       {% endfor %}
       {% case data.lang %} 
         {% when 'zh' %}
+          <li class="pc-only" ><a href="javascript:window.print()">打印（PDF）</a></li>
           <li>更新于{{ page.date | default: site.time | date: '%Y-%m-%d'}}</li>
         {% when 'en' %}
+          <li class="pc-only" ><a href="javascript:window.print()">Print (PDF)</a></li>
           <li>Last edit {{ page.date | default: site.time | date: '%B %d, %Y'}}</li>
       {% endcase %}
     </ul>
