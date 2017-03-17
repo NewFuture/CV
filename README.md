@@ -4,6 +4,7 @@
 * [x] 手机端适配
 * [x] 打印格式优化(可导PDF)
 * [x] html和css压缩
+* [x] [HTML5语义化支持](https://validator.w3.org/nu/?doc=https%3A%2F%2Fnewfuture.github.io%2FCV%2F&showoutline=yes)
 
 浏览器兼容:
 
