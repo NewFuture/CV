@@ -204,6 +204,7 @@ h2 {
         color: #aaa;
         i {
             font-style: normal;
+            padding: .1em .3em;
             @include outline($time_outline);
         }
     }
@@ -236,6 +237,7 @@ h2 {
     .item {
         margin-right: 1em;
         display: inline-block;
+        padding: .1em;
         @include outline($other_bg);
     }
     .list {
