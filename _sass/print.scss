@@ -71,7 +71,7 @@
     #others {
         page-break-after: avoid;
     }
-    // header,
+    header,
     section {
         display: flex;
     }
@@ -80,14 +80,14 @@
         width: 90%;
         border-bottom: 1px dashed #ccc;
     }
-    #contact {
-        display: inline-block;
-    }
     .avatar {
         width: 25%;
         img {
             border-radius: 1%;
         }
+    }
+    #contact {
+        display: inline-block;
     }
     //隐藏脚注
     footer {
