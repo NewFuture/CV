@@ -3,12 +3,9 @@
 //低分辨率笔记本和宽pad
 @media screen and (max-width: 1024px) {
     html,
-    body,
-    section {
+    body {
         padding: 0;
         border: 0;
-    }
-    html {
         background-color: $paper_color;
     }
     .container {
@@ -36,7 +33,7 @@
     h2 {
         display: block;
         text-align: center;
-        margin: .8em auto;
+        margin: .8em auto .2em;
     }
 }
 
