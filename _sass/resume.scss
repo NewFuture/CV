@@ -33,9 +33,9 @@ li {
 #name,
 #contact,
 h2,
-.content,
 h3,
-.sub,
+h4,
+.content,
 footer li {
     display: inline-block;
     *display: inline; //IE 7兼容
@@ -184,8 +184,7 @@ h2 {
     .head {
         margin: .5em auto;
     }
-    // .title ,
-    h3 {
+    .title {
         font-size: 1.3em;
         font-weight: 700;
         min-width: 60%;
@@ -197,6 +196,7 @@ h2 {
         color: #858585;
         text-align: right;
         font-weight: 600;
+        margin: 0;
         min-width: 40%;
     }
     .time {
@@ -229,7 +229,8 @@ h2 {
     .name {
         font-weight: 700;
         font-size: 1.1em;
-        margin-right: .5em;
+        min-width: 0;
+        margin: 0 .5em 0 0;
     }
     .text {
         background-color: $other_bg;

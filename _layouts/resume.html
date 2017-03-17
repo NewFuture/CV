@@ -26,7 +26,7 @@ layout: default
     <header>
       {% if data.photo %}
       <div class="avatar">
-        <img src="{{data.photo}}?{{site.time | date: '%s'}}" alt="photo">
+        <img src="{{data.photo}}?{{site.time | date: '%s'}}" alt="photo"/>
       </div>
       {% endif %}
       <div id="name">
@@ -65,7 +65,7 @@ layout: default
                 <h3 class="title">{{ content.title }}</h3>
               {% endif %} 
               {% if content.sub %}
-                <div class="sub">{{ content.sub }}</div>
+                <h4 class="sub">{{ content.sub }}</h4>
               {% endif %}
             </div>
             {% if content.duration %}
@@ -86,7 +86,7 @@ layout: default
             {% for content in data.others.content %}
             <li class="block">
               {% if content.name %}
-                <span class="name">{{ content.name }}</span>
+                <h3 class="name">{{ content.name }}</h3>
               {% endif %}
               {% if content.text%}
                 <span class="text">{{ content.text }}</span> 
