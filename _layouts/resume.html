@@ -7,9 +7,9 @@ layout: default
 
 <head>
   <title>{{ data.title }}</title>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | prepend: site.baseurl}}?{{site.time | date: '%s'}}"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | prepend: site.baseurl}}?{{site.time | date: '%s'}}">
 <!--[if lt IE 9]>
 <script>if(/*@cc_on!@*/0){var a = ['header', 'main', 'section', 'footer'];
         for(var i = 0; i < a.length; ++i)document.createElement(a[i]);}
@@ -18,7 +18,6 @@ layout: default
   {% for script in site.scripts %}
   <script src="{{script.src}}?{{site.time | date: '%s'}}" {{script.defer}}></script>
   {% endfor %}
-
 </head>
 
 <body>
@@ -26,7 +25,7 @@ layout: default
     <header>
       {% if data.photo %}
       <div class="avatar">
-        <img src="{{data.photo}}?{{site.time | date: '%s'}}" alt="photo"/>
+        <img src="{{data.photo}}?{{site.time | date: '%s'}}" alt="photo">
       </div>
       {% endif %}
       <div id="name">
@@ -71,7 +70,7 @@ layout: default
             {% if content.duration %}
               <div class="time"><i>{{ content.duration }}</i></div>
             {% endif %}
-            <p class="detail">{{ content.detail }}</p>
+              <p class="detail">{{ content.detail }}</p>
           </div>
           {% endfor %}
         </div>
