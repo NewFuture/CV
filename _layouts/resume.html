@@ -10,18 +10,18 @@ layout: default
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | prepend: site.baseurl}}?{{site.time | date: '%s'}}">
-<!--[if lt IE 9]>
-<script>if(/*@cc_on!@*/0){var a = ['header', 'main', 'section', 'footer'];
-        for(var i = 0; i < a.length; ++i)document.createElement(a[i]);}
-</script>
-<![endif]-->
   {% for script in site.scripts %}
   <script src="{{script.src}}?{{site.time | date: '%s'}}" {{script.defer}}></script>
   {% endfor %}
+<!--[if lt IE 9]>
+<script>if(/*@cc_on!@*/0){var a=['header','main','section','footer','details','summary'],i=0;while(i<a.length)document.createElement(a[i++])}
+</script>
+<![endif]-->
 </head>
 
 <body>
   <div class="container">
+
     <header>
       {% if data.photo %}
       <div class="avatar">
@@ -39,7 +39,7 @@ layout: default
           <i class="icon" aria-hidden="true">{% include {{item.icon}} %}</i>
           {% endif %} 
           {% if item.href %}
-          <a href="{{item.href }}">{{ item.text }}</a>
+          <a target="_blank" href="{{item.href }}">{{ item.text }}</a>
           {% else %}
           <span>{{ item.text }}</span> 
           {% endif %}
@@ -49,12 +49,14 @@ layout: default
     </header>
 
     <main>
-      {% for list in data.list %}
+      {% for list in data.main %}
       <section id="{{list.type}}">
         <h2 class="subject">{{ list.name | default: list.type }}</h2>
         <div class="content">
           {% for content in list.content %}
           <div class="block">
+
+
             <div class="head">
               {% if content.url %}
                 <h3 class="title">
@@ -67,10 +69,22 @@ layout: default
                 <h4 class="sub">{{ content.sub }}</h4>
               {% endif %}
             </div>
+
             {% if content.duration %}
               <div class="time"><i>{{ content.duration }}</i></div>
             {% endif %}
+
+            {% if content.summary and content.detail %}
+              <details>
+                <summary title="collapse" class="summary">{{ content.summary }}</summary>
+                <p class="detail">{{ content.detail }}</p>
+              </details>
+            {% elsif content.summary %}
+              <div class="summary">{{ content.summary }}</div>
+            {% else %}
               <p class="detail">{{ content.detail }}</p>
+            {% endif %}
+
           </div>
           {% endfor %}
         </div>

@@ -18,7 +18,9 @@ $other_bg:rgba(238, 238, 238, .3);
 header,
 main,
 section,
-footer {
+summary,
+footer,
+{
     display: block
 }
 
@@ -154,11 +156,13 @@ header {
 
 section {
     // display: flex;
-    margin-top: 1em;
+    margin-top: .5em;
     padding-left: .2em;
-    border-bottom: .1em solid #bbb;
-    &:last-child {
-        border-bottom: none;
+    &:not(:last-child) {
+        border-bottom: .1em solid #bbb;
+        .block:not(:last-child) {
+            border-bottom: 1px dotted rgba(128, 128, 128, 0.1);
+        }
     }
 }
 
@@ -180,22 +184,24 @@ h2 {
 }
 
 .block {
-    margin-bottom: 1em;
+    margin-bottom: .5em;
+    padding-bottom: .3em;
     .head {
-        margin: .5em auto;
+        margin: .9em auto .1em;
     }
     .title {
-        font-size: 1.3em;
-        font-weight: 700;
+        font-size: 1.4em;
+        font-weight: 800;
         min-width: 60%;
         margin: 0;
         vertical-align: middle;
+        color: black;
     }
     .sub {
-        font-size: 1.1em;
+        font-size: 1.2em;
         color: #858585;
         text-align: right;
-        font-weight: 600;
+        font-weight: 700;
         margin: 0;
         min-width: 40%;
     }
@@ -208,20 +214,87 @@ h2 {
             @include outline($time_outline);
         }
     }
+    .summary {
+        font-size: 1.1em;
+        font-weight: 500;
+        margin: .8em 0 0 .6em;
+        // color: #111;
+        line-height: 1.5em;
+        color: #555;
+        font-weight: 600;
+    }
     .detail {
         font-size: 1.05em;
-        line-height: 1.3;
+        line-height: 1.2;
+        font-weight: 400;
         text-indent: 1.2em;
-        font-weight: 500;
         background: $detail_bg;
+    }
+}
+
+details summary::-webkit-details-marker {
+    display: none;
+}
+
+summary {
+    text-decoration: underline;
+    cursor: pointer;
+    &:focus {
+        outline: none;
+    }
+    &::before {
+        content: '\02630';
+        margin: 0 .5em;
+        font-size: .9em;
+        color: #aaa;
+        text-decoration: underline;
+        display: inline-block;
+    }
+    &:before {
+        //兼容ie
+        text-decoration: none;
+    }
+}
+
+details[open] {
+    summary {
+        color: #222 !important;
+        text-decoration: none;
+        animation: black .5s;
+    }
+    p {
+        animation: sweep .6s ease-in-out;
+    }
+}
+
+@keyframes sweep {
+    0% {
+        opacity: 0;
+        color: $detail_bg;
+    }
+    100% {
+        opacity: 1;
+        color: #000;
+    }
+}
+
+@keyframes black {
+    0% {
+        font-weight: 700;
+        color: #777;
+    }
+    50% {
+        font-weight: 500;
+        color: #000;
+    }
+    100% {
+        font-weight: 600;
+        color: #222;
     }
 }
 
 // 其他others
 #others {
-    // ul {
-    //     padding-left: 1.5em;
-    // }
     .block {
         margin-bottom: .6em;
         list-style: none;
@@ -260,16 +333,11 @@ footer {
         margin: 0 auto;
     }
     li {
-        // padding: .1em;
-        &:before {
+        &:not(:last-child):after {
             content: '|';
             padding: .25em;
             color: $default_color;
             font-size: 1.1em;
-        }
-        &:first-child:before {
-            content: '';
-            font-size: inherit;
         }
     }
     a {

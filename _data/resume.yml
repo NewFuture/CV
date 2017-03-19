@@ -14,30 +14,30 @@ contact: #联系方式连接等3~5行
     href: 'http://your-website.com'
     icon: 'icons/web.svg'
   - text: "GitHubID"
-    href: 'https://github.com/GitHubID'
+    href: 'https://github.com/NewFuture'
     icon: "icons/github.svg"
-  # - text: "地址"    
+  # - text: "地址"
   #   icon: "icons/location.svg"
-list: #简历主要内容，类别条数不限
+main: #简历主要内容，类别条数不限
   - type: education #类别显示为ID
     name: 教育 #显示名称，空则使用type
     content: #内容基本格式 标题-副标题-日期-详细内容 (都允许空)
       - title: 大学名称
         duration: "2011年x月 - 2015年"
         sub: 地点或学历
-        detail: 专业
+        detail: 专业或者简短说明
       - title: Your University
         duration: Aug 2007 - Jun 2011
         sub: Ut enim ad minim veniam
-        detail: Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+        detail: Master Bachelor of Computer Science & Technology.
  
   - type: skills
     # name: "技能"
     content:
       - title: 编程语言
-        detail: 语言1, 语言2, 语言3
-      - title: Skill Group 2
-        detail: Consectetur, Adipiscing, Elit
+        summary: 语言1, 语言2, 语言3
+      - title: Skill Group
+        summary: Consectetur, Adipiscing, Elit
 
   - type: experience
     name: 经验
@@ -45,11 +45,13 @@ list: #简历主要内容，类别条数不限
     - title: 职位
       duration: "xxxx年xx月 - yyyy年yy月"
       sub: 某某公司
-      detail: 职位或者工作描述，工作经验详细总结或者介绍
-    - title: Job Title 2
+      summary: 一句话说明职务或者工作总结
+      detail: 职位或者工作描述，工作经验详细说明或者介绍
+    - title: Job Title
       duration: Apr 2013 - Mar 2016
       sub: Your 2nd, Inc.
-      detail: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      summary: to summary your job or work
+      detail: details， Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
   - type: projects
     name: Projects
@@ -57,8 +59,9 @@ list: #简历主要内容，类别条数不限
       - title: 项目名称
         duration: xxxx年xx月 - yyyy年yy月
         detail: 项目和工作介绍，项目总结.
-        sub: 贡献者
-      - title: Project Name 2
+        sub: 维护者
+      - title: Project Name
+        summary: projects introduction
         detail: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
         sub: Creator and maintainer.
    #可继续添加更多内容
