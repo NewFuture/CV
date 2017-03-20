@@ -6,9 +6,10 @@ layout: default
 <html lang="{{ data.lang }}">
 
 <head>
-  <title>{{ data.title }}</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ data.title }}</title>
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | prepend: site.baseurl}}?{{site.time | date: '%s'}}">
   {% for script in site.scripts %}
   <script src="{{script.src}}?{{site.time | date: '%s'}}" {{script.defer}}></script>
@@ -75,8 +76,8 @@ layout: default
             {% endif %}
 
             {% if content.summary and content.detail %}
-              <details>
-                <summary title="collapse" class="summary">{{ content.summary }}</summary>
+              <details {{ content.open }}>
+                <summary class="summary">{{ content.summary }}</summary>
                 <p class="detail">{{ content.detail }}</p>
               </details>
             {% elsif content.summary %}

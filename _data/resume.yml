@@ -46,12 +46,14 @@ main: #简历主要内容，类别条数不限
       duration: "xxxx年xx月 - yyyy年yy月"
       sub: 某某公司
       summary: 职务或者工作总结(自动折叠)
-      detail: 同时包含 summary和detail在chrome，Safari，Android和新版Firefox等会自动折叠，不支持折叠的浏览器和展开后表现一致
+      detail: 同时包含 summary和detail在Chrome，Safari(包括IOS)，Android和新版Firefox等会自动折叠，不支持折叠的浏览器和展开后表现一致
+      # open: open
+      #可以设置open默认展开
     - title: Job Title
       duration: Apr 2013 - Mar 2016
       sub: Your 2nd, Inc.
-      summary: Summary your job or work.
-      detail: details， Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      summary: Summary your job or work. (Collapse)
+      detail: Details can be collapsed in Chrome Safari, Firefox, Opera and so on. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
   - type: projects
     name: Projects
