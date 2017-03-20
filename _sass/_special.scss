@@ -21,23 +21,39 @@ li {
 
 /*webkit details summary*/
 
-summary {
-    &::before {
-        content: '\02630';
-        margin: 0 .5em;
-        font-size: .9em;
-        color: #aaa;
-        display: inline-block;
-    }
-}
-
+// summary {
+//     &::before {
+//         content: '\02630';
+//         margin: 0 .5em;
+//         font-size: .9em;
+//         color: #aaa;
+//         // display: inline-block;
+//     }
+// }
 :-webkit-any(details) {
     summary {
         color: #555;
-        text-decoration: underline;
         cursor: pointer;
+        &::before {
+            content: '\02630';
+            margin: 0 .5em 0 -.5em;
+            font-size: .9em;
+            color: #aaa;
+            // display: inline-block;
+        }
         &:focus {
             outline: none;
+        }
+        &::after {
+            text-decoration: underline;
+            font-size: .9em;
+            margin-left: .3em;
+        }
+        &:lang(en)::after {
+            content: "(detail)";
+        }
+        &:lang(zh)::after {
+            content: "(详情)";
         }
         &::-webkit-details-marker {
             display: none;
@@ -48,8 +64,11 @@ summary {
 details[open] {
     summary {
         color: #222 !important;
-        text-decoration: none;
         animation: black .5s;
+        &::before,
+        &::after {
+            display: none;
+        }
     }
     p {
         animation: sweep .6s ease-in-out;
