@@ -1,5 +1,8 @@
 /** 简历基本样式*/
 
+
+/*变量*/
+
 //网页背景
 $bg_color: #f9f9fc;
 //纸张颜色
@@ -13,23 +16,10 @@ $time_outline: rgba(180, 180, 180, .15);
 //item背景色
 $other_bg:rgba(238, 238, 238, .3);
 
-/* IE7,8 兼容*/
+/*导入依赖*/
 
-header,
-main,
-section,
-summary,
-footer,
-{
-    display: block
-}
-
-ul,
-li {
-    margin: 0;
-    padding: 0;
-}
-
+@import "mixins";
+@import "special";
 //水平布局IE兼容
 .avatar,
 #name,
@@ -80,10 +70,8 @@ a {
 
 .container {
     max-width: 75%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
     text-align: left;
-    // margin-bottom: 1em;
 }
 
 
@@ -218,9 +206,7 @@ h2 {
         font-size: 1.1em;
         font-weight: 500;
         margin: .8em 0 0 .6em;
-        // color: #111;
         line-height: 1.5em;
-        color: #555;
         font-weight: 600;
     }
     .detail {
@@ -229,67 +215,6 @@ h2 {
         font-weight: 400;
         text-indent: 1.2em;
         background: $detail_bg;
-    }
-}
-
-details summary::-webkit-details-marker {
-    display: none;
-}
-
-summary {
-    text-decoration: underline;
-    cursor: pointer;
-    &:focus {
-        outline: none;
-    }
-    &::before {
-        content: '\02630';
-        margin: 0 .5em;
-        font-size: .9em;
-        color: #aaa;
-        text-decoration: underline;
-        display: inline-block;
-    }
-    &:before {
-        //兼容ie
-        text-decoration: none;
-    }
-}
-
-details[open] {
-    summary {
-        color: #222 !important;
-        text-decoration: none;
-        animation: black .5s;
-    }
-    p {
-        animation: sweep .6s ease-in-out;
-    }
-}
-
-@keyframes sweep {
-    0% {
-        opacity: 0;
-        color: $detail_bg;
-    }
-    100% {
-        opacity: 1;
-        color: #000;
-    }
-}
-
-@keyframes black {
-    0% {
-        font-weight: 700;
-        color: #777;
-    }
-    50% {
-        font-weight: 500;
-        color: #000;
-    }
-    100% {
-        font-weight: 600;
-        color: #222;
     }
 }
 
@@ -341,7 +266,6 @@ footer {
         }
     }
     a {
-        color: #888;
         text-decoration: underline;
     }
 }

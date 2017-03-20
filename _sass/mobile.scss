@@ -72,8 +72,8 @@
     footer li {
         display: block;
         line-height: 1.5em;
-        &:before {
-            content: ''
+        &::after {
+            display: none;
         }
     }
 }

@@ -1,0 +1,83 @@
+/*×浏览器兼容设置*/
+
+
+/* IE7,8 兼容*/
+
+header,
+main,
+section,
+summary,
+footer,
+{
+    display: block
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+
+/*webkit details summary*/
+
+summary {
+    &::before {
+        content: '\02630';
+        margin: 0 .5em;
+        font-size: .9em;
+        color: #aaa;
+        display: inline-block;
+    }
+}
+
+:-webkit-any(details) {
+    summary {
+        color: #555;
+        text-decoration: underline;
+        cursor: pointer;
+        &:focus {
+            outline: none;
+        }
+        &::-webkit-details-marker {
+            display: none;
+        }
+    }
+}
+
+details[open] {
+    summary {
+        color: #222 !important;
+        text-decoration: none;
+        animation: black .5s;
+    }
+    p {
+        animation: sweep .6s ease-in-out;
+    }
+}
+
+@keyframes sweep {
+    0% {
+        opacity: 0;
+        color: $detail_bg;
+    }
+    100% {
+        opacity: 1;
+        color: #000;
+    }
+}
+
+@keyframes black {
+    0% {
+        font-weight: 700;
+        color: #777;
+    }
+    50% {
+        font-weight: 500;
+        color: #000;
+    }
+    100% {
+        font-weight: 600;
+        color: #222;
+    }
+}
