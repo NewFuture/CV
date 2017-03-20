@@ -260,6 +260,7 @@ footer {
         margin: 0 auto;
     }
     li {
+        margin: .15em;
         &:not(:last-child):after {
             content: '|';
             padding: .25em;
