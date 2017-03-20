@@ -6,6 +6,7 @@
 header,
 main,
 section,
+details,
 summary,
 footer,
 {
@@ -19,34 +20,53 @@ li {
 }
 
 
-/*webkit details summary*/
+/*details summary*/
 
-// summary {
-//     &::before {
-//         content: '\02630';
-//         margin: 0 .5em;
-//         font-size: .9em;
-//         color: #aaa;
-//         // display: inline-block;
-//     }
-// }
-:-webkit-any(details) {
-    summary {
+summary {
+    cursor: pointer;
+    &:focus {
+        outline: none;
+    }
+    &::before,
+    &::after {
+        font-size: .9em;
+        color: #aaa;
+    }
+}
+
+//webkit 内核
+:-webkit-any(summary) {
+    color: #555;
+    &::before {
+        content: '\02630';
+        margin: 0 .5em 0 -.5em;
+    }
+    &::after {
+        text-decoration: underline;
+        margin-left: .3em;
+    }
+    &:lang(en)::after {
+        content: "(detail)";
+    }
+    &:lang(zh)::after {
+        content: "(详情)";
+    }
+    &::-webkit-details-marker {
+        display: none;
+    }
+}
+
+// FireFox >=49 支持details
+@supports ( text-align-last:end) {
+     :-moz-any(summary) {
         color: #555;
-        cursor: pointer;
+        list-style: none;
         &::before {
             content: '\02630';
             margin: 0 .5em 0 -.5em;
-            font-size: .9em;
-            color: #aaa;
-            // display: inline-block;
-        }
-        &:focus {
-            outline: none;
         }
         &::after {
             text-decoration: underline;
-            font-size: .9em;
             margin-left: .3em;
         }
         &:lang(en)::after {
@@ -54,9 +74,6 @@ li {
         }
         &:lang(zh)::after {
             content: "(详情)";
-        }
-        &::-webkit-details-marker {
-            display: none;
         }
     }
 }

@@ -45,12 +45,12 @@ main: #简历主要内容，类别条数不限
     - title: 职位
       duration: "xxxx年xx月 - yyyy年yy月"
       sub: 某某公司
-      summary: 一句话说明职务或者工作总结
-      detail: 职位或者工作描述，工作经验详细说明或者介绍
+      summary: 职务或者工作总结(自动折叠)
+      detail: 同时包含 summary和detail在chrome，Safari，Android和新版Firefox等会自动折叠，不支持折叠的浏览器和展开后表现一致
     - title: Job Title
       duration: Apr 2013 - Mar 2016
       sub: Your 2nd, Inc.
-      summary: to summary your job or work
+      summary: Summary your job or work.
       detail: details， Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
   - type: projects

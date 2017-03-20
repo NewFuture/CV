@@ -22,6 +22,11 @@
     a:visited {
         text-decoration: underline !important;
     }
+    summary {
+        &::after {
+            display: none;
+        }
+    }
     // a[href]:after {
     //     content: " (" attr(href) ")";
     // }

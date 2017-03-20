@@ -18,9 +18,11 @@ $other_bg:rgba(238, 238, 238, .3);
 
 /*导入依赖*/
 
-@import "mixins";
-@import "special";
-//水平布局IE兼容
+@import "mixins"; //函数
+@import "special"; //浏览器定制
+
+/*水平布局IE兼容*/
+
 .avatar,
 #name,
 #contact,
