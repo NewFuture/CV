@@ -3,99 +3,106 @@ lang: "zh" #语言设置 zh表示中文 en 表示英语
 name: "你的名字"
 jobtitle: "求职意向" #可空不显示
 photo: "assets/img/photo.jpg" #照片可空，不显示
+
+#联系方式
 contact: #联系方式连接等3~5行
-  - text: "youremail@example.com" #文本内容
-    href: 'mailto:youremail@example.com' #链接，无链接则空  
-    icon: 'icons/email.svg' #图标 svg文件
-  - text: "1234567890"
-    href: 'tel:1234567890'
-    icon: 'icons/phone.svg'
-  - text: "your-website.com"
-    href: 'http://your-website.com'
-    icon: 'icons/web.svg'
-  - text: "GitHubID"
-    href: 'https://github.com/NewFuture'
-    icon: "icons/github.svg"
+- text: "youremail@example.com" #文本内容
+  href: 'mailto:youremail@example.com' #链接，无链接则空  
+  icon: 'icons/email.svg' #图标 svg文件
+- text: "1234567890"
+  href: 'tel:1234567890'
+  icon: 'icons/phone.svg'
+- text: "your-website.com"
+  href: 'http://your-website.com'
+  icon: 'icons/web.svg'
+- text: "GitHubID"
+  href: 'https://github.com/NewFuture'
+  icon: "icons/github.svg"
   # - text: "地址"
   #   icon: "icons/location.svg"
-main: #简历主要内容，类别条数不限
-  - type: education #类别显示为ID
-    name: 教育 #显示名称，空则使用type
-    content: #内容基本格式 标题-副标题-日期-详细内容 (都允许空)
-      - title: 大学名称
-        duration: "2011年x月 - 2015年"
-        sub: 地点或学历
-        detail: 专业或者简短说明
-      - title: Your University
-        duration: Aug 2007 - Jun 2011
-        sub: Ut enim ad minim veniam
-        detail: Master Bachelor of Computer Science & Technology.
- 
-  - type: skills
-    # name: "技能"
-    content:
-      - title: 编程语言
-        summary: 语言1, 语言2, 语言3
-      - title: Skill Group
-        summary: Consectetur, Adipiscing, Elit
 
-  - type: experience
-    name: 经验
-    content:
-    - title: 职位
-      duration: "xxxx年xx月 - yyyy年yy月"
-      sub: 某某公司
-      summary: 职务或者工作总结(自动折叠)
-      detail: 同时包含 summary和detail在Chrome，Safari(包括IOS)，Android和新版Firefox等会自动折叠，不支持折叠的浏览器和展开后表现一致
-      # open: open
-      #可以设置open默认展开
-    - title: Job Title
-      duration: Apr 2013 - Mar 2016
-      sub: Your 2nd, Inc.
-      summary: Summary your job or work. (Collapse)
-      detail: Details can be collapsed in Chrome Safari, Firefox, Opera and so on. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+#main下面是主体内容，类别条数不限
+main: #简历主要内容，
+- type: education #类别为ID
+  name: 教育 #显示名称，空则使用type
+  content: #内容基本格式 标题-副标题-日期-详细内容 (都允许空)
+  - title: 大学名称
+    duration: "2011年x月 - 2015年"
+    sub: 地点或学历
+    detail: 专业或者简短说明
+  - title: Your University
+    duration: Aug 2007 - Jun 2011
+    sub: Ut enim ad minim veniam
+    detail: Master Bachelor of Computer Science & Technology.
 
-  - type: projects
-    name: Projects
-    content:
-      - title: 项目名称
-        duration: xxxx年xx月 - yyyy年yy月
-        detail: 项目和工作介绍，项目总结.
-        sub: 维护者
-      - title: Project Name
-        summary: projects introduction
-        detail: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
-        sub: Creator and maintainer.
+- type: skills
+  # name: "技能"
+  content:
+  - title: 编程语言
+    summary: 语言1, 语言2, 语言3
+  - title: Skill Group
+    summary: Consectetur, Adipiscing, Elit
+
+- type: experience
+  name: 经验
+  content:
+  - title: 职位
+    duration: "xxxx年xx月 - yyyy年yy月"
+    sub: 某某公司
+    summary: 职务或者工作总结(自动折叠)
+    detail: 同时包含 summary和detail在Chrome，Safari(包括IOS)，Android和新版Firefox等会自动折叠，不支持折叠的浏览器和展开后表现一致
+    # open: open
+    #可以设置open默认展开
+  - title: Job Title
+    duration: Apr 2013 - Mar 2016
+    sub: Your 2nd, Inc.
+    summary: Summary your job or work. (Collapse)
+    detail: Details can be collapsed in Chrome Safari, Firefox, Opera and so on. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+- type: projects
+  name: Projects
+  content:
+  - title: 项目名称
+    duration: xxxx年xx月 - yyyy年yy月
+    detail: 项目和工作介绍，项目总结.
+    sub: 维护者
+  - title: Project Name
+    summary: projects introduction
+    detail: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+    sub: Creator and maintainer.
    #可继续添加更多内容
+
+#others 其他简略内容(列表)
 others: #其他列表显示
-   - type: others #ID可以为空
-     name: '其他'
-     content: #选择需要的格式
-      - 单行文字
-      - title: "加粗:"
-        text: "列表项二"
-      - title: "兴趣:"
-        items: #单行列表
-          - 睡觉
-          - 吃饭
-          - coding
-      - title: 列表
-        list:
-          - 第一项
-          - 第二项
-  #  - type: 
-  #    name: '其他'
-  #    content: #选择需要的格式
-  #     - 单行文字
-  #     - 如果有可以继续添加
-    
+- type: others #ID可以为空
+  name: '其他'
+  content: #选择需要的格式
+  - 单行文字
+  - title: "加粗:"
+    text: "列表项二"
+  - title: "兴趣:"
+    items: #单行列表
+    - 睡觉
+    - 吃饭
+    - coding
+  - title: 列表
+    list:
+    - 第一项
+    - 第二项
+#- type: 
+#  name: '其他'
+#  content: #选择需要的格式
+#  - 单行文字
+#  - 如果有可以继续添加
+
+#footer 脚注，打印版不显示    
 footer: #脚注多组
-  - text: "简历脚注"
-  #   href: '/'
-  - text: "Made with &hearts; by NewFuture"
-    href: "https://github.com/NewFuture/CV/"
+- text: "简历脚注"
+#   href: '/'
+- text: "Made with &hearts; by NewFuture"
+  href: "https://github.com/NewFuture/CV/"
 
 #页面额外js脚本，如xx统计
-# scripts:
-#   - src: "assets/js/resume.js"
-#     defer: defer
+scripts:
+#- src: "assets/js/resume.js"
+#  defer: defer #可以设置defer或者sync异步加载
