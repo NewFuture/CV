@@ -82,10 +82,15 @@ layout: default
               </details>
             {% elsif content.summary %}
               <div class="summary">{{ content.summary }}</div>
+            {% elsif content.items %}
+              <p class="items">
+                {% for item in content.items %}
+                  <span class="item">{{ item }}</span>
+                {% endfor %} 
+              </p>
             {% else %}
               <p class="detail">{{ content.detail }}</p>
             {% endif %}
-
           </div>
           {% endfor %}
         </div>

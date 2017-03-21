@@ -39,7 +39,10 @@ main: #简历主要内容，
   # name: "技能"
   content:
   - title: 编程语言
-    summary: 语言1, 语言2, 语言3
+    items: #itmems 可以小块的方式显示
+    - 汉语
+    - 语言2
+    - 语言3
   - title: Skill Group
     summary: Consectetur, Adipiscing, Elit
 
