@@ -68,21 +68,26 @@ main: #简历主要内容，类别条数不限
         sub: Creator and maintainer.
    #可继续添加更多内容
 others: #其他列表显示
-  title: '其他'
-  content: #选择需要的格式
-    - 单行文字
-    - name: "加粗:"
-      text: "列表项二"
-    - name: "兴趣:"
-      items: #单行列表
-        - 睡觉
-        - 吃饭
-        - coding
-    - name: 列表
-      list:
-        - 第一项
-        - 第二项
-
+   - type: others #ID可以为空
+     name: '其他'
+     content: #选择需要的格式
+      - 单行文字
+      - title: "加粗:"
+        text: "列表项二"
+      - title: "兴趣:"
+        items: #单行列表
+          - 睡觉
+          - 吃饭
+          - coding
+      - title: 列表
+        list:
+          - 第一项
+          - 第二项
+  #  - type: 
+  #    name: '其他'
+  #    content: #选择需要的格式
+  #     - 单行文字
+  #     - 如果有可以继续添加
     
 footer: #脚注多组
   - text: "简历脚注"

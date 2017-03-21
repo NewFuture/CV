@@ -92,15 +92,15 @@ layout: default
       </section>
       {% endfor %} 
       
-      {% if data.others %}
-      <section id="others">
-        <h2 class="subject">{{ data.others.title | default: '其他' }}</h2>
+      {% for other in data.others %}
+      <section class="other" id="other.type">
+        <h2 class="subject">{{ other.name | default: other.type }}</h2>
         <div class="content">
           <ul>
-            {% for content in data.others.content %}
+            {% for content in other.content %}
             <li class="block">
-              {% if content.name %}
-                <h3 class="name">{{ content.name }}</h3>
+              {% if content.title %}
+                <h3 class="name">{{ content.title }}</h3>
               {% endif %}
               {% if content.text%}
                 <span class="text">{{ content.text }}</span> 
@@ -122,7 +122,7 @@ layout: default
           </ul>
         </div>
       </section>
-      {% endif%}
+      {% endfor %}
 
     </main>
   </div>
