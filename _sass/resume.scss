@@ -218,6 +218,11 @@ h2 {
         line-height: 1.4em;
         font-weight: 400;
         background: $detail_bg;
+        word-wrap: break-word;
+        &:lang(zh),
+        a {
+            word-break: break-all;
+        }
         ul {
             margin-left: 2em;
         }
