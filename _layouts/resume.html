@@ -15,7 +15,7 @@ layout: default
   <script src="{{script.src}}?{{site.time | date: '%s'}}" {{script.defer}}></script>
   {% endfor %}
 <!--[if lt IE 9]>
-<script>if(/*@cc_on!@*/0){var a=['header','main','section','footer','details','summary'],i=0;while(i<a.length)document.createElement(a[i++])}
+<script>if(/*@cc_on!@*/0){var a='header,address,main,section,footer,details,summary,article'.split(','),i=0;while(i<a.length)document.createElement(a[i++])}
 </script>
 <![endif]-->
 </head>
@@ -33,7 +33,7 @@ layout: default
         <h1>{{ data.name }}</h1>
         <div class="jobtitle">{{ data.jobtitle }}</div>
       </div>
-      <div id="contact">
+      <address id="contact">
         {% for item in data.contact %}
         <div class="contact-item">
           {% if item.icon %}
@@ -46,7 +46,7 @@ layout: default
           {% endif %}
         </div>
         {% endfor %}
-      </div>
+      </address>
     </header>
 
     <main>
@@ -55,8 +55,7 @@ layout: default
         <h2 class="subject">{{ list.name | default: list.type }}</h2>
         <div class="content">
           {% for content in list.content %}
-          <div class="block">
-
+          <article class="block">
 
             <div class="head">
               {% if content.url %}
@@ -78,10 +77,10 @@ layout: default
             {% if content.summary and content.detail %}
               <details {{ content.open }}>
                 <summary class="summary">{{ content.summary }}</summary>
-                <p class="detail">{{ content.detail }}</p>
+                <div class="detail">{{ content.detail }}</div>
               </details>
             {% elsif content.summary %}
-              <div class="summary">{{ content.summary }}</div>
+              <p class="summary">{{ content.summary }}</p>
             {% elsif content.items %}
               <p class="items">
                 {% for item in content.items %}
@@ -89,9 +88,9 @@ layout: default
                 {% endfor %} 
               </p>
             {% else %}
-              <p class="detail">{{ content.detail }}</p>
+              <div class="detail">{{ content.detail }}</div>
             {% endif %}
-          </div>
+          </article>
           {% endfor %}
         </div>
       </section>

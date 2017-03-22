@@ -125,6 +125,7 @@ header {
 #contact {
     text-align: left;
     font-size: .95em;
+    font-style: normal;
     padding: 0 1em;
     float: right;
     *float: none; //兼容IE7
@@ -205,17 +206,24 @@ h2 {
     }
     .summary {
         font-size: 1.1em;
-        font-weight: 500;
+        // font-weight: 500;
         margin: .8em 0 0 1em;
         line-height: 1.5em;
         font-weight: 600;
     }
     .detail {
         font-size: 1.05em;
-        line-height: 1.2;
-        font-weight: 400;
+        margin: 1em 0;
         text-indent: 1.2em;
+        line-height: 1.4em;
+        font-weight: 400;
         background: $detail_bg;
+        ul {
+            margin-left: 2em;
+        }
+        li {
+            text-indent: 0;
+        }
     }
     .items {
         line-height: 1.5em;
