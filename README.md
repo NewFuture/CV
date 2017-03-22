@@ -5,6 +5,7 @@
 * [x] 打印格式优化(可导PDF)
 * [x] html和css压缩
 * [x] [HTML5语义化支持](https://validator.w3.org/nu/?doc=https%3A%2F%2Fnewfuture.github.io%2FCV%2F&showoutline=yes)
+* [x] 简单markdown嵌套
 
 浏览器兼容:
 
@@ -17,7 +18,7 @@
 
 ## 在线使用(需登录github)
 
-1. 修改(`Edit`)[_data/resume.yml](https://github.com/NewFuture/CV/edit/gh-pages/_data/resume.yml)(内容和条目根据需要删减)
+1. 修改(`Edit`)[_data/resume.yml](_data/resume.yml)(内容和条目根据需要删减),[点此直接修改](https://github.com/NewFuture/CV/edit/gh-pages/_data/resume.yml)
 2. 保存(点击`Commit changes`) (会自动fork和commit)
 3. 稍等片刻(commit后会自动编译生成github pages),打开[https://{your-github-id}.github.io/CV/](https://newfuture.github.io/CV/) 查看效果
 
@@ -56,7 +57,7 @@
 
 ### 自定义域名
 
-1. 添加[`CNAME`](./CNAME)文件，一行你的域名,[更多](https://help.github.com/articles/adding-or-removing-a-custom-domain-for-your-github-pages-site/)
+1. 添加[`CNAME`](https://github.com/NewFuture/CV/new/gh-pages/CNAME)文件，一行你的域名,[更多关于域名添加的问题](https://help.github.com/articles/adding-or-removing-a-custom-domain-for-your-github-pages-site/)
 2. 修改该域名的DNS的CNAME记录为`{YOUR-github-ID}.github.io`
 
 ### 自定义样式
