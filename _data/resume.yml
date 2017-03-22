@@ -71,7 +71,8 @@ main: #简历主要内容，
     sub: 维护者
   - title: Project Name
     summary: projects introduction
-    detail: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+    detail:
+      md: _data/demo.md
     sub: Creator and maintainer.
    #可继续添加更多内容
 

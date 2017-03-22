@@ -74,22 +74,35 @@ layout: default
               <div class="time"><i>{{ content.duration }}</i></div>
             {% endif %}
 
-            {% if content.summary and content.detail %}
-              <details {{ content.open }}>
-                <summary class="summary">{{ content.summary }}</summary>
-                <div class="detail">{{ content.detail }}</div>
-              </details>
-            {% elsif content.summary %}
-              <p class="summary">{{ content.summary }}</p>
+
+            {% if content.detail %}
+              {% comment %} 解析markdown文件 {% endcomment %}              
+              {% if content.detail.md %}
+                {% capture md %}{% include_relative {{content.detail.md}} %}{% endcapture %}
+                {% assign detail= md | markdownify %}
+              {% else %}
+                {% assign detail=content.detail %}
+              {% endif %}
+
+              {% if content.summary %}
+                <details {{ content.open }}>
+                  <summary class="summary">{{ content.summary }}</summary>
+                  <div class="detail">{{ detail }}</div>
+                </details>
+              {% else %}
+                <div class="detail">{{ detail }}</div>
+              {% endif %}
+
             {% elsif content.items %}
               <p class="items">
                 {% for item in content.items %}
                   <span class="item">{{ item }}</span>
                 {% endfor %} 
               </p>
-            {% else %}
-              <div class="detail">{{ content.detail }}</div>
+            {% elsif content.summary %}
+              <p class="summary">{{ content.summary }}</p>
             {% endif %}
+
           </article>
           {% endfor %}
         </div>
