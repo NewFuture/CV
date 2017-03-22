@@ -24,10 +24,23 @@
 
 ## 效果截图
 
-1. 标准PC版(宽度> 1024)![](assets/img/pc.png)
-2. iPad Pro或窄屏笔记本( 1024 >= width >= 768)![](assets/img/large.png)
-3. iPad mini或宽屏Note( 768 >= width > 450)![](assets/img/ipad.png)
-4. 标准手机版( width <= 450)![](assets/img/iphone.png)
+<detials>
+    <summary> 1. 标准PC版(宽度> 1024)</summary>
+    ![](assets/img/pc.png)
+</detials>
+<detials>
+    <summary>2. iPad Pro或窄屏笔记本( 1024 >= width >= 768)</summary>
+    ![](assets/img/large.png)
+</detials>
+<detials>
+    <summary>3. iPad mini或宽屏Note( 768 >= width > 450)</summary>
+    ![](assets/img/ipad.png)
+</details>
+<detials>
+    <summary>4. 标准手机版( width <= 450)</summary>
+    ![](assets/img/iphone.png)
+</details>
+
 
 
 
