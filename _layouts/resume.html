@@ -1,7 +1,7 @@
 --- 
 layout: default
 --- 
-{% assign data = site.data[page.data] %}
+{% assign data = site.data[ page.data] | default: site.data['resume'] %}
 <!DOCTYPE html>
 <html lang="{{ data.lang }}">
 
@@ -22,7 +22,7 @@ layout: default
 
 <body>
   <div class="container">
-
+  
     <header>
       {% if data.photo %}
       <div class="avatar">
@@ -76,7 +76,7 @@ layout: default
 
 
             {% if content.detail %}
-              {% comment %} 解析markdown文件 {% endcomment %}              
+              {% comment %} 解析markdown文件 {% endcomment %}
               {% if content.detail.md %}
                 {% capture md %}{% include_relative {{content.detail.md}} %}{% endcapture %}
                 {% assign detail= md | markdownify %}
