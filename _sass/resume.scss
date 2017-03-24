@@ -223,7 +223,7 @@ h2 {
         a {
             word-break: break-all;
         }
-        p{
+        p {
             margin: .5em 0;
         }
         ul {
@@ -253,6 +253,9 @@ h2 {
 
 // 其他others
 .other {
+    .content {
+        margin-top: 1.1em;
+    }
     .block {
         margin-bottom: .6em;
         list-style: none;

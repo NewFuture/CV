@@ -112,32 +112,30 @@ layout: default
       {% for other in data.others %}
       <section class="other" id="other.type">
         <h2 class="subject">{{ other.name | default: other.type }}</h2>
-        <div class="content">
-          <ul>
-            {% for content in other.content %}
-            <li class="block">
-              {% if content.title %}
-                <h3 class="name">{{ content.title }}</h3>
-              {% endif %}
-              {% if content.text%}
-                <span class="text">{{ content.text }}</span> 
-              {% elsif content.items %}
-                {% for item in content.items %}
-                  <span class="text item">{{ item }}</span>
-                {% endfor %} 
-              {% elsif content.list %}
-                <ul class="list">
-                  {% for li in content.list %}
-                    <li class="text">{{ li }}</li>
-                  {% endfor %}
-                </ul>
-              {% else %}
-                <span>{{ content }}</span>
-              {% endif %}
-            </li>
-            {% endfor %}
-          </ul>
-        </div>
+        <ul class="content">
+          {% for content in other.content %}
+          <li class="block">
+            {% if content.title %}
+              <h3 class="name">{{ content.title }}</h3>
+            {% endif %}
+            {% if content.text%}
+              <span class="text">{{ content.text }}</span> 
+            {% elsif content.items %}
+              {% for item in content.items %}
+                <span class="text item">{{ item }}</span>
+              {% endfor %} 
+            {% elsif content.list %}
+              <ul class="list">
+                {% for li in content.list %}
+                  <li class="text">{{ li }}</li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              <span>{{ content }}</span>
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
       </section>
       {% endfor %}
 
