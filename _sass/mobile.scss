@@ -23,7 +23,8 @@
         display: none;
     }
     #name {
-        margin-left: 8%;
+        // margin-left: 8%;
+        min-width: 50%;
     }
     #contact {
         margin-right: 7%;
@@ -68,6 +69,9 @@
         .time {
             text-align: right;
         }
+    }
+    .other .list {
+        padding-left: 2em;
     }
     footer li {
         display: block;
