@@ -40,7 +40,6 @@ summary {
     color: #555;
     &::before {
         content: '\0a7';
-        
         margin: 0 .5em 0 -.5em;
     }
     &::after {
@@ -48,7 +47,7 @@ summary {
         margin-left: .3em;
     }
     &:lang(en)::after {
-        content: "(detail)";
+        content: "(more)";
     }
     &:lang(zh)::after {
         content: "(详情)";
