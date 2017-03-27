@@ -80,16 +80,32 @@ a {
 /* 头部信息*/
 
 header {
+    display: flex;
+    *display: block; // IE 7,8 hack
     justify-content: space-between;
+    width: 100%;
     border-bottom: .3em solid #7fb8ec;
-    padding: 2.5em 1.5em 1em;
+    padding: 2.5em 0 1em;
 }
 
 .avatar,
 #name,
 #contact {
-    min-width: 25%;
+    min-width: 25%\9;
     vertical-align: middle;
+    *float: left; // ie 7 8
+}
+
+
+/*hack for ie10*/
+
+@media screen and (-ms-high-contrast: active),
+(-ms-high-contrast: none) {
+    /* IE10-specific styles go here */
+    .avatar,
+    #name {
+        min-width: 0;
+    }
 }
 
 //头像
@@ -127,8 +143,8 @@ header {
     font-size: .95em;
     font-style: normal;
     padding: 0 1em;
-    float: right;
-    *float: none; //兼容IE7
+    *line-height: 1.5em;//ie 7,8 高度
+    float: right\9; //兼容IE789
 }
 
 //图标
@@ -140,6 +156,12 @@ header {
         max-height: 95%;
         fill: $default_color;
     }
+}
+
+.clear {
+    clear: both;
+    display: block;
+    height: 0;
 }
 
 
