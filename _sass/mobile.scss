@@ -25,9 +25,11 @@
     #name {
         // margin-left: 8%;
         min-width: 50%;
+        min-height: auto;
     }
     #contact {
-        margin-right: 7%;
+        // margin-right: 3%;
+        float: none;
     }
     .content {
         width: 92%;
@@ -43,6 +45,7 @@
 
 //手机
 @media screen and (max-width: 520px) {
+    header,
     #name {
         display: block;
         margin: auto;

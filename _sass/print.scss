@@ -1,61 +1,54 @@
-/* 打印样式 */
+/* 
+打印样式
+chrome 优先
+*/
 
 @media print {
-    *,
-    *:before,
-    *:after {
-        background: transparent !important;
-        box-shadow: none !important;
-        text-shadow: none !important;
-        font-size: 12px;
+    @page {
+        /* auto is the initial value */
+        size: auto;
+        margin: 1.4cm 1cm 1cm; // this affects the margin in 
+    }
+    @page :blank {
+        display: none;
     }
     html,
     body {
         background: inherit !important;
         padding: 0 !important;
         border: 0 !important;
-    }
-    html {
         font-size: 12px !important;
     }
+    //文档范围
+    .container {
+        // padding: 2em;
+        max-width: 90%;
+        border-bottom: 1px dashed #ccc;
+    }
+    header {
+        padding-top: 0;
+        margin: auto;
+    }
+    //链接
     a,
     a:visited {
         text-decoration: underline !important;
+    }
+    //头像
+    .avatar {
+        max-width: 30%;
+        img {
+            border-radius: 1%;
+        }
+    }
+    //内容
+    section {
+        display: flex;
     }
     summary {
         &::after {
             display: none;
         }
-    }
-    // a[href]:after {
-    //     content: " (" attr(href) ")";
-    // }
-    // a[href^="#"]:after,
-    // a[href^="javascript:"]:after {
-    //     content: "";
-    // }
-    // abbr[title]:after {
-    //     content: " (" attr(title) ")";
-    // }
-    /*
-    * Don't show links that are fragment identifiers,
-    * or use the `javascript:` pseudo protocol
-    */
-    // pre,
-    // blockquote {
-    //     border: 1px solid #999;
-    //     page-break-inside: avoid;
-    // }
-    /*
-    * Printing Tables:
-    * http://css-discuss.incutio.com/wiki/Printing_Tables
-    */
-    // thead {
-    //     display: table-header-group;
-    // }
-    // tr,
-    img {
-        max-width: 100% !important;
     }
     p,
     h2,
@@ -63,36 +56,20 @@
         orphans: 3;
         widows: 3;
     }
+    // 分页设置
     img,
     .block,
-    ul {
+    ul,
+    li,
+    p,
+    span {
         page-break-inside: avoid;
     }
     h2,
     h3,
-    header,
-    main,
-    .container,
-    #others {
+    h4,
+    header {
         page-break-after: avoid;
-    }
-    header,
-    section {
-        display: flex;
-    }
-    .container {
-        max-width: 90%;
-        width: 90%;
-        border-bottom: 1px dashed #ccc;
-    }
-    .avatar {
-        width: 25%;
-        img {
-            border-radius: 1%;
-        }
-    }
-    #contact {
-        display: inline-block;
     }
     //隐藏脚注
     footer {
