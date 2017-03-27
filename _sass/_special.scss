@@ -39,7 +39,8 @@ summary {
 :-webkit-any(summary) {
     color: #555;
     &::before {
-        content: '\02630';
+        content: '\0a7';
+        
         margin: 0 .5em 0 -.5em;
     }
     &::after {
