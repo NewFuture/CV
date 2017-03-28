@@ -80,18 +80,32 @@ a {
 /* 头部信息*/
 
 header {
+    display: -webkit-box;
     display: flex;
     *display: block; // IE 7,8 hack
     justify-content: space-between;
     width: 100%;
     border-bottom: .3em solid #7fb8ec;
     padding: 2.5em 0 1em;
+    -moz-box-align: center;
+    // -ms-flex-align: center;
+    align-items: center;
 }
 
+// /* two items */
+// li:first-child:nth-last-child(2),
+// li:first-child:nth-last-child(2) ~ li {
+// 	min-width: 45%;
+// }
+// /* three items */
+// li:first-child:nth-last-child(3),
+// li:first-child:nth-last-child(3) ~ li {
+// 	width: 33.3333%;
+// }
 .avatar,
 #name,
 #contact {
-    min-width: 25%\9;
+    min-width: 26%\9;
     vertical-align: middle;
     *float: left; // ie 7 8
 }
@@ -111,7 +125,7 @@ header {
 //头像
 .avatar {
     max-width: 27%;
-    margin-left: 8%;
+    margin-left: 6%;
     img {
         max-width: 8.5em;
         height: 6.5em;
@@ -121,6 +135,9 @@ header {
 
 #name {
     text-align: center;
+    &:first-child {
+        min-width: 45%;
+    }
     // #fullname,
     h1 {
         font-size: 3em;
@@ -143,8 +160,11 @@ header {
     font-size: .95em;
     font-style: normal;
     padding: 0 1em;
-    *line-height: 1.5em;//ie 7,8 高度
+    *line-height: 1.5em; //ie 7,8 高度
     float: right\9; //兼容IE789
+    &:nth-child(2) {
+        min-width: 33%;
+    }
 }
 
 //图标

@@ -9,6 +9,10 @@ chrome 优先
         size: auto;
         margin: 1.4cm 1cm 1cm; // this affects the margin in 
     }
+    @page :first {
+        //首页
+        margin-top: 5mm;
+    }
     @page :blank {
         display: none;
     }
@@ -26,7 +30,7 @@ chrome 优先
         border-bottom: 1px dashed #ccc;
     }
     header {
-        padding-top: 0;
+        // padding-top: 0;
         margin: auto;
     }
     //链接
