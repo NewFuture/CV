@@ -45,6 +45,11 @@
 
 ![](assets/img/iphone.png)
 </details>
+<details>
+<summary>5. 打印版 (可导出PDF)</summary>
+
+![](assets/img/print.png)
+</details>
 
 
 
