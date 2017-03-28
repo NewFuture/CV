@@ -23,11 +23,10 @@
         display: none;
     }
     #name {
-        font-size: .9em;
-        margin-left: 5%;
+        margin-left: 10%;
     }
     #contact {
-        margin-right: 5%;
+        margin-right: 10%;
         float: none;
     }
     .content {
@@ -39,6 +38,16 @@
         display: block;
         text-align: center;
         margin: .8em auto .2em;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    #name {
+        font-size: .9em;
+        margin-left: 5%;
+    }
+    #contact {
+        margin-right: 5%;
     }
 }
 
@@ -54,6 +63,7 @@
     }
     #contact {
         display: block;
+        width: 80%;//IE 类半兼容
         width: -moz-fit-content;
         width: -webkit-fit-content;
         width: fit-content;
