@@ -23,8 +23,7 @@
         display: none;
     }
     #name {
-        // margin-left: 8%;
-        min-width: 50%;
+        margin-left: 8%;
     }
     #contact {
         // margin-right: 3%;
@@ -47,7 +46,7 @@
     header,
     #name {
         display: block;
-        margin: auto;
+        margin: auto !important;
     }
     #contact {
         display: block;

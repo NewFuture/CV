@@ -92,40 +92,18 @@ header {
     align-items: center;
 }
 
-// /* two items */
-// li:first-child:nth-last-child(2),
-// li:first-child:nth-last-child(2) ~ li {
-// 	min-width: 45%;
-// }
-// /* three items */
-// li:first-child:nth-last-child(3),
-// li:first-child:nth-last-child(3) ~ li {
-// 	width: 33.3333%;
-// }
 .avatar,
 #name,
 #contact {
-    min-width: 26%\9;
     vertical-align: middle;
+    min-width: 25%\9; //IE 9 及以下
     *float: left; // ie 7 8
-}
-
-
-/*hack for ie10*/
-
-@media screen and (-ms-high-contrast: active),
-(-ms-high-contrast: none) {
-    /* IE10-specific styles go here */
-    .avatar,
-    #name {
-        min-width: 0;
-    }
 }
 
 //头像
 .avatar {
     max-width: 27%;
-    margin-left: 6%;
+    margin-left: 7%;
     img {
         max-width: 8.5em;
         height: 6.5em;
@@ -136,7 +114,7 @@ header {
 #name {
     text-align: center;
     &:first-child {
-        min-width: 45%;
+        margin-left: 8%
     }
     // #fullname,
     h1 {
@@ -156,15 +134,14 @@ header {
 }
 
 #contact {
+    margin-right: 7%;
     text-align: left;
     font-size: .95em;
     font-style: normal;
     padding: 0 1em;
     *line-height: 1.5em; //ie 7,8 高度
+    *min-width: 20%;
     float: right\9; //兼容IE789
-    &:nth-child(2) {
-        min-width: 33%;
-    }
 }
 
 //图标
@@ -175,6 +152,19 @@ header {
         vertical-align: middle;
         max-height: 95%;
         fill: $default_color;
+    }
+}
+
+
+/*hack for ie10*/
+
+@media screen and (-ms-high-contrast: active),
+(-ms-high-contrast: none) {
+    /* IE10-specific styles go here */
+    .avatar,
+    #name,
+    #contact {
+        min-width: 0;
     }
 }
 
