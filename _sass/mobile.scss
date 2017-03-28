@@ -23,10 +23,11 @@
         display: none;
     }
     #name {
-        margin-left: 8%;
+        font-size: .9em;
+        margin-left: 5%;
     }
     #contact {
-        // margin-right: 3%;
+        margin-right: 5%;
         float: none;
     }
     .content {
@@ -42,18 +43,22 @@
 }
 
 //手机
-@media screen and (max-width: 500px) {
-    header,
+@media screen and (max-width: 480px) {
+    header {
+        display: block;
+    }
     #name {
         display: block;
+        border-bottom: .1em solid #bbb;
         margin: auto !important;
     }
     #contact {
         display: block;
-        margin: 0 auto;
-        padding: 1em 0 1em 12%;
-        border-top: .1em solid #bbb;
-        float: none;
+        width: -moz-fit-content;
+        width: -webkit-fit-content;
+        width: fit-content;
+        margin: auto;
+        padding-top: 1em;
     }
     .contact-item {
         padding-top: .2em;
