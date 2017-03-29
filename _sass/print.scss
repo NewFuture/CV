@@ -29,11 +29,11 @@ chrome 优先
         max-width: 90%;
         border-bottom: 1px dashed #ccc;
     }
-
     //链接
     a,
     a:visited {
-        text-decoration: underline !important;
+        text-decoration: underline;
+        border-bottom: 0;
     }
     //头像
     .avatar {
