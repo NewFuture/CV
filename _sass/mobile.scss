@@ -63,7 +63,7 @@
     }
     #contact {
         display: block;
-        width: 80%;//IE 类半兼容
+        width: 80%; //IE 类半兼容
         width: -moz-fit-content;
         width: -webkit-fit-content;
         width: fit-content;
@@ -80,11 +80,11 @@
         }
         .sub {
             min-width: 99%;
-            text-align: left;
+            // text-align: left;
         }
-        .time {
-            text-align: right;
-        }
+        // .time {
+        //     text-align: right;
+        // }
     }
     .other .list {
         padding-left: 2em;

@@ -71,11 +71,21 @@ layout: default
               {% endif %}
             </div>
 
+            <div class="info">
             {% if content.duration %}
-              <div class="time"><i>{{ content.duration }}</i></div>
+              <i class="time">{{ content.duration }}</i>
             {% endif %}
+            {% if content.tags %}
+              &nbsp;<div class="tag">
+               {% for tag in content.tags %}
+                <code>{{ tag }}</code>
+               {% endfor %}
+              </div>
+            {% endif %}
+            </div>
 
-
+           
+            
             {% if content.detail %}
               {% comment %} 解析markdown文件 {% endcomment %}
               {% if content.detail.md %}

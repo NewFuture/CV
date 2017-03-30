@@ -231,15 +231,6 @@ h2 {
         margin: 0;
         min-width: 40%;
     }
-    .time {
-        font-size: .95em;
-        color: #aaa;
-        i {
-            font-style: normal;
-            padding: .1em .3em;
-            @include outline($time_outline);
-        }
-    }
     .summary {
         font-size: 1.1em;
         // font-weight: 500;
@@ -255,6 +246,44 @@ h2 {
         .item {
             background: rgba(238, 238, 238, 0.33);
         }
+    }
+}
+
+.info {
+    text-align: justify;
+    /* IE special */
+    width: 99%;
+    -ms-text-justify: distribute-all-lines;
+    text-justify: distribute-all-lines;
+    &:after {
+        content: '';
+        display: inline-block;
+        width: 100%;
+        height: 0;
+        font-size: 0;
+        line-height: 0;
+    }
+    .time,
+    .tag {
+        color: #aaa;
+        vertical-align: baseline;
+        display: inline-block;
+        /* ie 7*/
+        *display: inline;
+        *zoom: 1;
+        *text-align: left;
+    }
+    .time,
+    code {
+        font-style: normal;
+        font-size: .85em;
+        padding: .1em .3em;
+        @include outline($time_outline);
+    }
+    code {
+        color: #666;
+        padding: .1em;
+        font-size: 1em;
     }
 }
 
