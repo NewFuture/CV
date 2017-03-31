@@ -249,18 +249,19 @@ h2 {
     }
 }
 
+//时间和标签
 .info {
     text-align: justify;
     /* IE special */
+    font-size: 0;
     width: 99%;
     -ms-text-justify: distribute-all-lines;
     text-justify: distribute-all-lines;
     &:after {
         content: '';
         display: inline-block;
-        width: 100%;
+        width: 99%;
         height: 0;
-        font-size: 0;
         line-height: 0;
     }
     .time,
@@ -276,14 +277,16 @@ h2 {
     .time,
     code {
         font-style: normal;
-        font-size: .85em;
+        font-size: 12px;
         padding: .1em .3em;
         @include outline($time_outline);
     }
     code {
         color: #666;
+        margin-left: .2em;
+        background: rgba(249, 249, 252, .5);
+        font-size: 13px;
         padding: .1em;
-        font-size: 1em;
     }
 }
 
