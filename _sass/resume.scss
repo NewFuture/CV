@@ -10,11 +10,12 @@ $paper_color: #fff;
 //默认文字颜色
 $default_color: #333;
 //详细内容颜色
-$detail_bg: rgba(236, 236, 236, .5);
+$detail_bg: rgba(236, 236, 236, .3);
 //时间外边颜色
 $time_outline: rgba(180, 180, 180, .15);
 //item背景色
-$other_bg:rgba(238, 238, 238, .3);
+$other_line:rgba(238, 238, 238, .4);
+$other_bg:rgba(238, 238, 238, .2);
 
 /*导入依赖*/
 
@@ -191,14 +192,22 @@ section {
 
 // .subject,
 h2 {
-    font-size: 1.5em;
-    text-align: right;
     width: 20%;
-    min-width: 7em;
-    font-weight: 800;
+    font-size: 1.4em;
+    text-align: right;
+    font-weight: 900;
     color: #6fa8dc;
     text-transform: uppercase;
     vertical-align: top;
+    &:lang(zh) {
+        font-size: 1.6em;
+        width: 16%;
+        min-width: 5em;
+        margin-right: 1%;
+    }
+    &:lang(en) {
+        min-width: 7em;
+    }
 }
 
 .content {
@@ -244,7 +253,8 @@ h2 {
         font-size: 1.1em;
         font-weight: 600;
         .item {
-            background: rgba(238, 238, 238, 0.33);
+            // background: rgba(238, 238, 238, 0.33);
+            background: rgba(245, 245, 245, .3);
         }
     }
 }
@@ -323,7 +333,7 @@ h2 {
     margin-right: 1em;
     display: inline-block;
     padding: .1em;
-    @include outline($other_bg);
+    @include outline($other_line);
 }
 
 // 其他others
