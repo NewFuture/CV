@@ -55,6 +55,9 @@ summary {
     &::-webkit-details-marker {
         display: none;
     }
+    .detail {
+        opacity: 0;
+    }
 }
 
 // FireFox >=49 支持details
@@ -82,23 +85,28 @@ summary {
 details[open] {
     summary {
         color: #222 !important;
-        animation: black .5s;
+        animation: black .7s;
         &::before,
         &::after {
             display: none;
         }
     }
-    p {
-        animation: sweep .6s ease-in-out;
+    .detail {
+        animation: fade .7s ease-in;
     }
 }
 
-@keyframes sweep {
+@keyframes fade {
     0% {
-        opacity: 0;
-        color: $detail_bg;
+        opacity: .9;
+        color: #222;
+        // color: $detail_bg;
     }
-    100% {
+    40% {
+        opacity: .5;
+        color: #666;
+    }
+    to {
         opacity: 1;
         color: #000;
     }
@@ -107,7 +115,7 @@ details[open] {
 @keyframes black {
     0% {
         font-weight: 700;
-        color: #777;
+        color: #666;
     }
     50% {
         font-weight: 500;
