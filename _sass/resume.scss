@@ -330,7 +330,7 @@ h2 {
 }
 
 .item {
-    margin-right: 1em;
+    // margin-right: 1em;
     display: inline-block;
     padding: .1em;
     @include outline($other_line);
@@ -348,14 +348,15 @@ h2 {
     .name {
         font-weight: 700;
         font-size: 1.1em;
-        min-width: 0;
-        margin: 0 .5em 0 0;
+        // min-width: 0;
+        margin: 0;
     }
     .text {
         background-color: $other_bg;
+        margin-left: 1em;
     }
     .list {
-        padding-left: 3em;
+        padding-left: 2em;
         line-height: 1.7em;
     }
 }
