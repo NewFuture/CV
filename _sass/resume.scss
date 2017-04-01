@@ -249,12 +249,13 @@ h2 {
     }
     .items {
         line-height: 1.5em;
-        margin: 1em 0 0 1em;
+        margin: .5em 0 0 1em;
         font-size: 1.1em;
         font-weight: 600;
         .item {
             // background: rgba(238, 238, 238, 0.33);
             background: rgba(245, 245, 245, .3);
+            margin: 0 .4em;
         }
     }
 }
