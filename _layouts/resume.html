@@ -121,7 +121,7 @@ layout: default
       {% endfor %} 
       
       {% for other in data.others %}
-      <section class="other" id="other.type">
+      <section class="other" id="{{ other.type }}">
         <h2 class="subject">{{ other.name | default: other.type }}</h2>
         <ul class="content">
           {% for content in other.content %}
@@ -153,9 +153,9 @@ layout: default
     </main>
   </div>
 
-  <footer>
+  <footer class="screen">
     <ul>
-      {% for footer in data.footer %}
+      {% for footer in data.footer.screen %}
         {% if footer.href %}
           <li><a href="{{footer.href}}">{{ footer.text | default:footer }}</a></li>
         {% else %}
@@ -172,6 +172,11 @@ layout: default
       {% endcase %}
     </ul>
   </footer>
+   {% if data.footer.print %}
+    {% capture md %}{% include_relative {{data.footer.print}} %}{% endcapture %}
+    <footer class="print">{{ md | markdownify }}</footer>
+  {% endif %}
+
   {% for script in data.scripts %}
     <script src="{{ script.src }}?{{site.time | date: '%s'}}" {{ script.defer }}></script>
   {% endfor %}

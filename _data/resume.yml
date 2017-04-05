@@ -74,7 +74,7 @@ main: #简历主要内容，
     detail: 项目和工作介绍，项目总结.
     sub: 维护者
   - title: Project Name
-    summary: projects introduction
+    summary: Projects' introduction or summary
     detail:
       md: _data/demo.md
     sub: Creator and maintainer.
@@ -103,12 +103,14 @@ others: #其他列表显示
 #  - 单行文字
 #  - 如果有可以继续添加
 
-#footer 脚注，打印版不显示    
+#footer 脚注，打印版和web版不同不显示    
 footer: #脚注多组
-- text: "简历脚注"
-#   href: '/'
-- text: "Made with &hearts; by NewFuture"
-  href: "https://github.com/NewFuture/CV/"
+  print: #打印版markdown或者html
+  screen:
+  - text: "简历脚注"
+  #   href: '/'
+  - text: "Made with &hearts; by NewFuture"
+    href: "https://github.com/NewFuture/CV/"
 
 #页面额外js脚本，如xx统计
 scripts:

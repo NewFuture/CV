@@ -7,14 +7,20 @@ chrome 优先
     @page {
         /* auto is the initial value */
         size: auto;
-        margin: 1.4cm 1cm 1cm; // this affects the margin in 
+        margin: 2cm .8cm 1.2cm; // this affects the margin in 
     }
     @page :first {
         //首页
-        margin-top: 5mm;
+        margin-top: 6mm;
     }
     @page :blank {
         display: none;
+    }
+    .screen {
+        display: none;
+    }
+    .print {
+        display: block;
     }
     html,
     body {
@@ -25,15 +31,16 @@ chrome 优先
     }
     //文档范围
     .container {
-        // padding: 2em;
         max-width: 90%;
-        border-bottom: 1px dashed #ccc;
     }
     //链接
     a,
     a:visited {
         text-decoration: underline;
         border-bottom: 0;
+    }
+    h3 a {
+        text-decoration: none;
     }
     //头像
     .avatar {
@@ -63,7 +70,8 @@ chrome 优先
     ul,
     li,
     p,
-    span {
+    span,
+    footer {
         page-break-inside: avoid;
     }
     h2,
@@ -74,8 +82,25 @@ chrome 优先
     }
     //隐藏脚注
     footer {
-        padding-bottom: 0;
-        margin: 0;
-        display: none;
+        color: #999;
+        page-break-before: avoid;
+        border-top-style: solid;
+        ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            line-height: 2em;
+            margin: 0;
+        }
+        li {
+            margin: 0 2em;
+            &:not(:last-child):after {
+                content: '';
+                padding: 0;
+            }
+        }
+    }
+    .other li:last-child {
+        margin-bottom: 0;
     }
 }
