@@ -60,9 +60,7 @@ layout: default
 
             <div class="head">
               {% if content.url %}
-                <h3 class="title">
-                  <a href="{{content.url}}" target="_blank">{{ content.title }}</a>
-                </h3>
+                <h3 class="title"><a href="{{content.url}}" target="_blank">{{ content.title }}</a></h3>
               {% else %}
                 <h3 class="title">{{ content.title }}</h3>
               {% endif %} 
@@ -84,8 +82,6 @@ layout: default
             {% endif %}
             </div>
 
-           
-            
             {% if content.detail %}
               {% comment %} 解析markdown文件 {% endcomment %}
               {% if content.detail.md %}
@@ -153,6 +149,7 @@ layout: default
     </main>
   </div>
 
+  {% if data.footer.screen %}
   <footer class="screen">
     <ul>
       {% for footer in data.footer.screen %}
@@ -172,10 +169,12 @@ layout: default
       {% endcase %}
     </ul>
   </footer>
-   {% if data.footer.print %}
-    {% capture md %}{% include_relative {{data.footer.print}} %}{% endcapture %}
-    <footer class="print">{{ md | markdownify }}</footer>
   {% endif %}
+  
+  {% if data.footer.print %}
+   {% capture md %}{% include_relative {{data.footer.print}} %}{% endcapture %}
+  <footer class="print">{{ md | markdownify }}</footer>
+ {% endif %}
 
   {% for script in data.scripts %}
     <script src="{{ script.src }}?{{site.time | date: '%s'}}" {{ script.defer }}></script>
