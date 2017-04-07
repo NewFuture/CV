@@ -53,8 +53,9 @@ chrome 优先
     h3 {
         font-size: 16px !important;
     }
-    h4 {
-        font-size: 14px !important;
+    .head .sub {
+        font-weight: 600;
+        font-size: 14px;
     }
     /*链接*/
     a,
