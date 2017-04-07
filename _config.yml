@@ -13,7 +13,7 @@ exclude:
 # Compress html 压缩HTML
 compress_html:
   #去除空格
-  clippings: [html, head, title, base, link, meta, style, script, body, article, section, nav, aside, h1, h2, h3, h4, h5, h6, hgroup, header, footer, address, p, hr, blockquote, ol, ul, li, dl, dt, dd, figure, figcaption, main, div, table, caption, colgroup, col, tbody, thead, tfoot, tr, td, th, a, span, i, svg, summary, details, code,'!--[if lt IE 9]']
+  clippings: [html, head, title, base, link, meta, style, script, body, article, section, nav, aside, h1, h2, h3, h4, h5, h6, hgroup, header, footer, address, p, hr, blockquote, ol, ul, li, dl, dt, dd, figure, figcaption, main, div, table, caption, colgroup, col, tbody, thead, tfoot, tr, td, th, a, span, i, svg, summary, details, code,'!--[if lte IE 9]','![endif]--']
   #去除注释
   # comments: all
 

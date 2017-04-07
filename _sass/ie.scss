@@ -1,0 +1,129 @@
+/** hack for ugly IE < 10 */
+
+.pc-only {
+    display: none;
+}
+
+
+/*水平布局IE兼容*/
+
+h2,
+h3,
+h4,
+.content,
+footer li {
+    *display: inline; //IE 7兼容
+    *zoom: 1;
+}
+
+
+/* IE兼容*/
+
+header,
+section,
+details,
+summary,
+article,
+footer,
+{
+    display: block;
+}
+
+
+/*IE 7,8*/
+
+@media \0screen\,screen\9 {
+    footer li {
+        margin: 0 .5em; // zoom: expression( this.runtimeStyle.zoom="1", this.appendChild( document.createElement("span")).className="after"); // *zoom: expression(this.innerHTML=this.innerHTML+' | ')
+    }
+    /*边框兼容ie*/
+    section {
+        border-top: .1em solid #bbb;
+        &:first-child {
+            border-top: none;
+        }
+    }
+}
+
+
+/*IE 7*/
+
+h2 {
+    *margin-top: 1em;
+}
+
+
+/*IE 7 对齐*/
+
+h4,
+.tag {
+    /*两端对齐，IE 7 在两者之间需要添加一个额外空格，有序每次渲染都会调用，先判断节点数是否为2*/
+    *content: expression(this.parentNode.childNodes.length==2?this.parentNode.insertBefore(document.createTextNode(" "), this):0);
+    *text-align: right;
+}
+
+header {
+    *display: block; // IE 7 hack
+}
+
+a {
+    *color: expression(this.parentNode.currentStyle['color']); // hack IE7 inherit
+}
+
+
+/*align*/
+
+.avatar,
+#name,
+#contact {
+    vertical-align: middle;
+    *display: inline;
+    *zoom: 1;
+}
+
+.avatar {
+    margin-left: 8%\0;
+    float: left\0; // ie 8 9    
+}
+
+#name {
+    *min-width: 45%; //ie7
+    &:first-child {
+        margin-left: 8%;
+        float: left;
+    }
+}
+
+#contact {
+    margin-right: 6%\0; //兼容IE8 9
+    float: right\0; //兼容IE8 9
+    *line-height: 1.5em; //ie 7 高度
+}
+
+br {
+    clear: both;
+    font-size: 0;
+    height: 0;
+}
+
+
+/* left and right algin */
+
+.head,
+.info {
+    text-align: justify; // /* IE special */
+    font-size: 0; // width: 99%;
+    -ms-text-justify: distribute-all-lines;
+    text-justify: distribute-all-lines;
+}
+
+.head .title,
+.head .sub,
+.info .time,
+.info .tag {
+    display: inline-block;
+    /* ie 7*/
+    *display: inline;
+    *zoom: 1;
+    *text-align: left;
+}

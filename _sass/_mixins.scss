@@ -74,3 +74,23 @@
     border-radius: $radius;
     @include box-shadow(none);
 }
+
+// flex
+@mixin flex($align:false,$justify:false){
+    display: box;              /* OLD - Android 4.4- */
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;
+
+    @if $align{
+        -moz-box-align: center;
+            -ms-flex-align: center;
+    align-items: center;
+    }
+        @if $justify{
+        justify-content: $justify;
+    }
+
+}

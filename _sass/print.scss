@@ -22,18 +22,41 @@ chrome 优先
     .print {
         display: block;
     }
+    /*文档范围*/
     html,
     body {
-        background: inherit !important;
-        padding: 0 !important;
-        border: 0 !important;
-        font-size: 12px !important;
+        background: inherit;
+        padding: 0;
+        border: 0;
+        font-size: 12px;
+        color: #111;
     }
-    //文档范围
-    .container {
-        max-width: 90%;
+    header,
+    main {
+        width: 90%;
     }
-    //链接
+    section {
+        display: flex;
+    }
+    /*color*/
+    .block .sub,
+    .info .time,
+    .info code {
+        color: #222;
+    }
+    summary {
+        color: #111 !important;
+    }
+    .name {
+        color: #000;
+    } //font
+    h3 {
+        font-size: 16px !important;
+    }
+    h4 {
+        font-size: 14px !important;
+    }
+    /*链接*/
     a,
     a:visited {
         text-decoration: underline;
@@ -42,29 +65,23 @@ chrome 优先
     h3 a {
         text-decoration: none;
     }
-    //头像
     .avatar {
+        //头像
         max-width: 30%;
         img {
             border-radius: 1%;
         }
-    }
-    //内容
-    section {
-        display: flex;
-    }
+    } //内容
     summary {
         &::after {
             display: none;
         }
-    }
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
-    // 分页设置
+    } // p,
+    // h2,
+    // h3 {
+    //     orphans: 3;
+    //     widows: 3;
+    // } // 分页设置
     img,
     .block,
     ul,
@@ -79,8 +96,7 @@ chrome 优先
     h4,
     header {
         page-break-after: avoid;
-    }
-    //隐藏脚注
+    } //隐藏脚注
     footer {
         color: #999;
         page-break-before: avoid;

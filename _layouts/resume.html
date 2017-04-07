@@ -14,15 +14,14 @@ layout: default
   {% for script in site.scripts %}
   <script src="{{script.src}}?{{site.time | date: '%s'}}" {{script.defer}}></script>
   {% endfor %}
-<!--[if lt IE 9]>
+<!--[if lte IE 9]>
 <script>if(/*@cc_on!@*/0){var a='header,address,main,section,footer,details,summary,article'.split(','),i=0;while(i<a.length)document.createElement(a[i++])}
 </script>
+<link rel="stylesheet" href="/assets/css/ie.css?{{site.time | date: '%s'}}">
 <![endif]-->
 </head>
 
 <body>
-  <div class="container">
-  
     <header>
       {% if data.photo %}
       <div class="avatar">
@@ -47,7 +46,7 @@ layout: default
         </div>
         {% endfor %}
       </address>
-      <!--[if lt IE 10]><i class="clear"></i><![endif]-->
+      <!--[if lte IE 9]><br><![endif]-->
     </header>
 
     <main>
@@ -74,7 +73,7 @@ layout: default
               <i class="time">{{ content.duration }}</i>
             {% endif %}
             {% if content.tags %}
-              &nbsp;<div class="tag">
+              <div class="tag">
                {% for tag in content.tags %}
                 <code>{{ tag }}</code>
                {% endfor %}
@@ -147,7 +146,6 @@ layout: default
       {% endfor %}
 
     </main>
-  </div>
 
   {% if data.footer.screen %}
   <footer class="screen">

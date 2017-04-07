@@ -1,18 +1,4 @@
-/*×浏览器兼容设置*/
-
-
-/* IE7,8 兼容*/
-
-header,
-main,
-section,
-details,
-summary,
-article,
-footer,
-{
-    display: block
-}
+/*高级浏览器兼容设置*/
 
 ul,
 li {
@@ -99,8 +85,7 @@ details[open] {
 @keyframes fade {
     0% {
         opacity: .9;
-        color: #222;
-        // color: $detail_bg;
+        color: #222; // color: $detail_bg;
     }
     40% {
         opacity: .5;
