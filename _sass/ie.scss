@@ -34,7 +34,8 @@ footer,
 
 @media \0screen\,screen\9 {
     footer li {
-        margin: 0 .5em; // zoom: expression( this.runtimeStyle.zoom="1", this.appendChild( document.createElement("span")).className="after"); // *zoom: expression(this.innerHTML=this.innerHTML+' | ')
+        // zoom: expression( this.runtimeStyle.zoom="1", this.appendChild( document.createElement("span")).className="after"); // *zoom: expression(this.innerHTML=this.innerHTML+' | ')
+        margin: 0 .5em;
     }
     /*边框兼容ie*/
     section {

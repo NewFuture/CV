@@ -153,8 +153,8 @@ section {
     text-align: left;
     margin-top: .5em;
     padding-left: .2em;
-    &:not(:last-child) {
-        border-bottom: .1em solid #bbb;
+    &:not(:first-child) {
+        border-top: .1em solid #bbb;
     }
     h2 {
         width: 20%;
@@ -317,7 +317,7 @@ footer {
     }
     li {
         margin: .15em;
-        &:not(:last-child):after {
+        &:not(:last-child)::after {
             content: '|';
             padding: .25em;
             color: $default_color;
