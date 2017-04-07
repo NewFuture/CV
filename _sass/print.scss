@@ -4,14 +4,15 @@ chrome 优先
 */
 
 @media print {
+    /*页面设置*/
     @page {
         /* auto is the initial value */
         size: auto;
-        margin: 2cm .8cm 1.2cm; // this affects the margin in 
+        margin: 2cm .8cm; // this affects the margin in 
     }
     @page :first {
         //首页
-        margin-top: 6mm;
+        margin-top: 1cm;
     }
     @page :blank {
         display: none;
@@ -35,28 +36,6 @@ chrome 优先
     main {
         width: 90%;
     }
-    section {
-        display: flex;
-    }
-    /*color*/
-    .block .sub,
-    .info .time,
-    .info code {
-        color: #222;
-    }
-    summary {
-        color: #111 !important;
-    }
-    .name {
-        color: #000;
-    } //font
-    h3 {
-        font-size: 16px !important;
-    }
-    .head .sub {
-        font-weight: 600;
-        font-size: 14px;
-    }
     /*链接*/
     a,
     a:visited {
@@ -66,38 +45,52 @@ chrome 优先
     h3 a {
         text-decoration: none;
     }
+    /*头像*/
     .avatar {
         //头像
         max-width: 30%;
         img {
             border-radius: 1%;
         }
-    } //内容
+    }
+    /*color*/
+    .block .sub,
+    .info .time,
+    .info code {
+        color: #222;
+    }
+    .name {
+        color: #000;
+    }
+    section {
+        display: flex;
+    }
+    .block:not(:first-child) {
+        padding-top: .3em;
+    }
+    /**/
+    .head .sub {
+        font-weight: 600;
+        font-size: 14px;
+    }
     summary {
+        color: #111 !important;
         &::after {
             display: none;
         }
-    } // p,
-    // h2,
-    // h3 {
-    //     orphans: 3;
-    //     widows: 3;
-    // }
+    }
+    .other li:last-child {
+        margin-bottom: 0;
+    }
     /*分页设置*/
     img,
-    .block,
+    article,
     ul,
     li,
     p,
-    span,
+    .detail,
     footer {
         page-break-inside: avoid;
-    }
-    h2,
-    h3,
-    h4,
-    header {
-        page-break-after: avoid;
     } //隐藏脚注
     footer {
         color: #999;
@@ -117,8 +110,5 @@ chrome 优先
                 padding: 0;
             }
         }
-    }
-    .other li:last-child {
-        margin-bottom: 0;
     }
 }

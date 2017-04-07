@@ -53,6 +53,15 @@ h2 {
     *margin-top: 1em;
 }
 
+.head {
+    .title {
+        *font-size: 18px;
+    }
+    .sub {
+        *font-size: 15px;
+    }
+}
+
 
 /*IE 7 对齐*/
 
@@ -113,9 +122,9 @@ br {
 .head,
 .info {
     text-align: justify; // /* IE special */
-    font-size: 0; // width: 99%;
     -ms-text-justify: distribute-all-lines;
     text-justify: distribute-all-lines;
+    *font-size: 0;
 }
 
 .head .title,

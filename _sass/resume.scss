@@ -182,8 +182,9 @@ section {
 
 .block {
     margin: 1em 0;
-    overflow: hidden;
-    zoom: 1;
+    &:not(:first-child) {
+        padding-top: .5em;
+    }
     .summary {
         font-size: 1.1em;
         margin: .3em 0 0 1em;
@@ -213,7 +214,7 @@ section {
 .head {
     .title {
         margin: 0;
-        font-size: 18px;
+        font-size: 1.4em;
         font-weight: 800; // margin: 0;
         color: black;
         a {
@@ -222,7 +223,7 @@ section {
     }
     .sub {
         margin: 0;
-        font-size: 16px;
+        font-size: 1.3em;
         color: #858585;
         text-align: right;
         font-weight: 700;
@@ -285,8 +286,9 @@ section {
 // 其他others
 .other {
     .block {
-        // margin-bottom: .6em;
         list-style: none;
+        margin-bottom: 0;
+        padding-top: .1em;
     }
     .name {
         font-weight: 700;
