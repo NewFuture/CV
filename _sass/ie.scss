@@ -76,19 +76,28 @@ h2 {
 
 
 /*IE 7 对齐*/
-
-h4,
-.tag {
-    /*两端对齐，IE 7 在两者之间需要添加一个额外空格，有序每次渲染都会调用，先判断节点数是否为2*/
-    *content: expression(this.parentNode.childNodes.length==2?this.parentNode.insertBefore(document.createTextNode(" "), this):0);
-    *text-align: right;
-}
-
 header {
     *display: block; // IE 7 hack
 }
 
+.sub {
+    *margin-top: -1.5em !important;
+}
+
+.tag {
+    *margin-top: -20px!important;
+}
+
+.sub,
+.tag {
+    /*两端对齐，IE 7 在两者之间需要添加一个额外空格，有序每次渲染都会调用，先判断节点数是否为2*/
+    // *content: expression(this.parentNode.childNodes.length==2?this.parentNode.insertBefore(document.createTextNode(" "), this):0);
+    *text-align: right;
+    *float: right;
+}
+
 a {
+    color: #333;
     *color: expression(this.parentNode.currentStyle.color); // hack IE7 inherit
 }
 

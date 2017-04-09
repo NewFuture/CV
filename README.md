@@ -11,8 +11,9 @@
 
 * [x] Chrome
 * [x] Andoroid (系统内置浏览器,微信等)
-* [x] Edge
-* [x] >=IE7 (支持IE: 7 8 9 10 11)
+* [x] Edge (Windows 10)
+* [x] >=IE7 (支持IE: 7 8 9 10 11)(Windows vista,7及以上系统)
+* [x] IE6 显示基本一致可读(Windows XP默认版本，显示略有差别)
 * [x] Safari (包括 iPhone和iPad)
 * [x] FireFox
 
@@ -24,6 +25,8 @@
 
 
 ## 效果截图
+
+不同系统和不同浏览器截图可[在此处查看](https://developer.microsoft.com/en-us/microsoft-edge/tools/screenshots/?url=https%3A%2F%2Fnewfuture.github.io%2FCV%2F)
 
 <details>
 <summary> 1. 标准PC版(宽度> 1024)</summary>
