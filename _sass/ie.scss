@@ -89,7 +89,7 @@ header {
 }
 
 a {
-    *color: expression(this.parentNode.currentStyle['color']); // hack IE7 inherit
+    *color: expression(this.parentNode.currentStyle.color); // hack IE7 inherit
 }
 
 .other {

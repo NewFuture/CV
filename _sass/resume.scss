@@ -101,8 +101,8 @@ footer li {
 /*头部信息*/
 
 header {
-    justify-content: space-around;
-    border-bottom: .3em solid #7fb8ec;
+    @include justify-content(space-around);
+    border-bottom: .3em solid #8bf;
     padding: 2.5em 0 1em;
     .avatar {
         //头像
@@ -117,7 +117,7 @@ header {
         // #fullname,
         font-size: 3em;
         font-weight: 900;
-        color: #6fa8dc;
+        color: #6ae;
         display: inline;
     }
     .jobtitle {
@@ -161,7 +161,7 @@ section {
         font-size: 1.4em;
         text-align: right;
         font-weight: 900;
-        color: #6fa8dc;
+        color: #6ae;
         text-transform: uppercase;
         vertical-align: top;
         &:lang(zh) {
@@ -208,7 +208,7 @@ section {
 
 .head,
 .info {
-    justify-content: space-between;
+    @include justify-content(space-between);
 }
 
 .head {
