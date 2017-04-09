@@ -230,6 +230,19 @@ section {
     }
 }
 
+.item,
+.time,
+code {
+    // margin-right: 1em;
+    display: inline-block;
+    @include outline($time_outline);
+}
+
+.item {
+    padding: .1em;
+    border-color: $other_line;
+}
+
 //时间和标签
 .info {
     .time,
@@ -239,8 +252,7 @@ section {
     .time,
     code {
         font-size: 12px;
-        padding: .1em .3em;
-        @include outline($time_outline);
+        padding: .1em .3em; // @include outline($time_outline);
     }
     code {
         color: #666;
@@ -274,13 +286,6 @@ section {
     li {
         text-indent: 0;
     }
-}
-
-.item {
-    // margin-right: 1em;
-    display: inline-block;
-    padding: .1em;
-    @include outline($other_line);
 }
 
 // 其他others

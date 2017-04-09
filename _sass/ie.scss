@@ -44,6 +44,18 @@ footer,
             border-top: none;
         }
     }
+    .item {
+        border: 1px solid #eee;
+    }
+    .info {
+        .time,
+        code {
+            border: 1px dotted #ccc;
+        }
+    }
+    .detail {
+        background: #fafafa;
+    }
 }
 
 
@@ -80,6 +92,13 @@ a {
     *color: expression(this.parentNode.currentStyle['color']); // hack IE7 inherit
 }
 
+.other {
+    .content {
+        *margin-left: 0;
+        *list-style-position: inside;
+    }
+}
+
 
 /*align*/
 
@@ -110,7 +129,7 @@ a {
     *line-height: 1.5em; //ie 7 高度
 }
 
-br {
+header br {
     clear: both;
     font-size: 0;
     height: 0;
