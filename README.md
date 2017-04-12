@@ -1,6 +1,8 @@
 # CV(简历)自动生成
 简历模板自动生成gh-pages. A resume template auto builds in github-pages by Jekyll
 
+支持`yaml`(方便人读写)或者`json`(方便程序转换)的数据格式
+
 * [x] 手机端适配
 * [x] 打印格式优化(可导PDF)
 * [x] html和css压缩
@@ -14,8 +16,10 @@
 * [x] Edge (Windows 10)
 * [x] >=IE7 (支持IE: 7 8 9 10 11)(Windows vista,7及以上系统)
 * [x] IE6 显示基本一致可读(Windows XP默认版本，显示略有差别)
-* [x] Safari (包括 iPhone和iPad)
+* [x] Safari (包括Mac, iPhone和iPad)
 * [x] FireFox
+
+
 
 ## 在线使用(需登录github)
 
