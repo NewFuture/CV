@@ -1,0 +1,22 @@
+/*css样式设置*/
+
+
+/*打印样式设置*/
+
+$print-page-margin: 6mm 5mm 1mm; //打印页边距
+$print-font-size: 14px; //打印字体大小
+$print-header-padding: 1cm 0 3mm; //header边距
+$print-section-margin: 8px 0; //section边距
+$print-section-padding: 8px 0; //section 内部偏移
+$print-subject-title-width: 20%; //分类栏宽度
+$print-content-width: 80%; // 内容宽度 $print-title-subject-width + $print-content-width <= 97% 最佳
+$print-block-margin: 5px 0; //没个块的边距
+$print-other-block-display: flex; // other每条的布局方式 flex 或者 block
+$print-footer-height: 50px; //打印版页脚高度
+$print-footer-top: 5px; //页脚上边距离
+
+/*网页设置*/
+
+$bg_color: #f9f9fc; //网页背景
+$paper_color: #fff; //纸张颜色
+$default_color: #333; //默认文字颜色

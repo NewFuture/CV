@@ -2,22 +2,39 @@
 layout: default
 --- 
 {% assign data = site.data[ page.data] | default: site.data['resume'] %}
+{% if site.querytime %}
+  {% assign querytime = site.time | date: '%s' | prepend: '?' %}
+{% endif %}
 <!DOCTYPE html>
-<html lang="{{ data.lang }}">
+<html
+{% if data.lang %}
+  lang="{{ data.lang }}"
+{% endif %}{% if site.manifest %}
+  manifest="{{site.manifest}}{{querytime}}"
+{% endif %}>
 
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ data.title }}</title>
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | prepend: site.baseurl}}?{{site.time | date: '%s'}}">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | prepend: site.baseurl}}{{querytime}}">
   {% for script in site.scripts %}
-  <script src="{{script.src}}?{{site.time | date: '%s'}}" {{script.defer}}></script>
+  <script src="{{script.src}}{{querytime}}" {{script.defer}}></script>
   {% endfor %}
+  <meta property="og:type" content="website">
+  {% if data.lang == 'zh'%}
+    <meta property="og:description" content="{{data.name}}-{{data.jobtitle}},详细简历">
+  {% else %}
+    <meta property="og:description" content="resume details of {{data.name}} - {{data.jobtitle}}">
+  {% endif%}
+  {% if data.photo %}
+    <meta property="og:image" content="{{data.photo}}{{querytime}}">
+  {% endif %}
 <!--[if lte IE 9]>
 <script>if(/*@cc_on!@*/0){var a='header,address,main,section,footer,details,summary,article'.split(','),i=0;while(i<a.length)document.createElement(a[i++])}
 </script>
-<link rel="stylesheet" href="{{site.baseurl }}/assets/css/ie.css?{{site.time | date: '%s'}}">
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/ie.css{{ querytime }}">
 <![endif]-->
 </head>
 
@@ -25,7 +42,7 @@ layout: default
     <header>
       {% if data.photo %}
       <div class="avatar">
-        <img src="{{data.photo}}?{{site.time | date: '%s'}}" alt="photo">
+        <img src="{{data.photo}}{{querytime}}" alt="photo">
       </div>
       {% endif %}
       <div id="name">
@@ -175,7 +192,7 @@ layout: default
  {% endif %}
 
   {% for script in data.scripts %}
-    <script src="{{ script.src }}?{{site.time | date: '%s'}}" {{ script.defer }}></script>
+    <script src="{{ script.src }}{{querytime}}" {{ script.defer }}></script>
   {% endfor %}
 </body>
 

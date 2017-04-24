@@ -74,8 +74,16 @@ h2 {
     }
 }
 
+.info {
+    .time,
+    .tag {
+        *font-size: 14px;
+    }
+}
+
 
 /*IE 7 对齐*/
+
 header {
     *display: block; // IE 7 hack
 }
@@ -163,5 +171,5 @@ header br {
     /* ie 7*/
     *display: inline;
     *zoom: 1;
-    *text-align: left;
+    text-align: left;
 }

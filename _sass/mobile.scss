@@ -10,7 +10,7 @@
     }
     header,
     main {
-        width: 80%;
+        width: 84%;
     }
     .pc-only {
         display: none;
@@ -29,7 +29,7 @@
     section {
         .content {
             width: 94%;
-            margin: 0 3%;
+            margin: 0 auto;
         }
         h2 {
             display: block;
@@ -41,9 +41,7 @@
 }
 
 @media screen and (max-width: 560px) {
-    header {
-        width: 100%;
-    }
+    header,
     main {
         width: 98%;
     }
