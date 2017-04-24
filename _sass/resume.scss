@@ -3,12 +3,6 @@
 
 /*变量*/
 
-//网页背景
-$bg_color: #f9f9fc;
-//纸张颜色
-$paper_color: #fff;
-//默认文字颜色
-$default_color: #333;
 //详细内容颜色
 $detail_bg: rgba(236, 236, 236, .3);
 //时间外边颜色
@@ -18,7 +12,6 @@ $other_line:rgba(238, 238, 238, .4);
 $other_bg:rgba(238, 238, 238, .2);
 
 /*导入依赖*/
-
 @import "mixins"; //函数
 @import "special"; //浏览器定制
 html {
@@ -152,28 +145,26 @@ header {
 section {
     text-align: left;
     margin-top: .5em;
-    padding-left: .2em;
     &:not(:first-child) {
         border-top: .1em solid #bbb;
     }
     h2 {
         width: 20%;
-        font-size: 1.4em;
+        font-size: 1.3em;
         text-align: right;
         font-weight: 900;
         color: #6ae;
         text-transform: uppercase;
         vertical-align: top;
         &:lang(zh) {
-            font-size: 1.6em;
-            width: 16%;
-            min-width: 5em;
-            margin-right: 1%;
+            font-size: 2em;
+            width: 15%; // min-width: 5em;
+            padding-right: 1%;
         }
     }
     .content {
-        margin-left: 2%;
-        width: 76%;
+        padding-left: 2%;
+        width: 78%;
     }
 }
 
@@ -214,7 +205,7 @@ section {
 .head {
     .title {
         margin: 0;
-        font-size: 1.4em;
+        font-size: 1.3em;
         font-weight: 800; // margin: 0;
         color: black;
         a {
@@ -223,7 +214,7 @@ section {
     }
     .sub {
         margin: 0;
-        font-size: 1.3em;
+        font-size: 1.2em;
         color: #858585;
         text-align: right;
         font-weight: 700;
@@ -251,14 +242,14 @@ code {
     }
     .time,
     code {
-        font-size: 12px;
+        // font-size: 12px;
         padding: .1em .3em; // @include outline($time_outline);
     }
     code {
         color: #666;
         margin-left: .2em;
         background: rgba(249, 249, 252, .5);
-        font-size: 14px;
+        font-size: 1.1em;
         padding: .1em;
     }
 }

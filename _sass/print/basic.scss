@@ -1,18 +1,13 @@
 /* 
-打印样式
+基本打印样式与浏览器一致
 chrome 优先
 */
 
 @media print {
     /*页面设置*/
     @page {
-        /* auto is the initial value */
         size: auto;
-        margin: 2cm .8cm; // this affects the margin in 
-    }
-    @page :first {
-        //首页
-        margin-top: 1cm;
+        margin: $print-page-margin; // this affects the margin in 
     }
     @page :blank {
         display: none;
@@ -29,7 +24,7 @@ chrome 优先
         background: inherit;
         padding: 0;
         border: 0;
-        font-size: 12px;
+        font-size: $print-font-size;
         color: #111;
     }
     header,
@@ -63,7 +58,8 @@ chrome 优先
         color: #000;
     }
     section {
-        display: flex;
+        margin: $print-section-margin;
+        padding: $print-section-padding;
     }
     .block:not(:first-child) {
         padding-top: .3em;

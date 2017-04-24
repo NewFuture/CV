@@ -2,6 +2,32 @@ title: 简历模板
 baseurl: ""
 querytime: true  #在头像,js和css等后加上时间戳防止缓存,false关闭
 manifest: '' # html5离线缓存配置文件名,默认关闭
+#打印样式设置
+print:
+  # 打印样式模板,
+  # 空不设置打印样式，模板变量无效
+  # basic:网页基本一致，
+  # flex: 侧栏密集排版，
+  # block:无侧栏
+  template: 'basic' 
+  #字体大小
+  fontsize: 12px
+  #页面边距设置，3~5mm为佳[不建议修改]
+  page-margin: '6mm 5mm 3mm' #上，右(无同上)，下(无同上)，左（无同右）
+  #也顶部(姓名栏目)边距偏移
+  header-padding: '8mm 0 3mm'
+  #每块设置(对应main里面每一条)
+  section:
+    margin: '3px auto 0' #边距
+    padding: '3px 0' #内部偏移
+    width: '80%' #内容宽度 basic无效
+  # content每一条边距设置
+  block-margin: 4px 0
+  #打印版页脚设置
+  footer:
+    top: 5px #上边距
+    height: 50px #高度
+
 exclude:
   - LICENSE
   - README.md
@@ -11,6 +37,8 @@ exclude:
 # scripts:
 #   - src: "assets/js/ie.js"
 #     defer: defer
+
+timezone: '+0800'
 
 # Compress html 压缩HTML
 compress_html:

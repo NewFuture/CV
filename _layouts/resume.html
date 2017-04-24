@@ -7,9 +7,9 @@ layout: default
 {% endif %}
 <!DOCTYPE html>
 <html
-{% if data.lang %}
+{% if data['lang'].size > 0 %}
   lang="{{ data.lang }}"
-{% endif %}{% if site.manifest %}
+{% endif %}{% if site.manifest.size > 0 %}
   manifest="{{site.manifest}}{{querytime}}"
 {% endif %}>
 
@@ -40,7 +40,7 @@ layout: default
 
 <body>
     <header>
-      {% if data.photo %}
+      {% if data.photo.size > 0 %}
       <div class="avatar">
         <img src="{{data.photo}}{{querytime}}" alt="photo">
       </div>
@@ -52,10 +52,10 @@ layout: default
       <address id="contact">
         {% for item in data.contact %}
         <div class="contact-item">
-          {% if item.icon %}
+          {% if item.icon.size > 0 %}
           <i class="icon" aria-hidden="true">{% include {{item.icon}} %}</i>
           {% endif %} 
-          {% if item.href %}
+          {% if item.href.size > 0 %}
           <a target="_blank" href="{{item.href }}">{{ item.text }}</a>
           {% else %}
           <span>{{ item.text }}</span> 
@@ -75,21 +75,21 @@ layout: default
           <article class="block">
 
             <div class="head">
-              {% if content.url %}
+              {% if content.url.size > 0 %}
                 <h3 class="title"><a href="{{content.url}}" target="_blank">{{ content.title }}</a></h3>
               {% else %}
                 <h3 class="title">{{ content.title }}</h3>
               {% endif %} 
-              {% if content.sub %}
+              {% if content.sub.size > 0 %}
                 <h4 class="sub">{{ content.sub }}</h4>
               {% endif %}
             </div>
 
             <div class="info">
-            {% if content.duration %}
+            {% if content.duration.size > 0 %}
               <i class="time">{{ content.duration }}</i>
             {% endif %}
-            {% if content.tags %}
+            {% if content.tags.size > 0 %}
               <div class="tag">
                {% for tag in content.tags %}
                 <code>{{ tag }}</code>
@@ -98,7 +98,7 @@ layout: default
             {% endif %}
             </div>
 
-            {% if content.detail %}
+            {% if content.detail.size > 0 %}
               {% comment %} 解析markdown文件 {% endcomment %}
               {% if content.detail.md %}
                 {% capture md %}{% include_relative {{content.detail.md}} %}{% endcapture %}
@@ -164,11 +164,11 @@ layout: default
 
     </main>
 
-  {% if data.footer.screen %}
+  {% if data.footer.screen.size > 0 %}
   <footer class="screen">
     <ul>
       {% for footer in data.footer.screen %}
-        {% if footer.href %}
+        {% if footer.href.size > 0 %}
           <li><a href="{{footer.href}}">{{ footer.text | default:footer }}</a></li>
         {% else %}
           <li>{{ footer.text | default:footer }}</li>
@@ -186,7 +186,7 @@ layout: default
   </footer>
   {% endif %}
   
-  {% if data.footer.print %}
+  {% if data.footer.print.size > 0 %}
    {% capture md %}{% include_relative {{data.footer.print}} %}{% endcapture %}
   <footer class="print">{{ md | markdownify }}</footer>
  {% endif %}

@@ -1,7 +1,32 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
 ---
+
+/*变量设置*/
+
+/*网页设置*/
+$bg_color: #f9f9fc; //网页背景
+$paper_color: #fff; //纸张颜色
+$default_color: #333; //默认文字颜色
+
+/*打印变量*/
+$print-page-margin: {{site.print.page-margin | default:'6mm 5mm 1mm'}}; //打印页边距
+$print-font-size: {{site.print.fontsize | default:'12px'}}; //打印字体大小
+
+$print-header-padding: {{site.print.header-padding | default:'8mm 0 4mm'}}; //header边距
+
+$print-section-margin: {{site.print.section.margin | default:'34px auto 0'}}; //section边距
+$print-section-padding: {{site.print.section.padding | default:'3px 0'}}; //section 内部偏移
+
+$print-content-width: {{site.print.section.width | default:'82%'}}; // 内容宽度
+$print-block-margin:{{site.print.block-margin | default:'5px 0'}}; //没个块的边距
+
+$print-footer-height: {{site.print.footer.height | default:'auto'}}; //打印版页脚高度
+$print-footer-top: {{site.print.footer.top | default:'5px'}}; //页脚上边距离
+
+/*导入*/
 @charset "utf-8";
-@import "resume"; 
+@import "resume";
 @import "mobile";
-@import "print";
+{% if site.print.template.size > 0%}
+    @import "print/{{site.print.template}}";
+{% endif %}
