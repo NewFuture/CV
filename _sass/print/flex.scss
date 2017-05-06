@@ -68,15 +68,20 @@ chrome 优先
     }
     section {
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-between;
+        align-items: center;
         margin: $print-section-margin;
         padding: $print-section-padding;
         h2 {
-            margin: .3em 0;
+            width: auto !important;
         }
         .content {
             width: $print-content-width;
+            padding: 0;
         }
+    }
+    details {
+        flex-basis: 100%;
     }
     .block {
         margin: $print-block-margin;
@@ -98,13 +103,10 @@ chrome 优先
         .detail {
             text-indent: .9em;
         }
-        details {
-            flex-basis: 100%;
-        }
         .detail,
         .text {
             margin-top: 1px;
-            background: none; // font-weight: normal;
+            background: none;
             color: #000;
         }
     }

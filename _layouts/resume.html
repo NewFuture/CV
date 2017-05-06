@@ -56,7 +56,7 @@ layout: default
           <i class="icon" aria-hidden="true">{% include {{item.icon}} %}</i>
           {% endif %} 
           {% if item.href.size > 0 %}
-          <a target="_blank" href="{{item.href }}">{{ item.text }}</a>
+          <a href="{{item.href }}" {{ item.attr }}>{{ item.text }}</a>
           {% else %}
           <span>{{ item.text }}</span> 
           {% endif %}

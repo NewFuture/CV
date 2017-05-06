@@ -18,6 +18,7 @@ contact: #联系方式连接等3~5行
 - text: "GitHubID"
   href: 'https://github.com/NewFuture'
   icon: "icons/github.svg"
+  attr: 'target="_blank"' #新标签页打开
   # - text: "地址"
   #   icon: "icons/location.svg"
 
