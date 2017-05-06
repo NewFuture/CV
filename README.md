@@ -21,14 +21,14 @@
 
 
 
-## 在线使用(需登录github)
+## 在线使用
 
-1. 修改(`Edit`)[_data/resume.yml](_data/resume.yml)(内容和条目根据需要删减),[点此直接修改](https://github.com/NewFuture/CV/edit/gh-pages/_data/resume.yml)
+1. 登录github,修改(`Edit`)[_data/resume.yml](_data/resume.yml)(内容和条目根据需要删减),[点此直接修改](https://github.com/NewFuture/CV/edit/gh-pages/_data/resume.yml)
 2. 保存(点击`Commit changes`) (会自动fork和commit)
 3. 稍等片刻(commit后会自动编译生成github pages),打开[https://{your-github-id}.github.io/CV/](https://newfuture.github.io/CV/) 查看效果
 
 
-## 效果截图
+## 效果截图(点击展开)
 
 不同系统和不同浏览器截图可[在此处查看](https://developer.microsoft.com/en-us/microsoft-edge/tools/screenshots/?url=https%3A%2F%2Fnewfuture.github.io%2FCV%2F)
 
