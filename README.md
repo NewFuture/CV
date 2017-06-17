@@ -52,8 +52,8 @@
 
 ![](assets/img/iphone.png)
 </details>
-<details>
-<summary>5. 打印版 (可导出PDF)</summary>
+<details open>
+<summary>5. 打印版 (可配置样式和导出PDF)</summary>
 
 ![](assets/img/print.png)
 </details>
@@ -76,6 +76,8 @@
 * [`_sass/resume.scss`](_sass/resume.scss) 默认样式
 * [`_sass/mobile.scss`](_sass/mobile.scss) 移动端适配
 * [`_sass/print.scss`](_sass/print.scss) 打印样式
+* [_config.yml](https://github.com/NewFuture/CV/blob/gh-pages/_config.yml#L6) 自定义配置
+
 
 ## 参考
 
