@@ -1,5 +1,8 @@
+# 数据格式可以为 yaml(文件以.yml结尾) 或者json(文件以.json结尾)
+# 如果YAML格式的数据请先检查格式是否有误，可选检查工具 http://www.yamllint.com
+
 title: "简历标题"
-lang: "" #语言设置 zh表示中文 en 表示英语
+lang: "zh" #语言设置 zh表示中文 en 表示英语
 name: "你的名字"
 jobtitle: "求职意向" #可空不显示
 photo: "assets/img/photo.jpg" #照片可空，不显示
