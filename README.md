@@ -23,9 +23,10 @@
 
 ## 在线使用
 
-1. 登录github,修改(`Edit`)[_data/resume.yml](_data/resume.yml)(内容和条目根据需要删减),[点此直接修改](https://github.com/NewFuture/CV/edit/gh-pages/_data/resume.yml)
-2. 保存(点击`Commit changes`) (会自动fork和commit)
-3. 稍等片刻(commit后会自动编译生成github pages),打开[https://{your-github-id}.github.io/CV/](https://newfuture.github.io/CV/) 查看效果
+1. fork: 登录github, 点击[Fork按钮](https://github.com/NewFuture/CV/fork)复制此项目到自己仓库
+2. 修改: 打开[_data/resume.yml](_data/resume.yml)(内容和条目根据需要删减)，点击(`Edit`)
+3. 保存: 点击`Commit changes` (会自动commit)注意yaml格式无误
+4. 稍等片刻(自动编译生成github pages),打开[{your-github-id}.github.io/CV/](https://newfuture.github.io/CV/) 查看效果
 
 
 ## 效果截图(点击展开)
