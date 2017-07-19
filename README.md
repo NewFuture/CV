@@ -24,7 +24,7 @@
 ## 在线使用
 
 1. fork: 登录github, 点击[Fork按钮](https://github.com/NewFuture/CV/fork)复制此项目到自己仓库
-2. 修改: 打开[_data/resume.yml](_data/resume.yml)(内容和条目根据需要删减)，点击(`Edit`)
+2. 修改: 打开[\_data/resume.yml](\_data/resume.yml)点击编辑(`Edit`)图标(内容和条目根据需要删减)
 3. 保存: 点击`Commit changes` (会自动commit)注意yaml格式无误
 4. 稍等片刻(自动编译生成github pages),打开[{your-github-id}.github.io/CV/](https://newfuture.github.io/CV/) 查看效果
 
