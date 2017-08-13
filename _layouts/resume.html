@@ -19,7 +19,7 @@ layout: default
   <meta name="HandheldFriendly" content="true"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>{{ data.title }}</title>
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | prepend: site.baseurl}}{{querytime}}">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | prepend: site.baseurl | replace: '//', '/' }}{{querytime}}">
   {% for script in site.scripts %}
   <script src="{{script.src}}{{querytime}}" {{script.defer}}></script>
   {% endfor %}
