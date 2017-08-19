@@ -35,7 +35,7 @@ layout: default
 <!--[if lte IE 9]>
 <script>if(/*@cc_on!@*/0){var a='header,address,main,section,footer,details,summary,article'.split(','),i=0;while(i<a.length)document.createElement(a[i++])}
 </script>
-<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/ie.css{{ querytime }}">
+<link rel="stylesheet" href="{{ '/assets/css/ie.css' | prepend: site.baseurl | replace: '//', '/' }}{{ querytime }}">
 <![endif]-->
 </head>
 
@@ -87,16 +87,16 @@ layout: default
             </div>
 
             <div class="info">
-            {% if content.duration.size > 0 %}
-              <i class="time">{{ content.duration }}</i>
-            {% endif %}
-            {% if content.tags.size > 0 %}
+              {% if content.tags.size > 0 %}
               <div class="tag">
-               {% for tag in content.tags %}
+                {% for tag in content.tags %}
                 <code>{{ tag }}</code>
-               {% endfor %}
+                {% endfor %}
               </div>
-            {% endif %}
+              {% endif %}
+              {% if content.duration.size > 0 %}
+               <i class="time">{{ content.duration }}</i>
+              {% endif %}
             </div>
 
             {% if content.detail.size > 0 %}

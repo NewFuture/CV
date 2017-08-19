@@ -63,6 +63,7 @@ footer,
 
 h2 {
     *margin-top: 1em;
+    *text-align: center !important;
 }
 
 .head {
@@ -92,12 +93,12 @@ header {
     *margin-top: -1.5em !important;
 }
 
-.tag {
+.time {
     *margin-top: -20px!important;
 }
 
 .sub,
-.tag {
+.time {
     /*两端对齐，IE 7 在两者之间需要添加一个额外空格，有序每次渲染都会调用，先判断节点数是否为2*/
     // *content: expression(this.parentNode.childNodes.length==2?this.parentNode.insertBefore(document.createTextNode(" "), this):0);
     *text-align: right;
@@ -110,6 +111,9 @@ a {
 }
 
 .other {
+    .name{
+        *margin-left: -1em;
+    }
     .content {
         *margin-left: 0;
         *list-style-position: inside;

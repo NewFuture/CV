@@ -1,0 +1,15 @@
+--- 
+layout: default
+---
+<!DOCTYPE html>
+<html lang="zh">
+<meta charset="utf-8">
+<script>
+    location = "{{ page.redirect.to }}"
+</script>
+<title>跳转中&hellip;</title>
+<meta http-equiv="refresh" content="0; url={{ page.redirect.to }}">
+<link rel="canonical" href="{{ page.redirect.to }}">
+<meta name="robots" content="noindex">
+<a href="{{ page.redirect.to }}">点此立即跳转(click to redirect)</a>
+</html>
