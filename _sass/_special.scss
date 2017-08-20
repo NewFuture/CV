@@ -25,11 +25,13 @@ summary {
 :-webkit-any(summary) {
     color: #555;
     &::before {
-        content: '\0a7';
+        font-family: initial;
+        // content: '\0a7';
+        content: '§';
         margin: 0 .5em 0 -.5em;
     }
     &::after {
-        text-decoration: underline;
+        border-bottom: 1px dotted;
         margin-left: .3em;
     }
     &:lang(en)::after {
@@ -52,11 +54,11 @@ summary {
         color: #555;
         list-style: none;
         &::before {
-            content: '\02630';
+            content: '§';
             margin: 0 .5em 0 -.5em;
         }
         &::after {
-            text-decoration: underline;
+            border-bottom: 1px dotted;
             margin-left: .3em;
         }
         &:lang(en)::after {
@@ -72,7 +74,10 @@ details[open] {
     summary {
         color: #222 !important;
         animation: black .7s;
-        &::before,
+        &::before{
+            content: '☰';
+            // content: '\02630'
+        }
         &::after {
             display: none;
         }
