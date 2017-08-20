@@ -1,0 +1,111 @@
+/*打印必用css设置*/
+
+/*页面基本设置*/
+@page {
+  /* auto is the initial value */
+  size: auto;
+  margin: $print-page-margin; // this affects the margin in 
+}
+
+@page:blank {
+  display: none;
+}
+
+/*打印设置*/
+.screen {
+  display: none;
+}
+
+.print {
+  display: block;
+}
+
+/*文档范围*/
+html,
+body {
+  background: inherit;
+  border: 0;
+  color: #111;
+  font-size: $print-font-size;
+  padding: 0;
+}
+
+header,
+main {
+  width: 90%;
+}
+
+/*链接*/
+a,
+a:visited {
+  border-bottom: 0;
+  text-decoration: underline;
+}
+
+h3 a {
+  text-decoration: none;
+}
+
+/*头像*/
+.avatar {
+  max-width: 30%;
+
+  img {
+    border-radius: 1%;
+  }
+}
+
+/*分页设置*/
+img,
+article,
+footer,
+ul,
+li,
+p,
+.detail,
+footer {
+  page-break-inside: avoid;
+}
+
+/*隐藏脚注*/
+footer {
+  border-top-style: solid;
+  color: #999;
+  margin: $print-footer-top / 2 0 0;
+  padding: $print-footer-top 0 0;
+  page-break-before: avoid;
+
+  ul,
+  li {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    line-height: 2em;
+    margin: 0;
+  }
+
+  li {
+    margin: 0 2em;
+    flex-direction: column;
+
+    &:not(:last-child)::after {
+      content: '';
+      padding: 0;
+    }
+  }
+}
+
+/*summary*/
+summary {
+  color: #111 !important;
+  margin: 0 0 0 .8em !important;
+
+  &::after {
+    display: none;
+  }
+}
+
+/*color*/
+.name {
+  color: #000;
+}

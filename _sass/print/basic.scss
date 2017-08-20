@@ -4,107 +4,31 @@ chrome 优先
 */
 
 @media print {
-    /*页面设置*/
-    @page {
-        size: auto;
-        margin: $print-page-margin; // this affects the margin in 
-    }
-    @page :blank {
-        display: none;
-    }
-    .screen {
-        display: none;
-    }
-    .print {
-        display: block;
-    }
-    /*文档范围*/
-    html,
-    body {
-        background: inherit;
-        padding: 0;
-        border: 0;
-        font-size: $print-font-size;
-        color: #111;
-    }
-    header,
-    main {
-        width: 90%;
-    }
-    /*链接*/
-    a,
-    a:visited {
-        text-decoration: underline;
-        border-bottom: 0;
-    }
-    h3 a {
-        text-decoration: none;
-    }
-    /*头像*/
-    .avatar {
-        //头像
-        max-width: 30%;
-        img {
-            border-radius: 1%;
-        }
-    }
-    /*color*/
-    .block .sub,
-    .info .time,
-    .info code {
-        color: #222;
-    }
-    .name {
-        color: #000;
-    }
-    section {
-        margin: $print-section-margin;
-        padding: $print-section-padding;
-    }
-    .block:not(:first-child) {
-        padding-top: .3em;
-    }
-    /**/
-    .head .sub {
-        font-weight: 600;
-        font-size: 14px;
-    }
-    summary {
-        color: #111 !important;
-        &::after {
-            display: none;
-        }
-    }
-    .other li:last-child {
-        margin-bottom: 0;
-    }
-    /*分页设置*/
-    img,
-    article,
-    ul,
-    li,
-    p,
-    .detail,
-    footer {
-        page-break-inside: avoid;
-    } //隐藏脚注
-    footer {
-        color: #999;
-        page-break-before: avoid;
-        border-top-style: solid;
-        ul {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            line-height: 2em;
-            margin: 0;
-        }
-        li {
-            margin: 0 2em;
-            &:not(:last-child):after {
-                content: '';
-                padding: 0;
-            }
-        }
-    }
+  /*基本样式*/
+  @import 'print';
+
+  /*color*/
+  .block .sub,
+  .info .time,
+  .info code {
+    color: #222;
+  }
+
+  section {
+    margin: $print-section-margin;
+    padding: $print-section-padding;
+  }
+
+  .block:not(:first-child) {
+    padding-top: .3em;
+  }
+
+  .head .sub {
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  .other li:last-child {
+    margin-bottom: 0;
+  }
 }

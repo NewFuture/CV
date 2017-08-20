@@ -35,7 +35,7 @@ body {
   background-color: $paper_color;
   border: 1px solid #dedede;
   color: $default_color;
-  font: 400 1em Palatino, "Palatino Linotype", Georgia, serif;
+  font: 400 1em Palatino, "Palatino Linotype", Georgia, serif, NSimSun;
   @include font-smoothing();
   @include hyphens();
 }

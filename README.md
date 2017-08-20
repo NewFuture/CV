@@ -20,6 +20,7 @@
 * [x] FireFox
 
 
+更多示例: [examples](https://github.com/NewFuture/CV/issues/1)
 
 ## 在线使用
 
@@ -43,16 +44,19 @@
 
 ![](assets/img/large.png)
 </details>
-<details>
+
+<details open>
 <summary>3. iPad mini或宽屏Note( 768 >= width > 450)</summary>
 
 ![](assets/img/ipad.png)
 </details>
-<details>
+
+<details open>
 <summary>4. 标准手机版( width <= 450)</summary>
 
 ![](assets/img/iphone.png)
 </details>
+
 <details open>
 <summary>5. 打印版 (可配置样式和导出PDF)</summary>
 
@@ -61,12 +65,16 @@
 
 
 
-
 ## 高级用法
 
 ### 导出 PDF
 1. 浏览器(推荐chrome)点击页面底部`打印`
 2. 选择打印为PDF文档
+3. 配置打印设置(布局样式,字体大小,边距等)* [_config.yml](https://github.com/NewFuture/CV/blob/gh-pages/_config.yml#L6)
+
+### 本地调试
+1. 安装[jekyll](http://jekyllcn.com/docs/installation/)
+2. `jekyll serve` 启动本地服务
 
 ### 自定义域名
 
@@ -77,7 +85,6 @@
 * [`_sass/resume.scss`](_sass/resume.scss) 默认样式
 * [`_sass/mobile.scss`](_sass/mobile.scss) 移动端适配
 * [`_sass/print.scss`](_sass/print.scss) 打印样式
-* [_config.yml](https://github.com/NewFuture/CV/blob/gh-pages/_config.yml#L6) 自定义配置
 
 
 ## 参考
