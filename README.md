@@ -25,7 +25,7 @@
 ## 在线使用
 
 1. fork: 登录github, 点击[Fork按钮](https://github.com/NewFuture/CV/fork)复制此项目到自己仓库
-2. 修改: 打开[\_data/resume.yml](\_data/resume.yml)点击编辑(`Edit`)图标(内容和条目根据需要删减)
+2. 修改: 打开[\_data/resume.yml](\_data/resume.yml)点击编辑(`Edit`)图标(内容和条目根据需要参考注释删减)
 3. 保存: 点击`Commit changes` (会自动commit)注意yaml格式无误
 4. 稍等片刻(自动编译生成github pages),打开[{your-github-id}.github.io/CV/](https://newfuture.github.io/CV/) 查看效果
 
@@ -39,7 +39,8 @@
 
 ![](assets/img/pc.png)
 </details>
-<details>
+
+<details open>
  <summary>2. iPad Pro或窄屏笔记本( 1024 >= width >= 768)</summary>
 
 ![](assets/img/large.png)
@@ -70,7 +71,7 @@
 ### 导出 PDF
 1. 浏览器(推荐chrome)点击页面底部`打印`
 2. 选择打印为PDF文档
-3. 配置打印设置(布局样式,字体大小,边距等)* [_config.yml](https://github.com/NewFuture/CV/blob/gh-pages/_config.yml#L6)
+3. 配置打印设置(布局样式,字体大小,边距等) [_config.yml](https://github.com/NewFuture/CV/blob/gh-pages/_config.yml#L6)
 
 ### 本地调试
 1. 安装[jekyll](http://jekyllcn.com/docs/installation/)
