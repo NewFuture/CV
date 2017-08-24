@@ -159,7 +159,7 @@ section {
   }
 
   h2 {
-    width: 19%;
+    width: $subject-width - 1%;
     margin-right: 1%;
     font-size: 1.3em;
     text-align: right;
@@ -170,14 +170,14 @@ section {
 
     &:lang(zh) {
       font-size: 1.65em;
-      width: 15%; // min-width: 5em;
       padding-right: 1%;
+      width: $subject-width * 3 / 4; // min-width: 5em;      
     }
   }
 
   .content {
     padding-left: 1%;
-    width: 78%;
+    width: 98% - $subject-width;
   }
 }
 

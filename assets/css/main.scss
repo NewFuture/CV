@@ -7,6 +7,7 @@
 $bg_color: #f9f9fc; //网页背景
 $paper_color: #fff; //纸张颜色
 $default_color: #333; //默认文字颜色
+$subject-width: {{site.subject-width | default: '20%'}};//宽度
 
 /*打印变量*/
 $print-page-margin: {{site.print.page-margin | default:'6mm 5mm 1mm'}}; //打印页边距
@@ -27,6 +28,6 @@ $print-footer-top: {{site.print.footer.top | default:'5px'}}; //页脚上边距�
 @charset "utf-8";
 @import "resume";
 @import "mobile";
-{% if site.print.template.size > 0%}
+{% if site.print.template.size > 0 %}
     @import "print/{{site.print.template}}";
 {% endif %}
