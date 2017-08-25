@@ -1,0 +1,115 @@
+--- 
+#layout: default
+--- 
+{% assign header = content | split: '<hr />' | first | strip %}
+{% assign main = content | split: '<hr />' | shift | join: '<hr />' %}
+{% if site.querytime %}
+  {% assign querytime = site.time | date: '%s' | prepend: '?' %}
+{% endif %}
+
+<!DOCTYPE html>
+<html
+{% if page.lang.size > 0 %}
+  lang="{{ page.lang }}"
+{% endif %}{% if site.manifest.size > 0 %}
+  manifest="{{site.manifest}}{{querytime}}"
+{% endif %}>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta charset="UTF-8"/>
+  <meta name="HandheldFriendly" content="true"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | prepend: site.baseurl | replace: '//', '/' }}{{querytime}}">
+  {% for script in site.scripts %}
+  <script src="{{script.src}}{{querytime}}" {{script.defer}}></script>
+  {% endfor %}
+  <meta property="og:type" content="website">
+  {% if page.lang == 'zh'%}
+    <meta property="og:description" content="{{page.title}} 详细简历">
+  {% else %}
+    <meta property="og:description" content="resume details of {{page.title}}">
+  {% endif%}
+  {% if page.photo.size %}
+    <meta property="og:image" content="{{page.photo}}{{querytime}}">
+  {% endif %}
+<!--[if lte IE 9]>
+<script>if(/*@cc_on!@*/0){var a='header,address,main,section,footer,details,summary,article'.split(','),i=0;while(i<a.length)document.createElement(a[i++])}
+</script>
+<link rel="stylesheet" href="{{ '/assets/css/ie.css' | prepend: site.baseurl | replace: '//', '/' }}{{ querytime }}">
+<![endif]-->
+</head>
+<body>
+<header>
+    {% if page.photo %}
+      <div class="avatar">
+        <img src="{{page.photo}}{{querytime}}" alt="photo">
+      </div>
+    {% endif %}
+    <div id="name">
+        {% assign header = header | strip | remove_first: '<h1' %}
+        {% assign jobtitle = header | split: 'h1>' | shift | join: 'h1>' | split: '>' | shift | join: '>' | split: '<' | pop | join: '<' %}        
+        <h1 {{ header | split: 'h1>' | first | strip }}h1>
+        <div class="jobtitle"> {{ jobtitle | strip }}</div>
+    </div>
+    <address id="contact">
+    {% for item in page.contact %}
+        {% if item[1] and item[1] != '' %}
+        <div class="contact-item">
+          {% assign icon = item[0] | prepend: 'icons/' | append: '.svg'%}        
+          <i class="icon" aria-hidden="true">{% include {{icon}} %}</i>
+          <a href="">{{item[1]}}</a>
+        </div>    
+        {% endif %}                  
+    {% endfor %}
+    </address>
+<!--[if lte IE 9]><br><![endif]-->
+</header>
+<main>
+    {% assign sections = main | split: '<h2 ' | compact | shift %}
+
+    {% for section in sections %}
+    <section>
+        <h2 class="subject" {{ section | split: 'h2>' | first }}h2>
+
+        <div class="content">
+           {% assign articles = section | split: '<h3 ' | shift %}      
+           {% for article in articles %}
+           {% assign token = article | strip %}
+            <article class="block">
+                
+                {% comment %} h3 and h4  tag{% endcomment %}
+                <div class="head">
+                    <h3 class="title" {{ token | split: 'h3>' | first | strip }}h3>
+                    {% assign token = token | split: 'h3>' | shift | join: 'h3>' | strip %}
+                    {% assign sub = token | split: '<h4' %}                    
+                    {% if sub[0] == '' %}
+                        <h4 class="sub" {{sub | shift | join: '<h4' | split: 'h4>' | pop | join: 'h4>'| strip}}h4>
+                    {% assign token = token | split: 'h4>' | | last | strip %}
+                    {% endif %}
+                </div>
+
+                {% comment %} h5 tags {% endcomment %}
+                <div class="info">
+                    {% assign info = token | split: '/h5>' | pop %}
+                    {% assign token = token | split: '/h5>' | last | strip %}
+                    {% for i in info %}
+                        {% if i contains '</code>' %}
+                        <div class="tag" {{ i | remove_first: '<h5' | strip }}/div>
+                        {% else %}
+                        <i class="time" {{i | remove_first: '<h5' | strip}}/i>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+
+                <div>
+                        {{token}}
+                </div>
+
+            </article>
+            {% endfor %}
+        </div>
+    </section>
+    {% endfor %}
+</main>
+</body>
