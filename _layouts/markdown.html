@@ -48,8 +48,8 @@
     {% endif %}
     <div id="name">
         {% assign header = header | strip | remove_first: '<h1' %}
-        {% assign jobtitle = header | split: 'h1>' | shift | join: 'h1>' | split: '>' | shift | join: '>' | split: '<' | pop | join: '<' %}        
-        <h1 {{ header | split: 'h1>' | first | strip }}h1>
+        {% assign jobtitle = header | split: '</h1>' | shift | join: '</h1>' | split: '>' | shift | join: '>' | split: '<' | pop | join: '<' %}        
+        <h1 {{ header | split: '</h1>' | first | strip }}</h1>
         <div class="jobtitle"> {{ jobtitle | strip }}</div>
     </div>
     <address id="contact">
@@ -70,7 +70,7 @@
 
     {% for section in sections %}
     <section>
-        <h2 class="subject" {{ section | split: 'h2>' | first }}h2>
+        <h2 class="subject" {{ section | split: '</h2>' | first | strip }}</h2>
 
         <div class="content">
            {% assign articles = section | split: '<h3 ' | shift %}      
@@ -80,31 +80,41 @@
                 
                 {% comment %} h3 and h4  tag{% endcomment %}
                 <div class="head">
-                    <h3 class="title" {{ token | split: 'h3>' | first | strip }}h3>
-                    {% assign token = token | split: 'h3>' | shift | join: 'h3>' | strip %}
+                    <h3 class="title" {{ token | split: '</h3>' | first | strip }}</h3>
+                    {% assign token = token | split: '</h3>' | shift | join: '</h3>' | strip %}
                     {% assign sub = token | split: '<h4' %}                    
                     {% if sub[0] == '' %}
-                        <h4 class="sub" {{sub | shift | join: '<h4' | split: 'h4>' | pop | join: 'h4>'| strip}}h4>
+                        <h4 class="sub" {{sub | shift | join: '<h4' | split: '</h4>' | pop | join: '</h4>'| strip}}</h4>
                     {% assign token = token | split: 'h4>' | | last | strip %}
                     {% endif %}
                 </div>
 
                 {% comment %} h5 tags {% endcomment %}
                 <div class="info">
-                    {% assign info = token | split: '/h5>' | pop %}
-                    {% assign token = token | split: '/h5>' | last | strip %}
+                    {% assign info = token | split: '</h5>' | pop %}
+                    {% assign token = token | split: '</h5>' | last | strip %}
                     {% for i in info %}
                         {% if i contains '</code>' %}
-                        <div class="tag" {{ i | remove_first: '<h5' | strip }}/div>
+                        <div class="tag" {{ i | remove_first: '<h5' | strip }}</div>
                         {% else %}
-                        <i class="time" {{i | remove_first: '<h5' | strip}}/i>
+                        <i class="time" {{i | remove_first: '<h5' | strip}}</i>
                         {% endif %}
                     {% endfor %}
                 </div>
+                
+                {% assign tagname = token | split: '>'| first| strip| split: ' ' | first | strip | remove: '<' | strip | downcase %}
+                {% if tagname == 'details' %}
+                    {{ token | split: '</summary>' | first | strip }}</summary>
+                    {% assign token = token | split: '</summary>' | shift | join: '</summary>' | strip %}
+                    <div class="detail">{{ token | split: '</details>'| first | strip }}</div></details>
+                {% elsif tagname == 'ul' %}
+                    code2
+                {% elsif tagname == 'h6' %}
+                    <div class="summary">{{token}}</div>                
+                {% else %}
+                    <div class="detail">{{token}}</div>
+                {% endif %}
 
-                <div>
-                        {{token}}
-                </div>
 
             </article>
             {% endfor %}
