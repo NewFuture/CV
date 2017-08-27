@@ -102,14 +102,14 @@ chrome 优先
     font-weight: 600; // font-size: 14px;
   }
 
-  .other {
-    .block {
+  section > ul {
+    & > li {
       display: flex;
       justify-content: flex-start; // align-items: baseline;
     }
-  }
 
-  .list .text {
-    margin: 0;
+    ul > li {
+      margin: 0;
+    }
   }
 }

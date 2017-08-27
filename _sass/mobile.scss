@@ -2,90 +2,102 @@
 
 //低分辨率笔记本和宽pad
 @media screen and (max-width: 1024px) {
-    html,
-    body {
-        padding: 0;
-        border: 0;
-        background-color: $paper_color;
-    }
-    header,
-    main {
-        width: 84%;
-    }
-    .pc-only {
-        display: none;
-    }
+  html,
+  body {
+    padding: 0;
+    border: 0;
+    background-color: $paper_color;
+  }
+
+  header,
+  main {
+    width: 84%;
+  }
+
+  .pc-only {
+    display: none;
+  }
 }
 
 //平板pad或者手机横屏
 @media screen and (max-width: 768px) {
-    header,
-    main {
-        width: 90%;
+  header,
+  main {
+    width: 90%;
+  }
+
+  .avatar {
+    display: none;
+  }
+
+  section {
+    .content {
+      width: 94%;
+      margin: 0 auto;
     }
-    .avatar {
-        display: none;
+
+    h2 {
+      display: block;
+      width: 100% !important;
+      text-align: center;
+      margin: .8em auto .2em;
     }
-    section {
-        .content {
-            width: 94%;
-            margin: 0 auto;
-        }
-        h2 {
-            display: block;
-            width: 100% !important;
-            text-align: center;
-            margin: .8em auto .2em;
-        }
-    }
+  }
 }
 
 @media screen and (max-width: 560px) {
-    header,
-    main {
-        width: 98%;
-    }
+  header,
+  main {
+    width: 98%;
+  }
 }
 
 //手机
 @media screen and (max-width: 480px) {
-    header,
-    .head {
-        display: block;
+  header,
+  .head {
+    display: block;
+  }
+
+  #name {
+    display: block;
+    font-size: .9em;
+    width: 90%;
+    margin: auto;
+    border-bottom: .1em dotted #bbb;
+  }
+
+  .contact {
+    display: block;
+    width: 80%; //IE 类半兼容
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+    width: fit-content;
+    margin: auto;
+    padding-top: 1em;
+  }
+
+  .contact-item {
+    padding-top: .2em;
+    padding-left: .4em;
+  }
+
+  .block {
+    .sub {
+      min-width: 99%; // text-align: left;
     }
-    #name {
-        display: block;
-        font-size: .9em;
-        width: 90%;
-        margin: auto;
-        border-bottom: .1em dotted #bbb;
+  }
+
+  section > ul ul {
+    padding-left: 1em;
+  }
+
+  footer li {
+    display: block;
+    line-height: 1.5em;
+
+    &::after {
+      display: none;
     }
-    #contact {
-        display: block;
-        width: 80%; //IE 类半兼容
-        width: -moz-fit-content;
-        width: -webkit-fit-content;
-        width: fit-content;
-        margin: auto;
-        padding-top: 1em;
-    }
-    .contact-item {
-        padding-top: .2em;
-        padding-left: .4em;
-    }
-    .block {
-        .sub {
-            min-width: 99%; // text-align: left;
-        }
-    }
-    .other .list {
-        padding-left: 1em;
-    }
-    footer li {
-        display: block;
-        line-height: 1.5em;
-        &::after {
-            display: none;
-        }
-    }
+  }
 }

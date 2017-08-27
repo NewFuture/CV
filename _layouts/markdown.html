@@ -1,5 +1,5 @@
 --- 
-#layout: default
+layout: default
 --- 
 {% assign header = content | split: '<hr />' | first | strip %}
 {% assign main = content | split: '<hr />' | shift | join: '<hr />' %}
@@ -19,7 +19,7 @@
   <meta charset="UTF-8"/>
   <meta name="HandheldFriendly" content="true"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>{{ page.title }}</title>
+  <title>{{ page.title | default: '我的简历' }}</title>
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | prepend: site.baseurl | replace: '//', '/' }}{{querytime}}">
   {% for script in site.scripts %}
   <script src="{{script.src}}{{querytime}}" {{script.defer}}></script>
@@ -41,7 +41,7 @@
 </head>
 <body>
 <header>
-    {% if page.photo %}
+    {% if page.photo.size > 0 %}
       <div class="avatar">
         <img src="{{page.photo}}{{querytime}}" alt="photo">
       </div>
@@ -52,7 +52,7 @@
         <h1 {{ header | split: '</h1>' | first | strip }}</h1>
         <div class="jobtitle"> {{ jobtitle | strip }}</div>
     </div>
-    <address id="contact">
+    <address class="contact">
     {% for item in page.contact %}
         {% if item[1] and item[1] != '' %}
         <div class="contact-item">
@@ -69,27 +69,33 @@
     {% assign sections = main | split: '<h2 ' | compact | shift %}
 
     {% for section in sections %}
-    <section>
-        <h2 class="subject" {{ section | split: '</h2>' | first | strip }}</h2>
+    <section>    
+        {% assign content = section | split: '</h2>' | shift | join: '</h2>' | strip  %}
+        {% assign tagname = content | split: '>' | first | strip | split: ' ' |  first | strip %}
 
-        <div class="content">
-           {% assign articles = section | split: '<h3 ' | shift %}      
+        <h2 class="subject" {{ section | split: '</h2>' | first | strip }}</h2>
+        
+        {% if tagname =='<h3' %}
+        {% comment %} 标准内容 {% endcomment %}
+           <div class="content">
+           {% assign articles = content | split: '<h3 ' | shift  %}
            {% for article in articles %}
-           {% assign token = article | strip %}
-            <article class="block">
-                
+
+           <article class="block">
+               {% assign token = article | strip %}
+
                 {% comment %} h3 and h4  tag{% endcomment %}
                 <div class="head">
                     <h3 class="title" {{ token | split: '</h3>' | first | strip }}</h3>
                     {% assign token = token | split: '</h3>' | shift | join: '</h3>' | strip %}
-                    {% assign sub = token | split: '<h4' %}                    
+                    {% assign sub = token | split: '<h4' %}
                     {% if sub[0] == '' %}
                         <h4 class="sub" {{sub | shift | join: '<h4' | split: '</h4>' | pop | join: '</h4>'| strip}}</h4>
-                    {% assign token = token | split: 'h4>' | | last | strip %}
+                    {% assign token = token | split: 'h4>' | last | strip | append: ' ' %}
                     {% endif %}
                 </div>
 
-                {% comment %} h5 tags {% endcomment %}
+                {% comment %} h5 tags and time{% endcomment %}
                 <div class="info">
                     {% assign info = token | split: '</h5>' | pop %}
                     {% assign token = token | split: '</h5>' | last | strip %}
@@ -97,27 +103,56 @@
                         {% if i contains '</code>' %}
                         <div class="tag" {{ i | remove_first: '<h5' | strip }}</div>
                         {% else %}
-                        <i class="time" {{i | remove_first: '<h5' | strip}}</i>
+                        <i class="time" {{ i | remove_first: '<h5' | strip }}</i>
                         {% endif %}
                     {% endfor %}
                 </div>
                 
-                {% assign tagname = token | split: '>'| first| strip| split: ' ' | first | strip | remove: '<' | strip | downcase %}
+                {% comment %} display details {% endcomment %}
+                {% assign tagname = token | split: '>'| first | strip| split: ' ' | first | strip | remove: '<' | strip | downcase %}
                 {% if tagname == 'details' %}
-                    {{ token | split: '</summary>' | first | strip }}</summary>
+                    {{ token | split: '</summary>' | first | replace_first: '<summary', '<summary class="summary"' | strip }}</summary>
                     {% assign token = token | split: '</summary>' | shift | join: '</summary>' | strip %}
                     <div class="detail">{{ token | split: '</details>'| first | strip }}</div></details>
                 {% elsif tagname == 'ul' %}
                  {{token | replace_first: '<ul','<ul class="items"' | replace: '<li', '<li class="item"' | strip }}
                 {% elsif tagname == 'h6' %}
-                    <div class="summary">{{token}}</div>
+                    {% assign end_tag = token | split: '/' | last | strip %}
+                    {% if end_tag == 'h6>' %}
+                        {{ token | replace_first: '<h6','<div class="summary"' | replace: '</h6>','</div>' | strip}}
+                    {% else %}
+                        <details open>{{ token | replace_first: '<h6','<summary class="summary"' | replace: '</h6>', '</summary><div class="detail">'}}</div></details>
+                    {% endif %}
                 {% else %}
                     <div class="detail">{{token}}</div>
                 {% endif %}
 
             </article>
             {% endfor %}
-        </div>
+            </div>
+        
+        {% elsif tagname =='<ul' %}
+        {% comment %} 列表形式 {% endcomment %}
+            {% assign items = content | split: '<div class="highlighter-rouge"><pre class="highlight"><code>' %}
+            {{ items | first | replace_first: '<ul', '<ul class="content"' | strip }}
+            {% assign items = items | shift %}
+
+            {% for item in items %}
+                {% assign token = item | split: '</code></pre>' | first | strip %}
+                {% assign text_itmes = token | newline_to_br | split: '<br />' %}
+                {% for text in text_itmes %}
+                    <span class="text item">{{text|escape}}</span>
+                {% endfor %}
+
+                {% assign token = item | split: '</code></pre>' | shift | join:'</code></pre>' | strip %}
+                {{token | remove_first: '</div>'}}
+            {% endfor %}
+
+        {% else %}
+        {% comment %} 未知格式 {% endcomment %}
+            <div class="content">{{content}}</div>
+        {% endif %}
+
     </section>
     {% endfor %}
 </main>

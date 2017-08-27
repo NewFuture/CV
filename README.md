@@ -1,7 +1,11 @@
 # CV(简历)自动生成
 简历模板自动生成gh-pages. A resume template auto builds in github-pages by Jekyll
 
-支持`yaml`(方便人读写)或者`json`(方便程序转换)的数据格式
+数据格式：
+* [x] `markdown`方便书写([预览](https://newfuture.github.io/CV/markdown))
+* [x] `yaml`(方便人读写，支持复杂嵌套)
+* [x] `json`(方便程序转换)
+
 
 * [x] 手机端适配
 * [x] 打印格式优化(可导PDF)

@@ -110,13 +110,11 @@ a {
     *color: expression(this.parentNode.currentStyle.color); // hack IE7 inherit
 }
 
-.other {
+section>ul {
+    *margin-left: 0;
+    *list-style-position: inside;
     .name{
         *margin-left: -1em;
-    }
-    .content {
-        *margin-left: 0;
-        *list-style-position: inside;
     }
 }
 
@@ -125,7 +123,7 @@ a {
 
 .avatar,
 #name,
-#contact {
+.contact {
     vertical-align: middle;
     *display: inline;
     *zoom: 1;
@@ -144,7 +142,7 @@ a {
     }
 }
 
-#contact {
+.contact {
     margin-right: 6%\0; //兼容IE8 9
     float: right\0; //兼容IE8 9
     *line-height: 1.5em; //ie 7 高度

@@ -89,13 +89,12 @@ chrome 优先
     font-weight: 600;
   }
 
-  .other {
-    .block {
+  section>ul {
+    &>li {
       display: block;
     }
+    ul>li {
+      margin: 0;
+    }
   }
-
-  .list .text {
-    margin: 0;
   }
-}
