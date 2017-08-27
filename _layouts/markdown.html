@@ -108,13 +108,12 @@
                     {% assign token = token | split: '</summary>' | shift | join: '</summary>' | strip %}
                     <div class="detail">{{ token | split: '</details>'| first | strip }}</div></details>
                 {% elsif tagname == 'ul' %}
-                    code2
+                 {{token | replace_first: '<ul','<ul class="items"' | replace: '<li', '<li class="item"' | strip }}
                 {% elsif tagname == 'h6' %}
-                    <div class="summary">{{token}}</div>                
+                    <div class="summary">{{token}}</div>
                 {% else %}
                     <div class="detail">{{token}}</div>
                 {% endif %}
-
 
             </article>
             {% endfor %}
