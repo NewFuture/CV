@@ -54,8 +54,9 @@ layout: default
         {% for item in data.contact %}
         <div class="contact-item">
           {% if item.icon.size > 0 %}
-          <i class="icon" aria-hidden="true">{% include {{item.icon}} %}</i>
+            {% include {{item.icon}} %}
           {% endif %} 
+          <span class="icon">{{item.desc}}</span>
           {% if item.href.size > 0 %}
           <a href="{{item.href }}" {{ item.attr }}>{{ item.text }}</a>
           {% else %}

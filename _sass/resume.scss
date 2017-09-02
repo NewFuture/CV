@@ -72,7 +72,8 @@ main {
 
 header,
 .head,
-.info {
+.info,
+.contact-item{
   @include flex(center);
 }
 
@@ -136,7 +137,7 @@ header {
     font-style: normal; // padding: 0 1em;
   } //图标
   .icon {
-    margin-right: .5em;
+    margin: 0 .5em;
   }
 
   svg {
@@ -171,7 +172,7 @@ section {
     &:lang(zh) {
       font-size: 1.65em;
       padding-right: 1%;
-      width: $subject-width * 3 / 4; // min-width: 5em;      
+      width: $subject-width * 3 / 4; // min-width: 5em;
     }
   }
 
