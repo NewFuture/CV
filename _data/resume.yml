@@ -96,6 +96,7 @@ others: #其他列表显示
     items: #单行列表
     - 睡觉
     - 吃饭
+    - test
     - coding
   - title: 列表
     list:
