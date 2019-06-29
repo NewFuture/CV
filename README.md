@@ -28,11 +28,18 @@
 
 ## 在线使用
 
-1. fork: 登录github, 点击[Fork按钮](https://github.com/NewFuture/CV/fork)复制此项目到自己仓库
-2. 修改: 打开[\_data/resume.yml](\_data/resume.yml)点击编辑(`Edit`)图标(内容和条目根据需要参考注释删减)
-3. 保存: 点击`Commit changes` (会自动commit)注意yaml格式无误
-4. 稍等片刻(自动编译生成github pages),打开[{your-github-id}.github.io/CV/](https://newfuture.github.io/CV/) 查看效果
+1. 应用此模板: 登录github, 点击[`Use this template`按钮](https://github.com/NewFuture/CV/generate)使用此模板
+2. 设置`Repository name`仓库名如`CV`(仓库名与最后网站一致,可自行选择私有公开),然后在自己的仓库下进行此操作
+3. 修改: 打开[\_data/resume.yml](\_data/resume.yml)(或者resume.json)点击编辑(`Edit`)图标(内容和条目根据需要参考注释删减)
+4. 保存: 点击`Commit changes` (会自动commit)注意yaml格式(或者json格式)无误
+5. 稍等片刻(自动编译生成github pages),打开[{your-github-id}.github.io/CV/](https://newfuture.github.io/CV/) (命名与项目名一致)查看效果
 
+## contribution
+
+> 如果你想改进此模板
+1. 可[`fork`](https://github.com/NewFuture/CV/fork)此模板
+2. 在fork后的仓库修改和预览
+3. 提交[`pull requests`](https://github.com/NewFuture/CV/pulls)
 
 ## 效果截图(点击展开)
 
